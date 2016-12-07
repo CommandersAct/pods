@@ -1,7 +1,4 @@
 
-<!doctype html>
-<meta charset="utf-8">
-<title>TagCommander Developer Implementation Guide - ${platform} - ${release_version}</title>
 <html>
 <body>
 <p><img alt="alt tag" src="res/logo.png" /></p>
@@ -64,13 +61,13 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
     - In the "Build Phases" tab under "Link Binary With Libraries"
     - That the FRAMEWORK_SEARCH_PATHS do include the places where the frameworks are.</p>
 <h1 id="support-and-contacts">Support and contacts</h1>
-<p><img alt="alt tag" src="./res/logo.png" /></p>
+<p><img alt="alt tag" src="res/logo.png" /></p>
 <hr />
 <p><strong>Support</strong>
 <em>support@tagcommander.com</em></p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 07/12/2016 11:26:03</p>
+<p>This documentation was generated on 07/12/2016 15:40:42</p>
 </body>
 </html>
