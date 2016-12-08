@@ -1,9 +1,10 @@
+
 <html>
 <body>
-<p><img alt="alt tag" src="https://raw.githubusercontent.com/TagCommander/pods/master/res/logo.jpg"/></p>
+<p><img alt="alt tag" src="res/logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>07/12/2016</em><br />
+<p>Last update : <em>08/12/2016</em><br />
 Release version : <em>4.0.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -60,13 +61,13 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
     - In the "Build Phases" tab under "Link Binary With Libraries"
     - That the FRAMEWORK_SEARCH_PATHS do include the places where the frameworks are.</p>
 <h1 id="support-and-contacts">Support and contacts</h1>
-<p><img alt="alt tag" src="https://raw.githubusercontent.com/TagCommander/pods/master/res/logo.jpg"/></p>
+<p><img alt="alt tag" src="res/logo.png" /></p>
 <hr />
 <p><strong>Support</strong>
 <em>support@tagcommander.com</em></p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 07/12/2016 15:40:42</p>
+<p>This documentation was generated on 08/12/2016 09:42:40</p>
 </body>
 </html>
