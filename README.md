@@ -63,8 +63,8 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
     - That the FRAMEWORK_SEARCH_PATHS do include the places where the frameworks are.</p>
 <h1 id="demo-applications">Demo Applications</h1>
 <p>You can check the demo showcasing our modules on github:</p>
-<p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/iOS">Tag Demo</a>
-<a href="https://github.com/TagCommander/Segment-Demo/tree/master/iOS">Segment Demo</a></p>
+<p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/iOS">Tag Demo</a></p>
+<p><a href="https://github.com/TagCommander/Segment-Demo/tree/master/iOS">Segment Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <hr />
@@ -73,6 +73,6 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 20/12/2016 14:39:23</p>
+<p>This documentation was generated on 20/12/2016 14:57:33</p>
 </body>
 </html>
