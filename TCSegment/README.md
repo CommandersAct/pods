@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>08/12/2016</em><br />
+<p>Last update : <em>20/12/2016</em><br />
 Release version : <em>4.0.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -19,6 +19,7 @@ Release version : <em>4.0.0</em></p>
 <li><a href="#asking-for-the-list">Asking for the List</a></li>
 </ul>
 </li>
+<li><a href="#demo-application">Demo Application</a></li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
 </ul>
 </div>
@@ -74,6 +75,9 @@ First you need to listen to the kTCNotification_SegmentAvailable notification li
 
 
 <p>If no segment are found or they were never fetched, the list will be empty and not null.</p>
+<h1 id="demo-application">Demo Application</h1>
+<p>To check an example of how to use this module, please check: </p>
+<p><a href="https://github.com/TagCommander/Segment-Demo/tree/master/iOS">Segment Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <hr />
@@ -82,6 +86,6 @@ First you need to listen to the kTCNotification_SegmentAvailable notification li
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 08/12/2016 18:00:55</p>
+<p>This documentation was generated on 20/12/2016 14:39:23</p>
 </body>
 </html>
