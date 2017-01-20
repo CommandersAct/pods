@@ -10,4 +10,4 @@ Changelog iOS
 
 	+ Added Cocoapods support
 	~ Modified release format from static library to Framework
-    + Added SegmentAvailable notifications on iOS
+    + Added SegmentAvailable notifications

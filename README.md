@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>20/12/2016</em><br />
+<p>Last update : <em>20/01/2017</em><br />
 Release version : <em>4.0.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -17,7 +17,6 @@ Release version : <em>4.0.0</em></p>
 <li><a href="#framework">Framework</a></li>
 </ul>
 </li>
-<li><a href="#demo-applications">Demo Applications</a></li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
 </ul>
 </div>
@@ -57,14 +56,13 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
 <blockquote>
 <p>You will always need to at least add the Core module to your project.</p>
 </blockquote>
-<p>Add the modules you need to your project and confirm that XCode really added them for your Target at the following places:
-    - In the "general" tab under "Linked Frameworks and Libraries"
-    - In the "Build Phases" tab under "Link Binary With Libraries"
-    - That the FRAMEWORK_SEARCH_PATHS do include the places where the frameworks are.</p>
-<h1 id="demo-applications">Demo Applications</h1>
-<p>You can check the demo showcasing our modules on github:</p>
-<p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/iOS">Tag Demo</a></p>
-<p><a href="https://github.com/TagCommander/Segment-Demo/tree/master/iOS">Segment Demo</a></p>
+<p>Add the modules you need to your project and confirm that XCode really added them for your Target at the following places:</p>
+<div class="codehilite"><pre>- In the &quot;general&quot; tab under &quot;Linked Frameworks and Libraries&quot;
+- In the &quot;Build Phases&quot; tab under &quot;Link Binary With Libraries&quot;
+- That the FRAMEWORK_SEARCH_PATHS do include the places where the frameworks are.
+</pre></div>
+
+
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <hr />
@@ -73,6 +71,6 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 20/12/2016 14:57:33</p>
+<p>This documentation was generated on 20/01/2017 17:09:55</p>
 </body>
 </html>
