@@ -348,7 +348,7 @@ You can ask for any variables computed by TagCommander through a simple getData 
 
 
 <p>You can find a full list of variables computed by the SDK, explanations and examples here: </p>
-<p><a href="./TCSDK/PredefinedVariables.md">TCPredefinedVariables</a></p>
+<p><a href="PredefinedVariables.md">TCPredefinedVariables</a></p>
 <h1 id="example-tcdemo">Example: TCDemo</h1>
 <p>To check an example of how to use this module, please check: </p>
 <p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/iOS">Tag Demo</a></p>
@@ -368,6 +368,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/01/2017 15:55:29</p>
+<p>This documentation was generated on 23/01/2017 15:58:07</p>
 </body>
 </html>

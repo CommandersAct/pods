@@ -86,6 +86,6 @@ First you need to listen to the kTCNotification_SegmentAvailable notification li
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/01/2017 15:55:29</p>
+<p>This documentation was generated on 23/01/2017 15:58:07</p>
 </body>
 </html>
