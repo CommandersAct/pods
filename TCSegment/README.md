@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>20/01/2017</em><br />
+<p>Last update : <em>23/01/2017</em><br />
 Release version : <em>4.0.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -86,6 +86,6 @@ First you need to listen to the kTCNotification_SegmentAvailable notification li
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 20/01/2017 17:09:55</p>
+<p>This documentation was generated on 23/01/2017 15:52:06</p>
 </body>
 </html>
