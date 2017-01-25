@@ -238,17 +238,16 @@ anyway for reasons of simplication.</p>
 <p>We recommend using TCLogLevel_Verbose while developing your application:</p>
 <div class="codehilite"><pre><span class="c1">// Put it before the TagCommander initialization</span>
 <span class="cp">#ifdef DEBUG</span>
-<span class="p">[[</span><span class="n">TCState</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setDebugForLevel</span><span class="p">:</span> <span class="n">TCLogLevel_Verbose</span>
-                                 <span class="nl">andOutput</span><span class="p">:</span> <span class="n">TCLogOutput_Console</span><span class="p">];</span>
+<span class="p">[TCDebug setDebugLevel: TCLogLevel_Verbose];</span>
 
-<span class="p">[[</span><span class="n">TCLogger</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setDebugVerboseNotificationLog</span><span class="p">:</span> <span class="nb">YES</span><span class="p">];</span>
+<span class="p">[TCDebug setNotificationLog: YES];</span>
 <span class="cp">#end</span>
 </pre></div>
 
 
 <ul>
 <li>
-<p>The first line allows you to select the verbosity of TagCommander's logs, alongside the desired outputs.</p>
+<p>The first line allows you to select the verbosity of TagCommander's logs.</p>
 <ul>
 <li>Verbosity</li>
 </ul>
@@ -292,7 +291,7 @@ anyway for reasons of simplication.</p>
 </table>
 </li>
 <li>
-<p>The internal architecture is working with internal notifications. You can ask the Logger to display all the internal notifications with setDebugVerboseNotificationLog: YES.</p>
+<p>The internal architecture is working with internal notifications. You can ask the Logger to display all the internal notifications with setNotificationLog: YES.</p>
 </li>
 </ul>
 <h2 id="testing">Testing</h2>
