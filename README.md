@@ -40,15 +40,17 @@ The modules are the following :</p>
 </pre></div>
 
 
+<p>In addition to those two variants also come a release version with BITCODE enabled. Since BITCODE is only used when submitting your application on the store, only a release version is available with BITCODE.</p>
 <h2 id="cocoapods">Cocoapods</h2>
-<p>Please note that if you are using cocoapod changes that would have you modify your applications are made, we will create new podspec files for the newest versions.</p>
+<p>Please note that if you are using cocoapod and important changes occur in our SDK that would have you modify your applications, we will create new podspec files for the newest versions to prevent any issues in your project.</p>
 <div class="warning"></div>
 
 <blockquote>
 <p>You will always need to at least add the Core module to your project.</p>
 </blockquote>
 <p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-debug-universal.podspec
-https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release-iphoneos.podspec</p>
+https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release-iphoneos.podspec
+https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release-iphoneos-bitcode-enabled.podspec</p>
 <h2 id="framework">Framework</h2>
 <p>The latest version of our modules are always available on our github account: https://github.com/TagCommander/pods</p>
 <div class="warning"></div>
@@ -68,6 +70,6 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 03/02/2017 09:45:28</p>
+<p>This documentation was generated on 03/02/2017 10:34:33</p>
 </body>
 </html>
