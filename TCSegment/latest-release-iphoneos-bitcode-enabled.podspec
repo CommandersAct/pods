@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/TCSegment for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSegment/Release-iphoneos/4.0.0.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSegment/Release-iphoneos/4.0.0-BITCODE.zip" }
   s.preserve_paths      = 'TCSegment.framework'
   s.public_header_files = 'TCSegment.framework/Headers/*.h'
   s.vendored_frameworks = 'TCSegment.framework'
