@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="predefined-variables-guide">Predefined variables Guide</h1>
 <p><strong>SDK TagCommander Android and iPhone</strong></p>
-<p>Last update : <em>23/01/2017</em><br /></p>
+<p>Last update : <em>01/02/2017</em><br /></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -73,11 +73,9 @@
 <li><a href="#tc_version_first_visit_ms-tc_nav_timestamp_version_first_visit_ms">TC_VERSION_FIRST_VISIT_MS# (#TC_NAV_TIMESTAMP_VERSION_FIRST_VISIT_MS#)</a></li>
 <li><a href="#tc_number_visit-tc_nav_number_visits">TC_NUMBER_VISIT# (#TC_NAV_NUMBER_VISITS#)</a></li>
 <li><a href="#tc_number_session">TC_NUMBER_SESSION</a></li>
-<li><a href="#tc_empty_variable_remove_equal">TC_EMPTY_VARIABLE_REMOVE_EQUAL</a><ul>
+<li><a href="#tc_empty_variable_remove_equal">TC_EMPTY_VARIABLE_REMOVE_EQUAL</a></li>
 <li><a href="#tc_is_first_visit">TC_IS_FIRST_VISIT</a></li>
 <li><a href="#tc_first_execute">TC_FIRST_EXECUTE</a></li>
-</ul>
-</li>
 </ul>
 </div>
 <h1 id="predefined-variables">Predefined variables</h1>
@@ -531,13 +529,15 @@ Should be at least one, since during launch the application is considered as goi
 <hr />
 <p>This variable only exist in v3 and before of Tag Commander's SDK.</p>
 <p>A special predefined variable which removes the '=' sign in the query string if the variable is not defined. It was created to answer a special case for google analytics.</p>
-<h2 id="tc_is_first_visit">TC_IS_FIRST_VISIT</h2>
+<h1 id="tc_is_first_visit">TC_IS_FIRST_VISIT</h1>
+<hr />
 <p>This is a very simple variable that is TRUE during the fist launch of the application, and FALSE afterward.</p>
 <ul>
 <li>Galaxy S7: TRUE</li>
 <li>iPhone 6s: FALSE</li>
 </ul>
-<h2 id="tc_first_execute">TC_FIRST_EXECUTE</h2>
+<h1 id="tc_first_execute">TC_FIRST_EXECUTE</h1>
+<hr />
 <p>The first time you ask the SDK to either execute() or SendData() each hard launch, this variable is TRUE and it's FALSE otherwise.</p>
 <p>It can be combined TC_IS_FIRST_VISIT, to have the very first hit of the first launch of the application.</p>
 <ul>

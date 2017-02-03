@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>23/01/2017</em><br />
+<p>Last update : <em>03/02/2017</em><br />
 Release version : <em>4.0.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -347,8 +347,6 @@ You can ask for any variables computed by TagCommander through a simple getData 
 </pre></div>
 
 
-<p>You can find a full list of variables computed by the SDK, explanations and examples here: </p>
-<p><a href="PredefinedVariables.md">TCPredefinedVariables</a></p>
 <h1 id="example-tcdemo">Example: TCDemo</h1>
 <p>To check an example of how to use this module, please check: </p>
 <p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/iOS">Tag Demo</a></p>
@@ -368,6 +366,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/01/2017 15:58:07</p>
+<p>This documentation was generated on 03/02/2017 09:23:10</p>
 </body>
 </html>

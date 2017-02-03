@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>23/01/2017</em><br />
+<p>Last update : <em>03/02/2017</em><br />
 Release version : <em>4.0.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -21,6 +21,12 @@ Release version : <em>4.0.0</em></p>
 <p>But even with that said, a part of our code is pretty usefull in several of our modules, so we created a Core module to prevent code repetition and thus also bigger applications if you need several modules.</p>
 <h1 id="dependencies">Dependencies</h1>
 <p>The Core module is mandatory if you are using TagCommander's mobile solution so we simply put the dependencies needed for the Core module directly in the documentations of the other modules.</p>
+<p>Core is building with the following dependencies :</p>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-base:10.0.1&#39;</span>
+<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.0&#39;</span>
+</pre></div>
+
+
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <hr />
@@ -29,6 +35,6 @@ Release version : <em>4.0.0</em></p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/01/2017 15:58:07</p>
+<p>This documentation was generated on 03/02/2017 09:23:10</p>
 </body>
 </html>

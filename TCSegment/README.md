@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>23/01/2017</em><br />
+<p>Last update : <em>03/02/2017</em><br />
 Release version : <em>4.0.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -12,6 +12,7 @@ Release version : <em>4.0.0</em></p>
 <ul>
 <li><a href="#segments-implementation-guide">Segment's Implementation Guide</a></li>
 <li><a href="#introduction">Introduction</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
 <li><a href="#creating-segments">Creating Segments</a></li>
 <li><a href="#getting-segments">Getting Segments</a><ul>
 <li><a href="#fetching">Fetching</a></li>
@@ -26,6 +27,13 @@ Release version : <em>4.0.0</em></p>
 <h1 id="introduction">Introduction</h1>
 <p>By using TagCommander's Engage product you will be able to store a lot of data and create segments of users. With those segments you can target precisely your offers to your customers or server personalized content in your application.</p>
 <p>TCSegment is a small module especially made to get the segment of your user from within your application.</p>
+<h1 id="dependencies">Dependencies</h1>
+<p>The Segment module is compiled with the following dependencies :</p>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="n">project</span><span class="p">(</span><span class="s1">&#39;:core&#39;</span><span class="p">)</span>
+<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.0&#39;</span>
+</pre></div>
+
+
 <h1 id="creating-segments">Creating Segments</h1>
 <p>For the creation of segments, please check the documentation of the Engage product.</p>
 <h1 id="getting-segments">Getting Segments</h1>
@@ -86,6 +94,6 @@ First you need to listen to the kTCNotification_SegmentAvailable notification li
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/01/2017 15:58:07</p>
+<p>This documentation was generated on 03/02/2017 09:23:10</p>
 </body>
 </html>
