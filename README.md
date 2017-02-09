@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>03/02/2017</em><br />
-Release version : <em>4.0.0</em></p>
+<p>Last update : <em>09/02/2017</em><br />
+Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -26,6 +26,7 @@ The modules are the following :</p>
 <p><a href="TCCore/README.md">Core : Used as a base by the other modules.</a></p>
 <p><a href="TCSDK/README.md">SDK : Tag management system collecting data throught a server-side approach.</a></p>
 <p><a href="TCSegment/README.md">Segment : Get your user segmentation from our servers.</a></p>
+<p><a href="TCBeacon/README.md">Beacon : Scan the beacon and find when a user is close to your shop</a></p>
 <p>For each of those modules, please check their respective documentation for more information.</p>
 <h1 id="adding-a-module-to-your-project">Adding a module to your project</h1>
 <p>If you want to add a module to your android project, you have several possibilities.</p>
@@ -40,17 +41,24 @@ The modules are the following :</p>
 </pre></div>
 
 
-<p>In addition to those two variants also come a release version with BITCODE enabled. Since BITCODE is only used when submitting your application on the store, only a release version is available with BITCODE.</p>
 <h2 id="cocoapods">Cocoapods</h2>
-<p>Please note that if you are using cocoapod and important changes occur in our SDK that would have you modify your applications, we will create new podspec files for the newest versions to prevent any issues in your project.</p>
+<p>Please note that if you are using cocoapod changes that would have you modify your applications are made, we will create new podspec files for the newest versions.</p>
 <div class="warning"></div>
 
 <blockquote>
 <p>You will always need to at least add the Core module to your project.</p>
 </blockquote>
-<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-debug-universal.podspec
-https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release-iphoneos.podspec
-https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release-iphoneos-bitcode-enabled.podspec</p>
+<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-debug-universal.podspec</p>
+<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release-iphoneos.podspec</p>
+<p>Your podfile should look something like this :</p>
+<div class="codehilite"><pre><span class="n">use_frameworks</span><span class="o">!</span>
+<span class="n">target</span> <span class="err">&#39;</span><span class="n">TCDemo</span><span class="err">&#39;</span> <span class="k">do</span>
+    <span class="n">pod</span> <span class="err">&#39;</span><span class="n">TCCore</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">podspec</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">https</span><span class="o">:</span><span class="c1">//raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-debug-universal.podspec&#39;</span>
+    <span class="n">pod</span> <span class="err">&#39;</span><span class="n">TCSDK</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">podspec</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">https</span><span class="o">:</span><span class="c1">//raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-debug-universal.podspec&#39;</span>
+<span class="n">end</span>
+</pre></div>
+
+
 <h2 id="framework">Framework</h2>
 <p>The latest version of our modules are always available on our github account: https://github.com/TagCommander/pods</p>
 <div class="warning"></div>
@@ -58,10 +66,13 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
 <blockquote>
 <p>You will always need to at least add the Core module to your project.</p>
 </blockquote>
-<p>Add the modules you need to your project and confirm that XCode really added them for your Target at the following places:
-    - In the "general" tab under "Linked Frameworks and Libraries"
-    - In the "Build Phases" tab under "Link Binary With Libraries"
-    - That the FRAMEWORK_SEARCH_PATHS do include the places where the frameworks are.</p>
+<p>Add the modules you need to your project and confirm that XCode really added them for your Target at the following places:</p>
+<div class="codehilite"><pre>- In the &quot;general&quot; tab under &quot;Linked Frameworks and Libraries&quot;
+- In the &quot;Build Phases&quot; tab under &quot;Link Binary With Libraries&quot;
+- That the FRAMEWORK_SEARCH_PATHS do include the places where the frameworks are.
+</pre></div>
+
+
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <hr />
@@ -70,6 +81,6 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-release
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 03/02/2017 10:34:33</p>
+<p>This documentation was generated on 09/02/2017 16:15:05</p>
 </body>
 </html>

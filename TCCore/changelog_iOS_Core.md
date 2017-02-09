@@ -6,7 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
-*4.0.0*
+*4.1.0 : 02/06 2017*
+
+	+ Beacon module release.
+
+*4.0.0 : 12/12 2016*
 
 	+ Added Cocoapods support
 	~ Modified release format from static library to Framework
