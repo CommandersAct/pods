@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="predefined-variables-guide">Predefined variables Guide</h1>
 <p><strong>SDK TagCommander Android and iPhone</strong></p>
-<p>Last update : <em>09/02/2017</em><br /></p>
+<p>Last update : <em>24/02/2017</em><br /></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -80,11 +80,11 @@
 </div>
 <h1 id="predefined-variables">Predefined variables</h1>
 <p>The following document is the complete, up-to-date, list of all predefined variables that Tag Commander's SDK automatically generates.</p>
-<p>For each of them we give you a small description of the variable and an exemple on at least one Android device and one iOS device. We might show more exemple if needed.</p>
+<p>For each of them we give you a small description of the variable and an example on at least one Android device and one iOS device. We might show more example if needed.</p>
 <p>The name in parentheses present the old names. They can still be used in v3 configurations, but are deprecated and such should not be. Starting v4, they have been completely removed.</p>
 <h1 id="tc_ip-ip">TC_IP# (#IP#)</h1>
 <hr />
-<p>The ip adresse of the device. Only available if the device is connected to internet.</p>
+<p>The ip address of the device. Only available if the device is connected to internet.</p>
 <ul>
 <li>Galaxy Tab 3: 10.144.112.50</li>
 <li>iPhone 4s: 10.144.112.88</li>

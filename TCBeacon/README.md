@@ -1,10 +1,10 @@
 
 <html>
 <body>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="beacons-implementation-guide">Beacon's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>09/02/2017</em><br />
+<p>Last update : <em>24/02/2017</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -43,7 +43,7 @@ Release version : <em>4.1.0</em></p>
 <li>Eddystone : Exist with 4 types of frames, UUID</li>
 </ul>
 <p>When you use a beacon, it is recommended that you only access information from your network of beacons. To do that the scan are filtered by an ID (beside with Eddystone's URL beacons), on iBeacon we use the full UUID of the beacon, on Eddystone we use the first part of it (called the namespace).</p>
-<p>As an exemple for our demo application we filter on "397180b5-be24-4090-8af5-8237f4e17248" when we are dealing with our iBeacons and on "017180B5-BE24-4090-8AF5" for our Eddystone ones.</p>
+<p>As an example for our demo application we filter on "397180b5-be24-4090-8af5-8237f4e17248" when we are dealing with our iBeacons and on "017180B5-BE24-4090-8AF5" for our Eddystone ones.</p>
 <p><a href="https://github.com/google/eddystone/blob/master/protocol-specification.md">If you want specific technical documentation on Eddystone's protocol, please check this link</a></p>
 <h2 id="good-practice">Good practice</h2>
 <p>Scanning in itself doesn't use too much of your battery (but still use some of course). It is <em>recommended</em> that you ask the user to opt-in for beacon scanning and also explain how it will be beneficial for him. As bluetooth must be enabled, explaining everything to him will also push him to activate the bluetooth more often.</p>
@@ -117,13 +117,13 @@ If you need a specific implementation or information, please contact support.</p
 <p>You can of course check our demo project for a simple implementation example.</p>
 <p><a href="https://github.com/TagCommander/Beacon-Demo/tree/master/iOS">Beacon Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
 <p><strong>Support</strong>
-<em>support@tagcommander.com</em></p>
-<p>http://www.tagcommander.com</p>
-<p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
+<em>support@commandersact.com</em></p>
+<p>http://www.commandersact.com</p>
+<p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 09/02/2017 16:15:05</p>
+<p>This documentation was generated on 24/02/2017 15:13:32</p>
 </body>
 </html>

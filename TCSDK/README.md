@@ -1,10 +1,11 @@
 
 <html>
 <body>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
+<p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>09/02/2017</em><br />
+<p>Last update : <em>24/02/2017</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -50,10 +51,10 @@ Release version : <em>4.1.0</em></p>
 </ul>
 </div>
 <h1 id="introduction">Introduction</h1>
-<p>TagCommander enables marketers to easily add, edit, update, and deactivate tags on web pages, videos and mobile applications with little-to-no support from IT departments.</p>
-<p>Instead of implementing several SDK's in the application, TagCommander for mobile provides clients with a single SDK which sends data to our server which then create and send hits to your partners.</p>
+<p>Commanders Act enables marketers to easily add, edit, update, and deactivate tags on web pages, videos and mobile applications with little-to-no support from IT departments.</p>
+<p>Instead of implementing several SDK's in the application, Commanders Act for mobile provides clients with a single SDK which sends data to our server which then create and send hits to your partners.</p>
 <p>Owing to remote configuration tools, it is also possible to modify the configuration without having to resubmit your application.</p>
-<p>The purpose of this document is to explain how to add TagCommander into your application.</p>
+<p>The purpose of this document is to explain how to add the SDK module into your application.</p>
 <h2 id="main-technical-specifications">Main Technical Specifications</h2>
 <ul>
 <li>Weight from 110 ko to 120 ko in your application depending on the iPhone model.</li>
@@ -62,10 +63,10 @@ Release version : <em>4.1.0</em></p>
 <li>Offline mode (the hits are stored in the phone to be replayed at the next launch.)</li>
 <li>Very low CPU and memory usage.</li>
 <li>Dynamic variable storage. If a value never changes, it's possible to set it only once.</li>
-<li>The state of the phone is easily accessed through TagCommander (network connection type, name of the phone, geographical location.)</li>
+<li>The state of the phone is easily accessed through the module (network connection type, name of the phone, geographical location.)</li>
 </ul>
 <h2 id="dynamic-variables">Dynamic Variables</h2>
-<p>A dynamic variable is a combination of a name and a value. It is used to give the TagCommander SDK data such as the name of the current screen or the product ID in a cart.</p>
+<p>A dynamic variable is a combination of a name and a value. It is used to give the module data such as the name of the current screen or the product ID in a cart.</p>
 <p>Dynamic Variables are implemented inside the application. They are replaced on the server at the time of the execution by the value transmitted.</p>
 <p>A dynamic variable is formatted like this: <code>#SCREEN#</code>.</p>
 <div class="warning"></div>
@@ -81,7 +82,7 @@ forget them when setting your dynamic variables.</p>
 <li>Test if conditions are met to fire a tag. For instance, if you set the <code>#EVENT#</code> to <code>click</code>, the tag with the condition <code>#EVENT# EQUAL 'click'</code> will be executed.</li>
 </ol>
 <h2 id="execution">Execution</h2>
-<p>When you call the sendData method, a hit will be packaged and sent to TagCommander's server.</p>
+<p>When you call the sendData method, a hit will be packaged and sent to Commanders Act's server.</p>
 <p><img alt="alt tag" src="../res/sdk_scheme.png" /></p>
 <h1 id="sdk-integration">SDK integration</h1>
 <h2 id="steps">Steps</h2>
@@ -126,9 +127,9 @@ forget them when setting your dynamic variables.</p>
 <blockquote>
 <p>This class is not a Singleton. If you have the need for only one pair
 of siteID's and containerID's, you might want to use it as a Singleton
-anyway for reasons of simplication.</p>
+anyway for reasons of simplification.</p>
 </blockquote>
-<p>If you want to use localisation, you will need to instanciation TCLocation after TagCommander.</p>
+<p>If you want to use localisation, you will need to instantiation TCLocation after TagCommander.</p>
 <div class="codehilite"><pre><span class="p">[</span><span class="n">TCLocation</span> <span class="n">sharedInstance</span><span class="p">];</span>
 </pre></div>
 
@@ -157,7 +158,7 @@ anyway for reasons of simplication.</p>
 <div class="warning"></div>
 
 <blockquote>
-<p>Always handle values as NSStrings !</p>
+<p>Always handle values as NSStrings!</p>
 </blockquote>
 <h2 id="example">Example</h2>
 <p>Let's say that the URL you are using in your server-side container uses the following url:</p>
@@ -171,7 +172,7 @@ anyway for reasons of simplication.</p>
 <li><code>#EVENT#</code></li>
 <li><code>#SCREEN_NAME#</code></li>
 </ul>
-<p>With the code from the previous section, this tag could be fired from TagCommander's server. The application sends two dynamic variables (<code>#EVENT#</code> and <code>#SCREEN_NAME#</code>) and the SDK adds all information available to it (like #TC_SYSVERSION# and #TC_SYSNAME# in this hit).</p>
+<p>With the code from the previous section, this tag could be fired from Commanders Act's server. The application sends two dynamic variables (<code>#EVENT#</code> and <code>#SCREEN_NAME#</code>) and the SDK adds all information available to it (like #TC_SYSVERSION# and #TC_SYSNAME# in this hit).</p>
 <h2 id="product-tags">Product tags</h2>
 <p>There are some tags that need to be passed a list of dictionaries, usually representing products. By passing complex information, we are able to create and send complex hits or many hits at the same time.</p>
 <p>Tags that needs to be passed a list of dictionaries are easy to spot in the configuration. They have appended to the name of the dynamic variable the name of the key that is retrieved from the dictionary.</p>
@@ -294,7 +295,7 @@ anyway for reasons of simplication.</p>
 </li>
 </ul>
 <h2 id="testing">Testing</h2>
-<p>There are three ways to verify that TagCommander executes the tags in your application:</p>
+<p>There are three ways to verify that the module executes the tags in your application:</p>
 <ul>
 <li>By reading the debug messages in the console.</li>
 <li>By going to your vendor's platform and check that the hits are displayed and that the data is correct. Please be aware that hits may not display immediately in the vendor account. This delay differs widely between vendors and may also vary for the type of hit under the same vendor.</li>
@@ -359,13 +360,13 @@ To use new methods you can check in this document how to.</p>
 What needs to be changed is the container in your TagCommander interface, please check with your consultant.</p>
 </blockquote>
 <h1 id="support-and-contacts">Support and contacts</h1>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
 <p><strong>Support</strong>
-<em>support@tagcommander.com</em></p>
-<p>http://www.tagcommander.com</p>
-<p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
+<em>support@commandersact.com</em></p>
+<p>http://www.commandersact.com</p>
+<p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 09/02/2017 16:15:05</p>
+<p>This documentation was generated on 24/02/2017 15:13:32</p>
 </body>
 </html>

@@ -1,10 +1,10 @@
 
 <html>
 <body>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>09/02/2017</em><br />
+<p>Last update : <em>24/02/2017</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -25,7 +25,7 @@ Release version : <em>4.1.0</em></p>
 </ul>
 </div>
 <h1 id="introduction">Introduction</h1>
-<p>By using TagCommander's Engage product you will be able to store a lot of data and create segments of users. With those segments you can target precisely your offers to your customers or server personalized content in your application.</p>
+<p>By using Data Commander product you will be able to store a lot of data and create segments of users. With those segments you can target precisely your offers to your customers or server personalized content in your application.</p>
 <p>TCSegment is a small module especially made to get the segment of your user from within your application.</p>
 <h1 id="dependencies">Dependencies</h1>
 <p>The Segment module is compiled with the following dependencies :</p>
@@ -35,10 +35,10 @@ Release version : <em>4.1.0</em></p>
 
 
 <h1 id="creating-segments">Creating Segments</h1>
-<p>For the creation of segments, please check the documentation of the Engage product.</p>
+<p>For the creation of segments, please check the documentation of the Data Commander product.</p>
 <h1 id="getting-segments">Getting Segments</h1>
-<p>The module needs some information to be able to fetch segments. It will need your siteID and also your security token. Your siteID and token are provided by TagCommander.</p>
-<p>For debugging purpose, we recommand the use of TCDebug which will help you seeing what's happening inside the modules.</p>
+<p>The module needs some information to be able to fetch segments. It will need your siteID and also your security token. Your siteID and token are provided by Commanders Act.</p>
+<p>For debugging purpose, we recommend the use of TCDebug which will help you seeing what's happening inside the modules.</p>
 <div class="codehilite"><pre><span class="p">[</span><span class="n">TCDebug</span> <span class="nl">setDebugLevel</span><span class="p">:</span> <span class="n">TCLogLevel_Verbose</span><span class="p">];</span>
 <span class="p">[</span><span class="n">TCDebug</span> <span class="nl">setNotificationLog</span><span class="p">:</span> <span class="nb">YES</span><span class="p">];</span>
 <span class="p">[[</span><span class="n">TCSegmentation</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setSiteID</span><span class="p">:</span> <span class="mi">3311</span>
@@ -77,7 +77,7 @@ First you need to listen to the kTCNotification_SegmentAvailable notification li
 
 
 <h2 id="asking-for-the-list">Asking for the List</h2>
-<p>If you don't want to or can't register to the notification, you can also simply call a method from the module that will give you the current list. Be carefull as it not synchroneous, the list may get updated after you asked for it.</p>
+<p>If you don't want to or can't register to the notification, you can also simply call a method from the module that will give you the current list. Be careful as it not synchronous, the list may get updated after you asked for it.</p>
 <div class="codehilite"><pre><span class="bp">NSArray</span> <span class="o">*</span><span class="n">segments</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCSegmentation</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">getSegments</span><span class="p">];</span>
 </pre></div>
 
@@ -87,13 +87,13 @@ First you need to listen to the kTCNotification_SegmentAvailable notification li
 <p>To check an example of how to use this module, please check: </p>
 <p><a href="https://github.com/TagCommander/Segment-Demo/tree/master/iOS">Segment Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
 <p><strong>Support</strong>
-<em>support@tagcommander.com</em></p>
-<p>http://www.tagcommander.com</p>
-<p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
+<em>support@commandersact.com</em></p>
+<p>http://www.commandersact.com</p>
+<p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 09/02/2017 16:15:05</p>
+<p>This documentation was generated on 24/02/2017 15:13:32</p>
 </body>
 </html>
