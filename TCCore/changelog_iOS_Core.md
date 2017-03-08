@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.1.2 : 03/08 2017*
+
+	~ Correction on ReachabilityChangedNotification.
+
 *4.1.1 : 03/02 2017*
 
 	+ Corrected issue on unrecognized selector in Core with NoIDFA.

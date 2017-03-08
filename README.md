@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>02/03/2017</em><br />
+<p>Last update : <em>08/03/2017</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -73,7 +73,7 @@ The modules are the following :</p>
 </blockquote>
 <p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Debug-universal.podspec</p>
 <p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos.podspec</p>
-<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos-bitcode-enabled.podspec</p>
+<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos-Bitcode.podspec</p>
 <p>Your podfile should look something like this :</p>
 <div class="codehilite"><pre><span class="n">use_frameworks</span><span class="o">!</span>
 <span class="n">target</span> <span class="err">&#39;</span><span class="n">TCDemo</span><span class="err">&#39;</span> <span class="k">do</span>
@@ -105,6 +105,6 @@ The modules are the following :</p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/03/2017 14:54:34</p>
+<p>This documentation was generated on 08/03/2017 16:28:06</p>
 </body>
 </html>

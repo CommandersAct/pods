@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.1.1 : 03/08 2017*
+
+	~ Correction on ReachabilityChangedNotification.
+
 *4.1.0 : 02/06 2017*
 
 	+ Beacon module release.
