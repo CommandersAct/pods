@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="predefined-variables-guide">Predefined variables Guide</h1>
 <p><strong>SDK TagCommander Android and iPhone</strong></p>
-<p>Last update : <em>08/03/2017</em><br /></p>
+<p>Last update : <em>31/03/2017</em><br /></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -76,6 +76,8 @@
 <li><a href="#tc_empty_variable_remove_equal">TC_EMPTY_VARIABLE_REMOVE_EQUAL</a></li>
 <li><a href="#tc_is_first_visit">TC_IS_FIRST_VISIT</a></li>
 <li><a href="#tc_first_execute">TC_FIRST_EXECUTE</a></li>
+<li><a href="#tc_sdk_id-41">TC_SDK_ID# 4.1+</a></li>
+<li><a href="#tc_normalized_id-41">TC_NORMALIZED_ID# 4.1+</a></li>
 </ul>
 </div>
 <h1 id="predefined-variables">Predefined variables</h1>
@@ -162,7 +164,7 @@
 </ul>
 <h1 id="tc_device">TC_DEVICE</h1>
 <hr />
-<p>The name of the device as given by it's owner.</p>
+<p>The name of the device as given by its owner.</p>
 <ul>
 <li>Galaxy Tab 3: lt01wifi</li>
 <li>Nexus 7: flo</li>
@@ -365,7 +367,7 @@ Should be at least one, since during launch the application is considered as goi
 <h1 id="tc_uniqueid-tc_local_uniqueid-tc_nav_visitor_id">TC_UNIQUEID# (#TC_LOCAL_UNIQUEID#, #TC_NAV_VISITOR_ID#)</h1>
 <hr />
 <p>Android: A 64-bit number (as a hex string) that is randomly generated when the user first sets up the device and should remain constant for the lifetime of the user's device. The value may change if a factory reset is performed on the device.</p>
-<p>iOS: A unique UUID generated during the first install on the phone. This will change if the application is uninstalled then re-installed. This won't change if the user resets it's IDFA.</p>
+<p>iOS: A unique UUID generated during the first install on the phone. This will change if the application is uninstalled then re-installed. This won't change if the user resets his IDFA.</p>
 <ul>
 <li>OnePlus One: a284d098fdf1c342</li>
 <li>iPhone 4s: 80EF0DC8-AD1B-460A-AC2D-4646FA2356E3</li>
@@ -543,6 +545,22 @@ Should be at least one, since during launch the application is considered as goi
 <ul>
 <li>OnePlus One: FALSE</li>
 <li>iPhone 4s: TRUE</li>
+</ul>
+<h1 id="tc_sdk_id-41">TC_SDK_ID# 4.1+</h1>
+<hr />
+<p>An ID formatted as an UUID created by the SDK to be unique. It can't be resetted by the user, but if the user remove the application and install it again later, it will have a different ID.</p>
+<ul>
+<li>OnePlus One: 65343D4C-BE71-47BC-B60A-4A46E49ED87E</li>
+<li>iPhone 6: 80EF0DC8-AD1B-460A-AC2D-4646FA2356E3</li>
+</ul>
+<h1 id="tc_normalized_id-41">TC_NORMALIZED_ID# 4.1+</h1>
+<hr />
+<p>An special ID mixing IDFA/AAID and TC_SDK_ID. Some user disable the IDFA/AAID, but those IDs are still the most reliable to recognize a user, to remove the need of manually checking the IDs we created a mix.</p>
+<p>TC_NORMALIZED_ID will be equal to the IDFA/AAID if the user has one, but if not, instead of having an empty IDFA, you will have the TC_SDK_ID.
+Coupled together you can also gain insight on the reliability of those ID when trying to identify users in the long run. Since if this ID is equal to the IDFA, you can match this ID with IDFA from other users coming from different sources.</p>
+<ul>
+<li>OnePlus One: 65343D4C-BE71-47BC-B60A-4A46E49ED87E</li>
+<li>iPhone 6: 3E115C1E-CFC9-4A31-A7AE-D5FD45C9541C</li>
 </ul>
 </body>
 </html>
