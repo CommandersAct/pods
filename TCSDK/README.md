@@ -181,26 +181,22 @@ anyway for reasons of simplification.</p>
 <span class="p">{</span>
     <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;viewCart&quot;</span><span class="p">];</span>
     <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#PARTNER_ID#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;868&quot;</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#REGIONAL_CODE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;eu&quot;</span><span class="p">];</span>
-
+    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#REGIONAL_CODE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;eu&quot;</span><span class="p">];
     <span class="n">TCProduct</span> <span class="o">*</span><span class="n">product1</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
     <span class="n">product1</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;22561563&quot;</span><span class="p">;</span>
     <span class="n">product1</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;1.2&quot;</span><span class="p">;</span>
     <span class="n">product1</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;1&quot;</span><span class="p">;</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product1</span><span class="p">];</span>
-
+    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product1</span><span class="p">];
     <span class="n">TCProduct</span> <span class="o">*</span><span class="n">product2</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
     <span class="n">product2</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;21669790&quot;</span><span class="p">;</span>
     <span class="n">product2</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;3.4&quot;</span><span class="p">;</span>
     <span class="n">product2</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;2&quot;</span><span class="p">;</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product2</span><span class="p">];</span>
-
+    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product2</span><span class="p">];
     <span class="n">TCProduct</span> <span class="o">*</span><span class="n">product3</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
     <span class="n">product3</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;3886822&quot;</span><span class="p">;</span>
     <span class="n">product3</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;5.4&quot;</span><span class="p">;</span>
     <span class="n">product3</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;3&quot;</span><span class="p">;</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product3</span><span class="p">];</span>
-
+    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product3</span><span class="p">];
     <span class="p">[</span><span class="n">TCInstance</span> <span class="n">sendData</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
