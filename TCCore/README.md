@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>31/03/2017</em><br />
+<p>Last update : <em>02/05/2017</em><br />
 Release version : <em>4.1.2</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -30,6 +30,6 @@ Release version : <em>4.1.2</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 31/03/2017 12:13:46</p>
+<p>This documentation was generated on 02/05/2017 17:00:34</p>
 </body>
 </html>

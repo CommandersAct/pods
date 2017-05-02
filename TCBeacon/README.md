@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="beacons-implementation-guide">Beacon's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>31/03/2017</em><br />
+<p>Last update : <em>02/05/2017</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -40,7 +40,7 @@ Release version : <em>4.1.0</em></p>
 <p>Here is the list of the types of beacons currently supported by Commanders Act's module:</p>
 <ul>
 <li>iBeacons : Which broadcast an UUID with a Major and a Minor.</li>
-<li>Eddystone : Exist with 4 types of frames, UUID, URL, Telemetry and EID.</li>
+<li>Eddystone : Exist with 4 types of frames, UUID</li>
 </ul>
 <p>When you use a beacon, it is recommended that you only access information from your network of beacons. To do that the scan are filtered by an ID (beside with Eddystone's URL beacons), on iBeacon we use the full UUID of the beacon, on Eddystone we use the first part of it (called the namespace).</p>
 <p>As an example for our demo application we filter on "397180b5-be24-4090-8af5-8237f4e17248" when we are dealing with our iBeacons and on "017180B5-BE24-4090-8AF5" for our Eddystone ones.</p>
@@ -124,6 +124,6 @@ If you need a specific implementation or information, please contact support.</p
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 31/03/2017 12:13:46</p>
+<p>This documentation was generated on 02/05/2017 17:00:34</p>
 </body>
 </html>
