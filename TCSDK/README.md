@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>02/05/2017</em><br />
+<p>Last update : <em>10/08/2017</em><br />
 Release version : <em>4.1.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -117,7 +117,7 @@ forget them when setting your dynamic variables.</p>
 <p>It is recommended to initialise TagCommander in your <code>AppDelegate's applicationdidFinishLaunchingWithOptions</code>
  so it will be operational as soon as possible.</p>
 <p>A single line of code is required to properly initialize an instance of TagCommander:</p>
-<div class="codehilite"><pre><span class="n">TagCommander</span> <span class="o">*</span><span class="n">TagCommanderInstance</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TagCommander</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithSiteID</span><span class="p">:</span> <span class="n">siteID</span>
+<div class="codehilite"><pre><span></span><span class="n">TagCommander</span> <span class="o">*</span><span class="n">TagCommanderInstance</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TagCommander</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithSiteID</span><span class="p">:</span> <span class="n">siteID</span>
                                                            <span class="nl">andContainerID</span><span class="p">:</span> <span class="n">containerID</span><span class="p">];</span>
 </pre></div>
 
@@ -130,14 +130,14 @@ of siteID's and containerID's, you might want to use it as a Singleton
 anyway for reasons of simplification.</p>
 </blockquote>
 <p>If you want to use localisation, you will need to instantiation TCLocation after TagCommander.</p>
-<div class="codehilite"><pre><span class="p">[</span><span class="n">TCLocation</span> <span class="n">sharedInstance</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCLocation</span> <span class="n">sharedInstance</span><span class="p">];</span>
 </pre></div>
 
 
 <p>We have set the default setInterval to 30 minutes to save battery. If you need another time precision, you can set TCLocation.GPSInterval to any value and it will be used instead of the default value.</p>
 <h2 id="executing-tags">Executing tags</h2>
 <p>For every element that needs tagging in your application, you need to call addData on your TagCommander instance and when you want to send all those information to the server, you will simply need to call sendData.</p>
-<div class="codehilite"><pre><span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;click&quot;</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;click&quot;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#PAGE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;order&quot;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#AMOUNT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;584.46&quot;</span><span class="p">];</span>
 
@@ -146,7 +146,7 @@ anyway for reasons of simplification.</p>
 
 
 <p>For compatibility reasons, we can still use TCAppVars to pass those information to TagCommander.</p>
-<div class="codehilite"><pre><span class="n">TCAppVars</span> <span class="o">*</span><span class="n">appVar</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCAppVars</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="n">TCAppVars</span> <span class="o">*</span><span class="n">appVar</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCAppVars</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
 <span class="p">[</span><span class="n">appVar</span> <span class="nl">set</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;click&quot;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">appVar</span> <span class="nl">set</span><span class="p">:</span> <span class="s">@&quot;#PAGE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;order&quot;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">appVar</span> <span class="nl">set</span><span class="p">:</span> <span class="s">@&quot;#AMOUNT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;584.46&quot;</span><span class="p">];</span>
@@ -162,7 +162,7 @@ anyway for reasons of simplification.</p>
 </blockquote>
 <h2 id="example">Example</h2>
 <p>Let's say that the URL you are using in your server-side container uses the following url:</p>
-<div class="codehilite"><pre>http://engage.commander1.com/dms?tc_s=3109&amp;tc_type=dms&amp;data_sysname=#TC_SYSNAME#
+<div class="codehilite"><pre><span></span>http://engage.commander1.com/dms?tc_s=3109&amp;tc_type=dms&amp;data_sysname=#TC_SYSNAME#
 &amp;data_sysversion=#TC_SYSVERSION#&amp;page=#SCREEN_NAME#&amp;event=#EVENT#
 </pre></div>
 
@@ -177,32 +177,28 @@ anyway for reasons of simplification.</p>
 <p>There are some tags that need to be passed a list of dictionaries, usually representing products. By passing complex information, we are able to create and send complex hits or many hits at the same time.</p>
 <p>Tags that needs to be passed a list of dictionaries are easy to spot in the configuration. They have appended to the name of the dynamic variable the name of the key that is retrieved from the dictionary.</p>
 <p>Most of the time the data are provided ready to use, but we provide a TCProduct class representing a product and its possible values.</p>
-<div class="codehilite"><pre><span class="p">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">sendViewCart:</span> <span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="nv">screenName</span>
-<span class="p">{</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;viewCart&quot;</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#PARTNER_ID#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;868&quot;</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#REGIONAL_CODE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;eu&quot;</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;viewCart&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#PARTNER_ID#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;868&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#REGIONAL_CODE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;eu&quot;</span><span class="p">];</span>
 
-    <span class="n">TCProduct</span> <span class="o">*</span><span class="n">product1</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-    <span class="n">product1</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;22561563&quot;</span><span class="p">;</span>
-    <span class="n">product1</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;1.2&quot;</span><span class="p">;</span>
-    <span class="n">product1</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;1&quot;</span><span class="p">;</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product1</span><span class="p">];</span>
+<span class="n">TCProduct</span> <span class="o">*</span><span class="n">product1</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;22561563&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;1.2&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;1&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product1</span><span class="p">];</span>
 
-    <span class="n">TCProduct</span> <span class="o">*</span><span class="n">product2</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-    <span class="n">product2</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;21669790&quot;</span><span class="p">;</span>
-    <span class="n">product2</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;3.4&quot;</span><span class="p">;</span>
-    <span class="n">product2</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;2&quot;</span><span class="p">;</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product2</span><span class="p">];</span>
+<span class="n">TCProduct</span> <span class="o">*</span><span class="n">product2</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;21669790&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;3.4&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;2&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product2</span><span class="p">];</span>
 
-    <span class="n">TCProduct</span> <span class="o">*</span><span class="n">product3</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-    <span class="n">product3</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;3886822&quot;</span><span class="p">;</span>
-    <span class="n">product3</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;5.4&quot;</span><span class="p">;</span>
-    <span class="n">product3</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;3&quot;</span><span class="p">;</span>
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product3</span><span class="p">];</span>
-
-    <span class="p">[</span><span class="n">TCInstance</span> <span class="n">sendData</span><span class="p">];</span>
-<span class="p">}</span>
+<span class="n">TCProduct</span> <span class="o">*</span><span class="n">product3</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">product3</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;3886822&quot;</span><span class="p">;</span>
+<span class="n">product3</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;5.4&quot;</span><span class="p">;</span>
+<span class="n">product3</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;3&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product3</span><span class="p">];</span>
+<span class="p">[</span><span class="n">TCInstance</span> <span class="n">sendData</span><span class="p">];</span>
 </pre></div>
 
 
@@ -223,7 +219,7 @@ anyway for reasons of simplification.</p>
 <li>inStock</li>
 </ul>
 <p>If you want to add more properties, please use the method on your TCProduct instance:</p>
-<div class="codehilite"><pre><span class="p">[</span><span class="n">product</span><span class="p">.</span><span class="n">customProperties</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;12&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;Menu&quot;</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">product</span><span class="p">.</span><span class="n">customProperties</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;12&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;Menu&quot;</span><span class="p">];</span>
 <span class="p">[</span><span class="n">product</span><span class="p">.</span><span class="n">customProperties</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;0&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;TakeOut&quot;</span><span class="p">];</span>
 </pre></div>
 
@@ -237,7 +233,7 @@ anyway for reasons of simplification.</p>
 <p>The TagCommander SDK also offers methods to help you with the Quality Assessment of the SDK implementation.</p>
 <h2 id="debugging">Debugging</h2>
 <p>We recommend using TCLogLevel_Verbose while developing your application:</p>
-<div class="codehilite"><pre><span class="c1">// Put it before the TagCommander initialization</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Put it before the TagCommander initialization</span>
 <span class="cp">#ifdef DEBUG</span>
 <span class="p">[</span><span class="n">TCDebug</span> <span class="nl">setDebugLevel</span><span class="p">:</span> <span class="n">TCLogLevel_Verbose</span><span class="p">];</span>
 <span class="p">[</span><span class="n">TCDebug</span> <span class="nl">setNotificationLog</span><span class="p">:</span> <span class="nb">YES</span><span class="p">];</span>
@@ -327,12 +323,12 @@ anyway for reasons of simplification.</p>
 <h2 id="persisting-variables">Persisting variables</h2>
 <p>TagCommander permits storing of variables that remain the same in the whole application, such as vendors ID, in a TagCommander instance, instead of sending them each time you want to send data.</p>
 <p>These variables will have a lower priority to the one given by the addData method but will persist for the whole run of the application.</p>
-<div class="codehilite"><pre><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">TagCommanderInstance</span> <span class="nl">addPermanentData</span><span class="p">:</span> <span class="s">@&quot;#VENDOR_ID#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;UE-556XXXXX-01&quot;</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">TagCommanderInstance</span> <span class="nl">addPermanentData</span><span class="p">:</span> <span class="s">@&quot;#VENDOR_ID#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;UE-556XXXXX-01&quot;</span><span class="p">];</span>
 </pre></div>
 
 
 <p>They can also be removed if necessary.</p>
-<div class="codehilite"><pre><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">TagCommanderInstance</span> <span class="nl">removePermanentData</span><span class="p">:</span> <span class="s">@&quot;#VENDOR_ID#&quot;</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">TagCommanderInstance</span> <span class="nl">removePermanentData</span><span class="p">:</span> <span class="s">@&quot;#VENDOR_ID#&quot;</span><span class="p">];</span>
 </pre></div>
 
 
@@ -340,7 +336,7 @@ anyway for reasons of simplification.</p>
 <p>TagCommander collects a great deal of information to function with accuracy.
 You can ask for any variables computed by TagCommander through a simple getData on TCPredefinedVariables.</p>
 <p>The two following line are doing exactly the same thing, one using the constants declared in the SDK, the second using the name of the variable as defined in PredefinedVariables.xlsx. You can use either one.</p>
-<div class="codehilite"><pre><span class="n">TCPredefinedVariables</span> <span class="o">*</span><span class="n">predefVariables</span> <span class="o">=</span> <span class="p">[</span><span class="n">TCPredefinedVariables</span> <span class="n">sharedInstance</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="n">TCPredefinedVariables</span> <span class="o">*</span><span class="n">predefVariables</span> <span class="o">=</span> <span class="p">[</span><span class="n">TCPredefinedVariables</span> <span class="n">sharedInstance</span><span class="p">];</span>
 <span class="bp">NSString</span> <span class="o">*</span><span class="n">currentVisit</span> <span class="o">=</span> <span class="p">[</span><span class="n">predefVariables</span> <span class="nl">getData</span><span class="p">:</span> <span class="n">kTCPredefinedVariable_CurrentVisitMs</span><span class="p">];</span>
 <span class="bp">NSString</span> <span class="o">*</span><span class="n">currentVisit</span> <span class="o">=</span> <span class="p">[</span><span class="n">predefVariables</span> <span class="nl">getData</span><span class="p">:</span> <span class="s">@&quot;#TC_CURRENT_VISIT_MS#&quot;</span><span class="p">];</span>
 </pre></div>
@@ -367,6 +363,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/05/2017 17:00:34</p>
+<p>This documentation was generated on 10/08/2017 12:06:16</p>
 </body>
 </html>

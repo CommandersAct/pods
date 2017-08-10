@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="beacons-implementation-guide">Beacon's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>02/05/2017</em><br />
+<p>Last update : <em>10/08/2017</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -40,7 +40,7 @@ Release version : <em>4.1.0</em></p>
 <p>Here is the list of the types of beacons currently supported by Commanders Act's module:</p>
 <ul>
 <li>iBeacons : Which broadcast an UUID with a Major and a Minor.</li>
-<li>Eddystone : Exist with 4 types of frames, UUID</li>
+<li>Eddystone : Exist with 4 types of frames, UUID, URL, Telemetry and EID.</li>
 </ul>
 <p>When you use a beacon, it is recommended that you only access information from your network of beacons. To do that the scan are filtered by an ID (beside with Eddystone's URL beacons), on iBeacon we use the full UUID of the beacon, on Eddystone we use the first part of it (called the namespace).</p>
 <p>As an example for our demo application we filter on "397180b5-be24-4090-8af5-8237f4e17248" when we are dealing with our iBeacons and on "017180B5-BE24-4090-8AF5" for our Eddystone ones.</p>
@@ -69,7 +69,7 @@ If you need a specific implementation or information, please contact support.</p
 <p>Scanning for beacon is pretty easy, tell us what we need to scan for, and we'll give you updates.</p>
 <p>The first thing you want to do is to listen to the events we will send you when we found, update or lost a beacon.</p>
 <p>You can use an helper class we created for notifications or do it all by yourself. The following lines show you how to do it and give you the names of the notifications.</p>
-<div class="codehilite"><pre><span class="nb">self</span><span class="p">.</span><span class="n">listenerDelegate</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCEventListener</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="nb">self</span><span class="p">.</span><span class="n">listenerDelegate</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCEventListener</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
 <span class="nb">self</span><span class="p">.</span><span class="n">listenerDelegate</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="nb">self</span><span class="p">;</span>
 <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">listenerDelegate</span> <span class="nl">listen</span><span class="p">:</span> <span class="n">kTCNotification_BeaconFound</span><span class="p">];</span>
 <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">listenerDelegate</span> <span class="nl">listen</span><span class="p">:</span> <span class="n">kTCNotification_BeaconUpdate</span><span class="p">];</span>
@@ -78,19 +78,19 @@ If you need a specific implementation or information, please contact support.</p
 
 
 <p>When you have your user consent to scan for beacons, you can call the following code to scan for an Eddystone beacon:</p>
-<div class="codehilite"><pre><span class="p">[</span><span class="n">TCDebug</span> <span class="nl">setDebugLevel</span><span class="p">:</span> <span class="n">TCLogLevel_Verbose</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCDebug</span> <span class="nl">setDebugLevel</span><span class="p">:</span> <span class="n">TCLogLevel_Verbose</span><span class="p">];</span>
 <span class="p">[[</span><span class="n">TCBeacons</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">startWithBeaconType</span><span class="p">:</span> <span class="n">kTCEddystoneServiceID</span> <span class="nl">andID</span><span class="p">:</span> <span class="s">@&quot;017180B5-BE24-4090-8AF5&quot;</span><span class="p">];</span>
 </pre></div>
 
 
 <p>Or if you want to scann for an iBeacon:</p>
-<div class="codehilite"><pre><span class="p">[[</span><span class="n">TCBeacons</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">startWithBeaconType</span><span class="p">:</span> <span class="n">kTCiBeaconServiceID</span> <span class="nl">andID</span><span class="p">:</span> <span class="s">@&quot;397180b5-be24-4090-8af5-8237f4e17248&quot;</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">TCBeacons</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">startWithBeaconType</span><span class="p">:</span> <span class="n">kTCiBeaconServiceID</span> <span class="nl">andID</span><span class="p">:</span> <span class="s">@&quot;397180b5-be24-4090-8af5-8237f4e17248&quot;</span><span class="p">];</span>
 </pre></div>
 
 
 <p>If you only want to scan URL type beacons, no need to pass the module any UUID at all.</p>
 <p>And then create the delegate method for the notifications (here simply logging the result):</p>
-<div class="codehilite"><pre><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">onNotificationReceived:</span> <span class="p">(</span><span class="bp">NSNotification</span> <span class="o">*</span><span class="p">)</span> <span class="nv">incomingNotification</span>
+<div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">onNotificationReceived:</span> <span class="p">(</span><span class="bp">NSNotification</span> <span class="o">*</span><span class="p">)</span> <span class="nv">incomingNotification</span>
 <span class="p">{</span>
     <span class="bp">NSString</span> <span class="o">*</span><span class="n">notificationName</span> <span class="o">=</span> <span class="n">incomingNotification</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
 
@@ -124,6 +124,6 @@ If you need a specific implementation or information, please contact support.</p
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/05/2017 17:00:34</p>
+<p>This documentation was generated on 10/08/2017 12:06:16</p>
 </body>
 </html>

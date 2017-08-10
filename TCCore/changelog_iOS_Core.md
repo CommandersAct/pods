@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.1.3 : 03/08 2017*
+
+	+ Added TC_SDK_ID and TC_NORMALIZED_ID
+
 *4.1.2 : 03/08 2017*
 
 	~ Correction on ReachabilityChangedNotification.
