@@ -2,9 +2,13 @@ Changelog iOS
 =============
 
 <div class="warning"></div>
->  If you want to check the previous version's changelog, you can find it here :
+>  If you want to check the previous version's changelog, you can find it here:
 
 [Previous changelist](../res/changelog_iOS_3.md)
+
+*4.1.4 : 28/08 2017*
+
+	~ Prevented the loading of v3 offline hits into the v4.
 
 *4.1.3 : 03/08 2017*
 
