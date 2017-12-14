@@ -2,9 +2,19 @@ Changelog iOS
 =============
 
 <div class="warning"></div>
->  If you want to check the previous version's changelog, you can find it here:
+>  If you want to check the previous version's changelog, you can find it here :
 
 [Previous changelist](../res/changelog_iOS_3.md)
+
+
+*4.1.3 : 12/06 2017*
+
+	+ You can now disable the SDK by calling disableSDK() nothing will be treated by the SDK after this.
+
+*4.1.2 : 11/22 2017*
+
+	+ Added Background Mode, a way to force the SDK to work when the application is in background.
+	- Removed the ways to directly touch the DynamicStores used by the system classes.
 
 *4.1.1 : 03/08 2017*
 

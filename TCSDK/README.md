@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>28/08/2017</em><br />
-Release version : <em>4.1.1</em></p>
+<p>Last update : <em>14/12/2017</em><br />
+Release version : <em>4.1.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -31,6 +31,8 @@ Release version : <em>4.1.1</em></p>
 <li><a href="#executing-tags">Executing tags</a></li>
 <li><a href="#example">Example</a></li>
 <li><a href="#product-tags">Product tags</a></li>
+<li><a href="#background-mode">Background Mode</a></li>
+<li><a href="#deactivating-the-sdk">Deactivating the SDK</a></li>
 </ul>
 </li>
 <li><a href="#troubleshooting">Troubleshooting</a><ul>
@@ -64,6 +66,7 @@ Release version : <em>4.1.1</em></p>
 <li>Very low CPU and memory usage.</li>
 <li>Dynamic variable storage. If a value never changes, it's possible to set it only once.</li>
 <li>The state of the phone is easily accessed through the module (network connection type, name of the phone, geographical location.)</li>
+<li>Background mode, in the case you really need to send data while the application is in background.</li>
 </ul>
 <h2 id="dynamic-variables">Dynamic Variables</h2>
 <p>A dynamic variable is a combination of a name and a value. It is used to give the module data such as the name of the current screen or the product ID in a cart.</p>
@@ -229,6 +232,23 @@ anyway for reasons of simplification.</p>
 <blockquote>
 <p>If you are updating from an old version of TagCommander you can still use old functions with TCAppVars and a list of products.</p>
 </blockquote>
+<h2 id="background-mode">Background Mode</h2>
+<p>While the application is goind to background, the SDK sends all data that was already queued then stops. This is in order to preserve battery life and not use carrier data when not required.</p>
+<p>But some applications need to be able to continue sending data because they have real background activities. For example listening to music.</p>
+<p>For those cases, we added a way to bypass the way to SDK usually react to background. Please call:</p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">tc</span> <span class="n">enableRunningInBackground</span><span class="p">];</span>
+</pre></div>
+
+
+<p>One drawback is that we're not able to ascertain when the application will really be killed. In normal mode, we're saving all hits not sent when going in the background, which is not possible here anymore. To be sure to not loose any hits in background mode, we will save much more often the offline hits. </p>
+<p>Please assure that your application has background modes enabled to use this feature.</p>
+<h2 id="deactivating-the-sdk">Deactivating the SDK</h2>
+<p>If you want to show a privacy message to your users allowing them to stop the tracking, you might want to use the following function to stop it if they refuse to be tracked.</p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCInstance</span> <span class="n">disableSDK</span><span class="p">];</span>
+</pre></div>
+
+
+<p>What this function does is stopping all systems in the SDK that update automatically or listen to notifications like background or internet reachability. This will also ignore all calls to the SDK by your application so that nothing is treated anymore and you don't have to protect those calls manually.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <p>The TagCommander SDK also offers methods to help you with the Quality Assessment of the SDK implementation.</p>
 <h2 id="debugging">Debugging</h2>
@@ -363,6 +383,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 28/08/2017 11:34:04</p>
+<p>This documentation was generated on 14/12/2017 15:08:16</p>
 </body>
 </html>
