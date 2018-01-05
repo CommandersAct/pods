@@ -6,6 +6,9 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.1.4 : 01/05 2018*
+
+	~ Corrected wrong memory management attributes in TCProduct
 
 *4.1.3 : 12/06 2017*
 
