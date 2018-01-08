@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="beacons-implementation-guide">Beacon's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>05/01/2018</em><br />
+<p>Last update : <em>08/01/2018</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -124,6 +124,6 @@ If you need a specific implementation or information, please contact support.</p
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/01/2018 14:11:30</p>
+<p>This documentation was generated on 08/01/2018 11:07:08</p>
 </body>
 </html>
