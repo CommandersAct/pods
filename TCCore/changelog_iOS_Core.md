@@ -6,6 +6,9 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.2.1 : 06/13 2018*
+
+	+ Allow direct acces to setIDFA and setIDFV to reload those values when the first init came too soon.
 
 *4.1.5 : 12/06 2017*
 

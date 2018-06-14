@@ -6,6 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.2.1 : 06/13 2018*
+
+	 /!\ With this update you need to also update the core module as it changes the accessibility of 2 important functions.
+	+ Checking the value of TC_IDFA as it can be unavailable on very rare cases.
+
 *4.1.5 : 01/08 2018*
 
 	~ Corrected wrong format for TC_LAST_VISIT/MS
