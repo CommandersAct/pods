@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="predefined-variables-guide">Predefined variables Guide</h1>
 <p><strong>SDK TagCommander Android and iPhone</strong></p>
-<p>Last update : <em>14/06/2018</em><br /></p>
+<p>Last update : <em>05/07/2018</em><br /></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -87,6 +87,7 @@
 <p>The name in parentheses present the old names. They can still be used in v3 configurations, but are deprecated and such should not be. Starting v4, they have been completely removed.</p>
 <h1 id="tc_ip-ip">TC_IP# (#IP#)</h1>
 <hr />
+<p>/!\ Require user consent.</p>
 <p>The ip address of the device. Only available if the device is connected to internet.</p>
 <ul>
 <li>Galaxy Tab 3: 10.144.112.50</li>
@@ -165,6 +166,7 @@
 </ul>
 <h1 id="tc_device">TC_DEVICE</h1>
 <hr />
+<p>/!\ Require user consent.</p>
 <p>The name of the device as given by its owner.</p>
 <ul>
 <li>Galaxy Tab 3: lt01wifi</li>
@@ -237,6 +239,7 @@
 </ul>
 <h1 id="tc_user_agent">TC_USER_AGENT</h1>
 <hr />
+<p>/!\ Require user consent.</p>
 <p>The user agent of the device's web browser.</p>
 <ul>
 <li>OnePlus One: Mozilla/5.0 (Linux; Android 4.4.4; A0001 Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36</li>
@@ -375,6 +378,7 @@ Should be at least one, since during launch the application is considered as goi
 </ul>
 <h1 id="tc_idfa">TC_IDFA</h1>
 <hr />
+<p>/!\ Require user consent.</p>
 <p>The advertising identifier as specified by either Google or Apple.</p>
 <ul>
 <li>Nexus 7: a4ca013b-218b-4a9b-818e-8d1a751b39bf</li>
@@ -384,6 +388,7 @@ Should be at least one, since during launch the application is considered as goi
 - 00000000-0000-0000-0000-000000000000</p>
 <h1 id="tc_idfv">TC_IDFV</h1>
 <hr />
+<p>/!\ Require user consent.</p>
 <p>The advertising ID for the vendor (unique by vendor). Only available on iOS and formatted as an UDID.</p>
 <ul>
 <li>iPhone 4s: 6480CCA0-AEFC-2100-B5C6-ABCF01AA3721</li>
@@ -404,6 +409,7 @@ Should be at least one, since during launch the application is considered as goi
 </ul>
 <h1 id="tc_longitude">TC_LONGITUDE</h1>
 <hr />
+<p>/!\ Require user consent.</p>
 <p>The longitudinal position of the user using the device. It won't be available if the user turned off all means of localisation.</p>
 <p>This Variable requires you to ask permission to use location to your users.</p>
 <ul>
@@ -412,6 +418,7 @@ Should be at least one, since during launch the application is considered as goi
 </ul>
 <h1 id="tc_latitude">TC_LATITUDE</h1>
 <hr />
+<p>/!\ Require user consent.</p>
 <p>The latitudinal position of the user using the device. It won't be available if the user turned off all means of localisation.</p>
 <p>This Variable requires you to ask permission to use location to your users.</p>
 <ul>
@@ -572,6 +579,7 @@ The second one is when you know exactly what to expect, all part of the referrer
 </ul>
 <h1 id="tc_normalized_id-core-413">TC_NORMALIZED_ID# Core 4.1.3+</h1>
 <hr />
+<p>/!\ Require user consent.</p>
 <p>An special ID mixing IDFA/AAID and TC_SDK_ID. Some user disable the IDFA/AAID, but those IDs are still the most reliable to recognize a user, to remove the need of manually checking the IDs we created a mix.</p>
 <p>TC_NORMALIZED_ID will be equal to the IDFA/AAID if the user has one, but if not, instead of having an empty IDFA, you will have the TC_SDK_ID.
 Coupled together you can also gain insight on the reliability of those ID when trying to identify users in the long run. Since if this ID is equal to the IDFA, you can match this ID with IDFA from other users coming from different sources.</p>

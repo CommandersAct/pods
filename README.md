@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>14/06/2018</em><br />
+<p>Last update : <em>05/07/2018</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -28,7 +28,7 @@ The modules are the following :</p>
 <p><a href="TCCore/README.md">Core : Used as a base by the other modules.</a></p>
 <p><a href="TCSDK/README.md">SDK : Tag management system collecting data through a server-side approach.</a></p>
 <p><a href="TCSegment/README.md">Segment : Get your user segmentation from our servers.</a></p>
-<p><a href="TCBeacon/README.md">Beacon : Scan the beacon and find when a user is close to your shop</a></p>
+<p><a href="TCPrivacy/README.md">Privacy : Pass the Privacy settings to our tag system</a></p>
 <p>For each of those modules, please check their respective documentation for more information.</p>
 <h1 id="adding-a-module-to-your-project">Adding a module to your project</h1>
 <p>If you want to add a module to your android project, you have several possibilities.</p>
@@ -105,6 +105,6 @@ The modules are the following :</p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/06/2018 10:29:39</p>
+<p>This documentation was generated on 05/07/2018 11:22:29</p>
 </body>
 </html>

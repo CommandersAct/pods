@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>14/06/2018</em><br />
+<p>Last update : <em>05/07/2018</em><br />
 Release version : <em>4.2.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -47,6 +47,7 @@ Release version : <em>4.2.1</em></p>
 <li><a href="#tcpredefinedvariables">TCPredefinedVariables</a></li>
 </ul>
 </li>
+<li><a href="#swift">Swift</a></li>
 <li><a href="#example-tcdemo">Example: TCDemo</a></li>
 <li><a href="#migration-from-v2-and-v3-to-v4">Migration from v2 and v3 to v4</a></li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
@@ -364,6 +365,8 @@ You can ask for any variables computed by TagCommander through a simple getData 
 
 <p>You can find a full list of variables computed by the SDK, explanations and examples here: </p>
 <p><a href="PredefinedVariables.md">TCPredefinedVariables</a></p>
+<h1 id="swift">Swift</h1>
+<p>If you want to use Swift as your main language, please check the demo <a href="https://github.com/TagCommander/TagCommander-In-Swift">TagCommander-In-Swift</a>.</p>
 <h1 id="example-tcdemo">Example: TCDemo</h1>
 <p>To check an example of how to use this module, please check: </p>
 <p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/iOS">Tag Demo</a></p>
@@ -383,6 +386,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/06/2018 10:29:39</p>
+<p>This documentation was generated on 05/07/2018 11:22:29</p>
 </body>
 </html>
