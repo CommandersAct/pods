@@ -23,12 +23,14 @@ Release version : <em>4.2.0</em></p>
 </div>
 <h1 id="introduction">Introduction</h1>
 <p>Having the user consent is essential to send sensible informations like the IDFA. To prevent having to manually save the consent asked to the user and manually using it with our SDKs, we created a module helping you do it automatically.</p>
-<p>You can send to this module the gathered consents, it will then:
-- Save it and reload it everytime the application is launched.
-- Enable or disable the SDK.
-- Add the categories automatically to the hits the SDK sends.
-- Save and check the validity of the consent. The validity duration is set to 13 months.
-- Send a hit to our servers to record the consent.</p>
+<p>You can send to this module the gathered consents, it will then:</p>
+<ul>
+<li>Save it and reload it everytime the application is launched.</li>
+<li>Enable or disable the SDK.</li>
+<li>Add the categories automatically to the hits the SDK sends.</li>
+<li>Save and check the validity of the consent. The validity duration is set to 13 months.</li>
+<li>Send a hit to our servers to record the consent.</li>
+</ul>
 <h2 id="setup">Setup</h2>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
 Join those IDs with a "conset version". Default is 001, but if you change the implementation, it's better (but not required) to increment this version.</p>
@@ -77,6 +79,6 @@ If you want to use an ID already inside the SDK:</p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/07/2018 11:22:29</p>
+<p>This documentation was generated on 05/07/2018 11:31:39</p>
 </body>
 </html>
