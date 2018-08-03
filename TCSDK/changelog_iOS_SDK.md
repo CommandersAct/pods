@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.2.2 : 08/01 2018*
+
+	+ Protecting the addition of data in the datalayer when the SDK is disabled.
+
 *4.2.1 : 06/13 2018*
 
 	 /!\ With this update you need to also update the core module as it changes the accessibility of 2 important functions.

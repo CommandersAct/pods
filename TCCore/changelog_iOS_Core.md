@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.2.2 : 08/01 2018*
+
+	+ We can now modify a TCHTTPOperation to put additional post data.
+
 *4.2.1 : 06/27 2018*
 	
 	+ Privacy notifications.
