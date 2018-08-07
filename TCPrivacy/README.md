@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>03/08/2018</em><br />
+<p>Last update : <em>07/08/2018</em><br />
 Release version : <em>4.2.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -92,6 +92,6 @@ This allow you to proove that a user has indeed been shown the consent screen ev
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 03/08/2018 16:47:14</p>
+<p>This documentation was generated on 07/08/2018 10:30:24</p>
 </body>
 </html>

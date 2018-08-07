@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.2.3 : 08/06 2018*
+
+	~ Refactoring on consent hits to give them a proper route.
+
 *4.2.2 : 08/01 2018*
 
 	+ Protecting the addition of data in the datalayer when the SDK is disabled.
