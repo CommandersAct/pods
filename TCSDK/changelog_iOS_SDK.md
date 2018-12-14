@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.3.0 : 12/05 2018*
+
+	- Moved TCUser_agent in Core
+
 *4.2.3 : 08/06 2018*
 
 	~ Refactoring on consent hits to give them a proper route.
