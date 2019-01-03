@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>14/12/2018</em><br />
+<p>Last update : <em>03/01/2019</em><br />
 Release version : <em>4.3.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -205,6 +205,8 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>The <em>customisation</em> part defines colors for the content and the buttons, if not present, no style will be applied to your buttons.</p>
 <p>The <em>global_consent</em> let you customize the text alongside the global consent button. If not present, no global consent button will appear inside your app.</p>
 <p>The <em>categories</em> let you give all the categories to accept or refuse and define their names, IDs and description. If a category has sub categories, you can define them in <em>subcategories</em>.</p>
+<p>Example:</p>
+<p><img alt="alt tag" src="../res/privacy_example.png" /></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -213,6 +215,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/12/2018 16:01:52</p>
+<p>This documentation was generated on 03/01/2019 09:52:52</p>
 </body>
 </html>
