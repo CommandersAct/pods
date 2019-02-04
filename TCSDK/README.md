@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>04/01/2019</em><br />
-Release version : <em>4.3.0</em></p>
+<p>Last update : <em>04/02/2019</em><br />
+Release version : <em>4.3.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -250,6 +250,11 @@ anyway for reasons of simplification.</p>
 
 
 <p>What this function does is stopping all systems in the SDK that update automatically or listen to notifications like background or internet reachability. This will also ignore all calls to the SDK by your application so that nothing is treated anymore and you don't have to protect those calls manually.</p>
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">TCInstance</span> <span class="n">enableSDK</span><span class="o">];</span>
+</pre></div>
+
+
+<p>In the case you need to re-enable it after disabling it the first time, you can use this function.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <p>The TagCommander SDK also offers methods to help you with the Quality Assessment of the SDK implementation.</p>
 <h2 id="debugging">Debugging</h2>
@@ -386,6 +391,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 04/01/2019 14:21:41</p>
+<p>This documentation was generated on 04/02/2019 14:37:04</p>
 </body>
 </html>

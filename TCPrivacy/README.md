@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>04/01/2019</em><br />
+<p>Last update : <em>04/02/2019</em><br />
 Release version : <em>4.3.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -44,13 +44,14 @@ Release version : <em>4.3.1</em></p>
 <p>Having the user consent is essential to send sensible information like the IDFA/AAID.
 To prevent having to manually save the consent asked to the user and manually using it with our SDKs, we created a module helping you do it automatically.</p>
 <p>This module will gather the consent and will:</p>
-<ul>
-<li>Save it and reload it every time the application is launched.</li>
-<li>Save and check the validity of the consent. The validity duration is set to 13 months.</li>
-<li>Send a hit to our servers to record the consent.</li>
-<li>Enable or disable the SDK. (if used alongside the SDK)</li>
-<li>Add the categories automatically to the hits the SDK sends. (if used alongside the SDK)</li>
-</ul>
+<div class="codehilite"><pre><span></span>- Save it and reload it every time the application is launched.
+- Save and check the validity of the consent. The validity duration is set to 13 months.
+- Send a hit to our servers to record the consent.
+- Enable or disable the SDK. (if used alongside the SDK)
+- Add the categories automatically to the hits the SDK sends. (if used alongside the SDK)
+</pre></div>
+
+
 <h2 id="choose-your-privacy">Choose your privacy</h2>
 <p>Privacy come with 2 major flavors:</p>
 <h3 id="with-the-sdk">With the SDK</h3>
@@ -64,7 +65,7 @@ To prevent having to manually save the consent asked to the user and manually us
 
 
 <h2 id="setup">Setup</h2>
-<p>In both case, after initialisation the SDK will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.</p>
+<p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.</p>
 <h3 id="with-the-sdk_1">With the SDK</h3>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
@@ -83,11 +84,12 @@ It will then the check the consent validity, if it's too old, you can implement 
 </pre></div>
 
 
-<p>A lot of things are hidden behind this call:
-- it will check saved consent
-- it will put the SDK on hold if nothing is fount
-- start/stop the SDK if something is saved
-- try to update and replace the JSON configuration</p>
+<p>A lot of things are hidden behind this call:</p>
+<div class="codehilite"><pre><span></span>- it will check saved consent
+- try to update and replace the JSON configuration
+</pre></div>
+
+
 <h2 id="giving-consent">Giving consent</h2>
 <p>Here is where the IDs of the categories matters.</p>
 <h3 id="with-the-privacy-center">With the Privacy Center</h3>
@@ -215,6 +217,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 04/01/2019 14:21:41</p>
+<p>This documentation was generated on 04/02/2019 14:37:04</p>
 </body>
 </html>
