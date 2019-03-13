@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>05/02/2019</em><br />
+<p>Last update : <em>13/03/2019</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -94,6 +94,6 @@ First you need to listen to the kTCNotification_SegmentAvailable notification li
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/02/2019 09:02:22</p>
+<p>This documentation was generated on 13/03/2019 12:00:11</p>
 </body>
 </html>

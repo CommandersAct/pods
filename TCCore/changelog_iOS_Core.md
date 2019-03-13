@@ -6,6 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.3.1 : 03/12 2019*
+
+    + Added route for Partners hits
+    ~ Small HTTP notifications refactorisation
+
 *4.3.0 : 12/05 2018*
 
 	+ Moved TCUser_agent in Core
