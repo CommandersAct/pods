@@ -1,6 +1,17 @@
 Changelog iOS
 =============
 
+*4.3.3 : 03/19 2019*
+
+	+ Callback if there is an important change in configuration update.
+
+
+*4.3.2 : 01/22 2019*
+
+    + Privacy policies can be added in the descriptions.
+    + Better privacy metrics
+
+
 *4.3.1 : 01/04 2019*
 
 	~ Corrected callback not called when saving consent standalone.

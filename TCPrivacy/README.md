@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>13/03/2019</em><br />
-Release version : <em>4.3.1</em></p>
+<p>Last update : <em>21/03/2019</em><br />
+Release version : <em>4.3.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -27,7 +27,12 @@ Release version : <em>4.3.1</em></p>
 <li><a href="#mannually-displayed-consent">Mannually displayed consent</a></li>
 </ul>
 </li>
-<li><a href="#saving-consent">Saving consent</a></li>
+<li><a href="#saving-consent">Saving consent</a><ul>
+<li><a href="#using-user-id">Using user ID</a></li>
+<li><a href="#using-tc_normalized_id">Using TC_NORMALIZED_ID</a></li>
+<li><a href="#using-tc_sdk_id">Using TC_SDK_ID</a></li>
+</ul>
+</li>
 <li><a href="#displaying-consent">Displaying consent</a><ul>
 <li><a href="#global-consent">Global consent</a></li>
 </ul>
@@ -121,6 +126,15 @@ If you want to use an ID already inside the SDK:</p>
 
 
 <p>This can be used to save the display of the consent, and giving the consent.</p>
+<p>This ID is very important because it will be the basic information used to get back the consent when you need a proof.</p>
+<h3 id="using-user-id">Using user ID</h3>
+<p>You will be able to get the information more easily since this is an ID available by several means for you.</p>
+<h3 id="using-tc_normalized_id">Using TC_NORMALIZED_ID</h3>
+<p>You will get the IDFA/AAID most of the time (as long as the user is not opt-out) and a generated ID the rest of the time. This might allow you to get the information if you know the device identifier.
+Otherwise, you will have to get the ID stored in the app memory. See TC_SDK_ID.</p>
+<h3 id="using-tc_sdk_id">Using TC_SDK_ID</h3>
+<p>In this case the only place where the ID exists is inside the application memory.
+If you're looking for a way to proove consent or reset saved information, you'll need to create a specific screen in app for this.</p>
 <h2 id="displaying-consent">Displaying consent</h2>
 <p>If you are familiar with Commanders Act privacy for web, you know that we actually record two things. The first thing is "displaying the consent form".
 This allow you to prove that a user has indeed been shown the consent screen even if he somehow left without accepting/refusing to give his consent.</p>
@@ -138,6 +152,7 @@ It's not mandatory but recommended.</p>
 <p>Some of the event happening in the SDK have callbacks associated with them in the case you need to do specific actions at this specific moment.
 Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner "the user don't wan't to receive personalized ads" for example.</p>
+<p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
 <div class="codehilite"><pre><span></span><span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span> <span class="n">consentUpdated</span><span class="o">:</span> <span class="o">(</span><span class="n">NSDictionary</span> <span class="o">*)</span> <span class="n">consent</span><span class="o">;</span>
 </pre></div>
 
@@ -149,6 +164,12 @@ We have a Dictionnary which is the same as the one given to our SDK with keys PR
 
 
 <p>This is called after 13 months without change in the user consent. This can allow you to force displaying the consent the same way you would on first launch.</p>
+<div class="codehilite"><pre><span></span><span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span> <span class="n">consentCategoryChanged</span><span class="o">;</span>
+</pre></div>
+
+
+<p>When you make a change in the JSON, there is nothing special to do.
+But when this change is adding or removing a category, or changing an ID, we should re-display the PCM.</p>
 <h2 id="tcdemo">TCDemo</h2>
 <p>You can, of course, check our demo project for a simple implementation example.</p>
 <p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/iOS">Privacy Demo</a></p>
@@ -174,8 +195,10 @@ Meanwhile the configuration has to be done manually and you can find the definit
     <span class="nt">&quot;information&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-10-23&quot;</span><span class="p">,</span>
         <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;\nThis is your sample privacy center\n&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;saveButton&quot;</span><span class="p">:</span> <span class="s2">&quot;Save&quot;</span>
+        <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;\nThis is your sample privacy center.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;saveButton&quot;</span><span class="p">:</span> <span class="s2">&quot;Save&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;privacy_policy_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.commandersact.com/en/privacy/&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;privacy_policy_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Privacy policy&quot;</span>
     <span class="p">},</span>
     <span class="nt">&quot;customisation&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -192,11 +215,11 @@ Meanwhile the configuration has to be done manually and you can find the definit
     <span class="p">},</span>
     <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Statistics&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;These cookies allow us analyze user behavior on the site, measure and improve performance and the quality of our service.&quot;</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Advertising&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;1444&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;These cookies allow us display adverts matching your interests on the websites you visit.&quot;</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Advertising&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;1444&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;These cookies allow us display adverts matching your interests on the websites you visit.&quot;</span><span class="p">,</span> <span class="nt">&quot;privacy_policy_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.commandersact.com/en/privacy/1&quot;</span><span class="p">,</span> <span class="nt">&quot;privacy_policy_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Privacy policy&quot;</span> <span class="p">},</span>
         <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Details&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Here you can select the vendors.&quot;</span><span class="p">,</span> <span class="nt">&quot;subcategories&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;GA&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to GA&quot;</span> <span class="p">},</span>
-            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Xiti&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to AT Internet&quot;</span> <span class="p">},</span>
-            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Vendor3&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to this vendor3&quot;</span> <span class="p">}</span>
+            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;GA&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to GA.&quot;</span><span class="p">,</span> <span class="nt">&quot;privacy_policy_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.google.com/analytics/terms/us.html&quot;</span><span class="p">,</span> <span class="nt">&quot;privacy_policy_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Privacy policy&quot;</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Xiti&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to AT Internet.&quot;</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Vendor3&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to this vendor3.&quot;</span> <span class="p">}</span>
         <span class="p">]}</span>
     <span class="p">]</span>
 <span class="p">}</span>
@@ -207,6 +230,7 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>The <em>customisation</em> part defines colors for the content and the buttons, if not present, no style will be applied to your buttons.</p>
 <p>The <em>global_consent</em> let you customize the text alongside the global consent button. If not present, no global consent button will appear inside your app.</p>
 <p>The <em>categories</em> let you give all the categories to accept or refuse and define their names, IDs and description. If a category has sub categories, you can define them in <em>subcategories</em>.</p>
+<p>If you want to display a link to you privacy policies (or anything else in fact), you can add together "privacy_policy_url" and "privacy_policy_text" that will form a linkable text the line after the description.</p>
 <p>Example:</p>
 <p><img alt="alt tag" src="../res/privacy_example.png" /></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
@@ -217,6 +241,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 13/03/2019 12:00:11</p>
+<p>This documentation was generated on 21/03/2019 14:13:33</p>
 </body>
 </html>
