@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.3.4 : 03/25 2019*
+
+    ~ Refactoring and better documentation for the ID used to save the privacy.
+
+
 *4.3.3 : 03/19 2019*
 
 	+ Callback if there is an important change in configuration update.
