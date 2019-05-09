@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.3.5 : 04/11 2019*
+
+	~ Privacy Policy: Don't take into account the /n into the link zone.
+
+
 *4.3.4 : 03/25 2019*
 
     ~ Refactoring and better documentation for the ID used to save the privacy.
