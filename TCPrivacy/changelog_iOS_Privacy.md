@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.3.6 : 05/13 2019*
+
+	~ Corrected error in encoding constant resulting in bad display of accents.
+
+
 *4.3.5 : 04/11 2019*
 
 	~ Privacy Policy: Don't take into account the /n into the link zone.
