@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>13/05/2019</em><br />
+<p>Last update : <em>17/05/2019</em><br />
 Release version : <em>4.3.6</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -12,10 +12,14 @@ Release version : <em>4.3.6</em></p>
 <ul>
 <li><a href="#privacys-implementation-guide">Privacy's Implementation Guide</a></li>
 <li><a href="#introduction">Introduction</a><ul>
-<li><a href="#choose-your-privacy">Choose your privacy</a></li>
-<li><a href="#setup">Setup</a><ul>
+<li><a href="#choose-your-privacy">Choose your privacy</a><ul>
 <li><a href="#with-the-sdk">With the SDK</a></li>
 <li><a href="#standalone">Standalone</a></li>
+</ul>
+</li>
+<li><a href="#setup">Setup</a><ul>
+<li><a href="#with-the-sdk_1">With the SDK</a></li>
+<li><a href="#standalone_1">Standalone</a></li>
 </ul>
 </li>
 <li><a href="#giving-consent">Giving consent</a><ul>
@@ -55,11 +59,10 @@ To prevent having to manually save the consent asked to the user and manually us
 
 <h2 id="choose-your-privacy">Choose your privacy</h2>
 <p>Privacy come with 2 major flavors:</p>
-<div class="codehilite"><pre><span></span>- With Tag Management (With SDK)
-- Standalone
-</pre></div>
-
-
+<h3 id="with-the-sdk">With the SDK</h3>
+<p>With the SDK, you will need to have the SDK module in your app and will have to initialize the Privacy module with an instance of the TagCommander class.</p>
+<h3 id="standalone">Standalone</h3>
+<p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
 <p>And 2 ways to display it inside your app:</p>
 <div class="codehilite"><pre><span></span>- Manually and send us the information
 - Using our Privacy Center
@@ -68,8 +71,7 @@ To prevent having to manually save the consent asked to the user and manually us
 
 <h2 id="setup">Setup</h2>
 <p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.</p>
-<h3 id="with-the-sdk">With the SDK</h3>
-<p>Modules: Core, Privacy SDK</p>
+<h3 id="with-the-sdk_1">With the SDK</h3>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
 <p>/!\ This will be very simplified as we will generate a JSON from the Tag Commander interface describing your privacy and categories. (2nd Quarter 2019)</p>
@@ -81,9 +83,7 @@ Join those IDs with a "consent version". Default is 001, but if you change the i
 <p>This call will check the saved consent, putting the SDK on hold if nothing is fount, and start/stop the SDK if something is saved.
 It will then the check the consent validity, if it's too old, you can implement a callback treating what to do then. Please check the Callback part.</p>
 <p>Please note that start and stop have a notification sent with them, you can listen to them if needed: kTCNotification_StartingTheSDK and kTCNotification_StoppingTheSDK.</p>
-<h3 id="standalone">Standalone</h3>
-<p>Modules: Core, Privacy</p>
-<p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
+<h3 id="standalone_1">Standalone</h3>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID  application context. If you want to add your consent version, you can add it to the parameters as a String.</p>
 <div class="codehilite"><pre><span></span><span class="o">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="o">]</span> <span class="n">setSiteID</span><span class="o">:</span> <span class="n">siteID</span> <span class="n">andPrivacyID</span><span class="o">:</span> <span class="n">privacyID</span><span class="o">];</span>
 </pre></div>
@@ -246,6 +246,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 13/05/2019 14:35:56</p>
+<p>This documentation was generated on 17/05/2019 16:31:07</p>
 </body>
 </html>
