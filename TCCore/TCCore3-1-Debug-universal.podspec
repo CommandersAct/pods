@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "TCCore3-1-Release-iphoneos"
+  s.name         = "TCCore3-1-TCCore-Debug-universal"
   s.version      = "4.3.1"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCCore"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCCore for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCCore/Release-iphoneos/4.3.1.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCCore/Debug-universal/4.3.1.zip" }
   s.preserve_paths      = 'TCCore.framework'
   #s.public_header_files = 'TCCore.framework/Headers/*.h'
   s.vendored_frameworks = 'TCCore.framework'
