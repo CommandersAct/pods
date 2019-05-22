@@ -4,30 +4,30 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>20/05/2019</em><br />
-Release version : <em>4.3.6</em></p>
+<p>Last update : <em>22/05/2019</em><br />
+Release version : <em>4.3.7</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
 <ul>
 <li><a href="#privacys-implementation-guide">Privacy's Implementation Guide</a></li>
 <li><a href="#introduction">Introduction</a><ul>
-<li><a href="#choose-your-privacy">Choose your privacy</a><ul>
+<li><a href="#choose-your-privacy">Choose your privacy</a></li>
+<li><a href="#setup">Setup</a><ul>
 <li><a href="#with-the-sdk">With the SDK</a></li>
 <li><a href="#standalone">Standalone</a></li>
 </ul>
 </li>
-<li><a href="#setup">Setup</a><ul>
-<li><a href="#with-the-sdk_1">With the SDK</a></li>
-<li><a href="#standalone_1">Standalone</a></li>
-</ul>
-</li>
-<li><a href="#giving-consent">Giving consent</a><ul>
-<li><a href="#with-the-privacy-center">With the Privacy Center</a></li>
-<li><a href="#mannually-displayed-consent">Mannually displayed consent</a></li>
-</ul>
-</li>
 <li><a href="#saving-consent">Saving consent</a><ul>
+<li><a href="#with-the-privacy-center">With the Privacy Center</a></li>
+<li><a href="#manually-displayed-consent">Manually displayed consent</a></li>
+</ul>
+</li>
+<li><a href="#using-iab-consent-string">Using IAB Consent String</a><ul>
+<li><a href="#iab-with-privacy-center">IAB with Privacy Center</a></li>
+</ul>
+</li>
+<li><a href="#retaining-consent">Retaining consent</a><ul>
 <li><a href="#using-user-id">Using user ID</a></li>
 <li><a href="#using-tc_normalized_id">Using TC_NORMALIZED_ID</a></li>
 <li><a href="#using-tc_sdk_id">Using TC_SDK_ID</a></li>
@@ -59,10 +59,11 @@ To prevent having to manually save the consent asked to the user and manually us
 
 <h2 id="choose-your-privacy">Choose your privacy</h2>
 <p>Privacy come with 2 major flavors:</p>
-<h3 id="with-the-sdk">With the SDK</h3>
-<p>With the SDK, you will need to have the SDK module in your app and will have to initialize the Privacy module with an instance of the TagCommander class.</p>
-<h3 id="standalone">Standalone</h3>
-<p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
+<div class="codehilite"><pre><span></span>- With Tag Management (With SDK)
+- Standalone
+</pre></div>
+
+
 <p>And 2 ways to display it inside your app:</p>
 <div class="codehilite"><pre><span></span>- Manually and send us the information
 - Using our Privacy Center
@@ -71,7 +72,8 @@ To prevent having to manually save the consent asked to the user and manually us
 
 <h2 id="setup">Setup</h2>
 <p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.</p>
-<h3 id="with-the-sdk_1">With the SDK</h3>
+<h3 id="with-the-sdk">With the SDK</h3>
+<p>Modules: Core, Privacy, SDK</p>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
 <p>/!\ This will be very simplified as we will generate a JSON from the Tag Commander interface describing your privacy and categories. (2nd Quarter 2019)</p>
@@ -83,7 +85,9 @@ Join those IDs with a "consent version". Default is 001, but if you change the i
 <p>This call will check the saved consent, putting the SDK on hold if nothing is fount, and start/stop the SDK if something is saved.
 It will then the check the consent validity, if it's too old, you can implement a callback treating what to do then. Please check the Callback part.</p>
 <p>Please note that start and stop have a notification sent with them, you can listen to them if needed: kTCNotification_StartingTheSDK and kTCNotification_StoppingTheSDK.</p>
-<h3 id="standalone_1">Standalone</h3>
+<h3 id="standalone">Standalone</h3>
+<p>Modules: Core, Privacy</p>
+<p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID  application context. If you want to add your consent version, you can add it to the parameters as a String.</p>
 <div class="codehilite"><pre><span></span><span class="o">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="o">]</span> <span class="n">setSiteID</span><span class="o">:</span> <span class="n">siteID</span> <span class="n">andPrivacyID</span><span class="o">:</span> <span class="n">privacyID</span><span class="o">];</span>
 </pre></div>
@@ -95,11 +99,11 @@ It will then the check the consent validity, if it's too old, you can implement 
 </pre></div>
 
 
-<h2 id="giving-consent">Giving consent</h2>
+<h2 id="saving-consent">Saving consent</h2>
 <p>Here is where the IDs of the categories matters.</p>
 <h3 id="with-the-privacy-center">With the Privacy Center</h3>
-<p>If you're using the Privacy Center, nothing has to be done here, it will automatically propagate the consent to all other systems.</p>
-<h3 id="mannually-displayed-consent">Mannually displayed consent</h3>
+<p>If you're using the Privacy Center, nothing has to be done here, it will automatically propagate the consent to all other systems. And the ID will be the one used in the configuration file. Please check the Privacy Center part for more information.</p>
+<h3 id="manually-displayed-consent">Manually displayed consent</h3>
 <p>Once the user validated his consent, you can the send the information to the Privacy module as follow:</p>
 <div class="codehilite"><pre><span></span><span class="bp">NSMutableDictionary</span> <span class="o">*</span><span class="n">consent</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSMutableDictionary</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCapacity</span><span class="p">:</span> <span class="mi">3</span><span class="p">];</span>
 <span class="p">[</span><span class="n">consent</span> <span class="nl">setObject</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_CAT_1&quot;</span><span class="p">];</span>
@@ -109,9 +113,38 @@ It will then the check the consent validity, if it's too old, you can implement 
 </pre></div>
 
 
-<p>Please prefix your IDs with "PRIVACY_CAT_". 1 mean accepting this category, 0 is refusing.</p>
+<p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 mean accepting this category or vendor, 0 is refusing.</p>
+<p>Passing vendor information is crucial for IAB.</p>
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
-<h2 id="saving-consent">Saving consent</h2>
+<h2 id="using-iab-consent-string">Using IAB Consent String</h2>
+<p>For now we can create a consent string, but we can't display the privacy center with information from the vendor list. We're creating a first release with only the consent string before so that all our client that don't use the Privacy Center can use IAB.</p>
+<p>First you will need to add the consent library to your project. You will find it in the same repository.</p>
+<p>This library is the TCIAB module, you will find the usual podspecs in the repository. Please beware that depending on your XCode version the universal versions might not be working.</p>
+<p>When you init the Privacy module it will check if this library is present in your project. If so, it will save in the phone that a CMP is present.</p>
+<p>Then later, when you save the consent, the consent string will automatically be created and saved.</p>
+<p>Everything saved is saved with keys defined under the IAB standards. We use mainly IABConsent_CMPPresent and IABConsent_ConsentString.</p>
+<h3 id="iab-with-privacy-center">IAB with Privacy Center</h3>
+<p>As explained above IAB is not made to work with the privacy center for now, so if you still want to use the privacy center, please do it like this:</p>
+<p>You first need to remove the automatic link between the module and IAB by disabling IAB:</p>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">].</span><span class="n">enableIAB</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span>
+<span class="p">[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">].</span><span class="n">vendorListVersion</span> <span class="o">=</span> <span class="mi">146</span><span class="p">;</span>
+</pre></div>
+
+
+<p>You need to manually set the vendorListVersion also as this is required during the creation of the consent string (we default at 146 which is the version )</p>
+<p>Then when you want to save the consent you will need to manually send information:</p>
+<div class="codehilite"><pre><span></span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">consent</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSMutableDictionary</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="p">[</span><span class="n">consent</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_CAT_1&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">consent</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_CAT_2&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">consent</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_VEN_52&quot;</span><span class="p">];</span>
+<span class="p">[</span><span class="n">consent</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_VEN_141&quot;</span><span class="p">];</span>
+<span class="p">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">saveConsentString</span><span class="p">:</span> <span class="n">consent</span><span class="p">];</span>
+</pre></div>
+
+
+<p>You can put this inside the "consentUpdated" callback and you need to map the ID you're using inside the privacy center to either a purpose id or a vendor id.
+For now we can't do better since we're not distinguishing vendors and category inside the privacy center. An evolution will be done after the support of IAB v2.</p>
+<h2 id="retaining-consent">Retaining consent</h2>
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
 <p>If you want to use an ID already inside the SDK:</p>
@@ -151,11 +184,11 @@ We don't recommend this behaviour, please discuss it with your setup team first.
 
 
 <h3 id="global-consent">Global consent</h3>
-<p>While not yet available in the web part, we already integrated an On/Off switch so that the user can consent to all categories at the same time.
-It's not mandatory but recommended.</p>
+<p>We integrated an On/Off switch so that the user can consent to all categories at the same time.
+It's not mandatory yet, but recommended.</p>
 <h2 id="reacting-to-consent">Reacting to consent</h2>
-<p>Some of the event happening in the SDK have callbacks associated with them in the case you need to do specific actions at this specific moment.
-Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
+<p>Some of the event happening in the SDK have callbacks associated with them in the case you need to do specific actions at this specific moment.</p>
+<p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
 <div class="codehilite"><pre><span></span><span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span> <span class="n">consentUpdated</span><span class="o">:</span> <span class="o">(</span><span class="n">NSDictionary</span> <span class="o">*)</span> <span class="n">consent</span><span class="o">;</span>
@@ -174,7 +207,7 @@ We have a Dictionnary which is the same as the one given to our SDK with keys PR
 
 
 <p>When you make a change in the JSON, there is nothing special to do.
-But when this change is adding or removing a category, or changing an ID, we should re-display the PCM.</p>
+But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
 <h2 id="tcdemo">TCDemo</h2>
 <p>You can, of course, check our demo project for a simple implementation example.</p>
 <p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/iOS">Privacy Demo</a></p>
@@ -246,6 +279,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 20/05/2019 16:38:33</p>
+<p>This documentation was generated on 22/05/2019 11:40:49</p>
 </body>
 </html>

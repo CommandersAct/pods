@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.3.7 : 05/15 2019*
+
+	+ Generating consent string for IAB version 1.
+
+
 *4.3.6 : 05/13 2019*
 
 	~ Corrected error in encoding constant resulting in bad display of accents.
