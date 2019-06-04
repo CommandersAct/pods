@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.3.3 : 06/04 2019*
+
+	- Removed useless (and deprecated key) in Info.plist
+
 
 *4.3.2 : 05/13 2019*
 
