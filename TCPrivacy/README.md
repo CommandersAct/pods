@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>04/06/2019</em><br />
-Release version : <em>4.3.7</em></p>
+<p>Last update : <em>07/06/2019</em><br />
+Release version : <em>4.3.8</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -49,27 +49,21 @@ Release version : <em>4.3.7</em></p>
 <p>Having the user consent is essential to send sensible information like the IDFA/AAID.
 To prevent having to manually save the consent asked to the user and manually using it with our SDKs, we created a module helping you do it automatically.</p>
 <p>This module will gather the consent and will:</p>
-<div class="codehilite"><pre><span></span>- Save it and reload it every time the application is launched.
+<pre><code>- Save it and reload it every time the application is launched.
 - Save and check the validity of the consent. The validity duration is set to 13 months.
 - Send a hit to our servers to record the consent.
 - Enable or disable the SDK. (if used alongside the SDK)
 - Add the categories automatically to the hits the SDK sends. (if used alongside the SDK)
-</pre></div>
-
-
+</code></pre>
 <h2 id="choose-your-privacy">Choose your privacy</h2>
 <p>Privacy come with 2 major flavors:</p>
-<div class="codehilite"><pre><span></span>- With Tag Management (With SDK)
+<pre><code>- With Tag Management (With SDK)
 - Standalone
-</pre></div>
-
-
+</code></pre>
 <p>And 2 ways to display it inside your app:</p>
-<div class="codehilite"><pre><span></span>- Manually and send us the information
+<pre><code>- Manually and send us the information
 - Using our Privacy Center
-</pre></div>
-
-
+</code></pre>
 <h2 id="setup">Setup</h2>
 <p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.</p>
 <h3 id="with-the-sdk">With the SDK</h3>
@@ -78,10 +72,9 @@ To prevent having to manually save the consent asked to the user and manually us
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
 <p>/!\ This will be very simplified as we will generate a JSON from the Tag Commander interface describing your privacy and categories. (2nd Quarter 2019)</p>
 <p>The setup is really simple, pass to the TCMobilePrivacy object your site ID, application context and a pointer to your TagCommanders' SDK instance. If you want to add your consent version, you can add it to the parameters as a NSString.</p>
-<div class="codehilite"><pre><span></span><span class="o">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="o">]</span> <span class="n">setSiteID</span><span class="o">:</span> <span class="mi">3311</span> <span class="n">TCInstance</span><span class="o">:</span> <span class="n">tc</span> <span class="n">AndVersion</span><span class="o">:</span> <span class="err">@</span><span class="s">&quot;001&quot;</span><span class="o">];</span>
-</pre></div>
-
-
+<pre><code>:::java
+[[TCMobilePrivacy sharedInstance] setSiteID: 3311 TCInstance: tc AndVersion: @"001"];
+</code></pre>
 <p>This call will check the saved consent, putting the SDK on hold if nothing is fount, and start/stop the SDK if something is saved.
 It will then the check the consent validity, if it's too old, you can implement a callback treating what to do then. Please check the Callback part.</p>
 <p>Please note that start and stop have a notification sent with them, you can listen to them if needed: kTCNotification_StartingTheSDK and kTCNotification_StoppingTheSDK.</p>
@@ -89,30 +82,26 @@ It will then the check the consent validity, if it's too old, you can implement 
 <p>Modules: Core, Privacy</p>
 <p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID  application context. If you want to add your consent version, you can add it to the parameters as a String.</p>
-<div class="codehilite"><pre><span></span><span class="o">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="o">]</span> <span class="n">setSiteID</span><span class="o">:</span> <span class="n">siteID</span> <span class="n">andPrivacyID</span><span class="o">:</span> <span class="n">privacyID</span><span class="o">];</span>
-</pre></div>
-
-
+<pre><code>:::java
+[[TCMobilePrivacy sharedInstance] setSiteID: siteID andPrivacyID: privacyID];
+</code></pre>
 <p>A lot of things are hidden behind this call:</p>
-<div class="codehilite"><pre><span></span>- it will check saved consent
+<pre><code>- it will check saved consent
 - try to update and replace the JSON configuration
-</pre></div>
-
-
+</code></pre>
 <h2 id="saving-consent">Saving consent</h2>
 <p>Here is where the IDs of the categories matters.</p>
 <h3 id="with-the-privacy-center">With the Privacy Center</h3>
 <p>If you're using the Privacy Center, nothing has to be done here, it will automatically propagate the consent to all other systems. And the ID will be the one used in the configuration file. Please check the Privacy Center part for more information.</p>
 <h3 id="manually-displayed-consent">Manually displayed consent</h3>
 <p>Once the user validated his consent, you can the send the information to the Privacy module as follow:</p>
-<div class="codehilite"><pre><span></span><span class="bp">NSMutableDictionary</span> <span class="o">*</span><span class="n">consent</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSMutableDictionary</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithCapacity</span><span class="p">:</span> <span class="mi">3</span><span class="p">];</span>
-<span class="p">[</span><span class="n">consent</span> <span class="nl">setObject</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_CAT_1&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">consent</span> <span class="nl">setObject</span><span class="p">:</span> <span class="s">@&quot;0&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_CAT_2&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">consent</span> <span class="nl">setObject</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_CAT_3&quot;</span><span class="p">];</span>
-<span class="p">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">saveConsent</span><span class="p">:</span> <span class="n">consent</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objective-c
+NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
+[consent setObject: @"1" forKey: @"PRIVACY_CAT_1"];
+[consent setObject: @"0" forKey: @"PRIVACY_CAT_2"];
+[consent setObject: @"1" forKey: @"PRIVACY_CAT_3"];
+[[TCMobilePrivacy sharedInstance] saveConsent: consent];
+</code></pre>
 <p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 mean accepting this category or vendor, 0 is refusing.</p>
 <p>Passing vendor information is crucial for IAB.</p>
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
@@ -126,43 +115,38 @@ It will then the check the consent validity, if it's too old, you can implement 
 <h3 id="iab-with-privacy-center">IAB with Privacy Center</h3>
 <p>As explained above IAB is not made to work with the privacy center for now, so if you still want to use the privacy center, please do it like this:</p>
 <p>You first need to remove the automatic link between the module and IAB by disabling IAB:</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">].</span><span class="n">enableIAB</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span>
-<span class="p">[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">].</span><span class="n">vendorListVersion</span> <span class="o">=</span> <span class="mi">146</span><span class="p">;</span>
-</pre></div>
-
-
+<pre><code>:::objective-c
+[TCMobilePrivacy sharedInstance].enableIAB = NO;
+[TCMobilePrivacy sharedInstance].vendorListVersion = 146;
+</code></pre>
 <p>You need to manually set the vendorListVersion also as this is required during the creation of the consent string (we default at 146 which is the version )</p>
 <p>Then when you want to save the consent you will need to manually send information:</p>
-<div class="codehilite"><pre><span></span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">consent</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSMutableDictionary</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="p">[</span><span class="n">consent</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_CAT_1&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">consent</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_CAT_2&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">consent</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_VEN_52&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">consent</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;1&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;PRIVACY_VEN_141&quot;</span><span class="p">];</span>
-<span class="p">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">saveConsentString</span><span class="p">:</span> <span class="n">consent</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objective-c
+NSDictionary *consent = [[NSMutableDictionary alloc] init];
+[consent setValue: @"1" forKey: @"PRIVACY_CAT_1"];
+[consent setValue: @"1" forKey: @"PRIVACY_CAT_2"];
+[consent setValue: @"1" forKey: @"PRIVACY_VEN_52"];
+[consent setValue: @"1" forKey: @"PRIVACY_VEN_141"];
+[[TCMobilePrivacy sharedInstance] saveConsentString: consent];
+</code></pre>
 <p>You can put this inside the "consentUpdated" callback and you need to map the ID you're using inside the privacy center to either a purpose id or a vendor id.
 For now we can't do better since we're not distinguishing vendors and category inside the privacy center. An evolution will be done after the support of IAB v2.</p>
 <h2 id="retaining-consent">Retaining consent</h2>
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
 <p>If you want to use an ID already inside the SDK:</p>
-<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setConsentUser</span><span class="p">:</span> <span class="s">@&quot;#TC_IDFA#&quot;</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objective-c
+[[TCMobilePrivacy sharedInstance] setConsentUser: @"#TC_IDFA#"];
+</code></pre>
 <p>If you want to use an ID from your data layer, please first add it to the permanant store:</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">tc</span> <span class="nl">addPermanentData</span><span class="p">:</span> <span class="s">@&quot;MY_ID&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;12345&quot;</span><span class="p">];</span>
-<span class="p">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setConsentUser</span><span class="p">:</span> <span class="s">@&quot;MY_ID&quot;</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objective-c
+[tc addPermanentData: @"MY_ID" withValue: @"12345"];
+[[TCMobilePrivacy sharedInstance] setConsentUser: @"MY_ID"];
+</code></pre>
 <p>and if you simply want to simply pass the information:</p>
-<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="nl">setConsentUser</span><span class="p">:</span> <span class="s">@&quot;123456765432&quot;</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objective-c
+[[TCMobilePrivacy sharedInstance] setConsentUser: @"123456765432"];
+</code></pre>
 <p>This can be used to save the display of the consent, and giving the consent.</p>
 <p>This ID is very important because it will be the basic information used to get back the consent when you need a proof.</p>
 <h3 id="using-user-id">Using user ID</h3>
@@ -179,10 +163,9 @@ This allow you to prove that a user has indeed been shown the consent screen eve
 <p>In some cases, client also use this to infer user consent since he continued using the application after he was shown the consent screen.
 We don't recommend this behaviour, please discuss it with your setup team first.</p>
 <p>Either way it's interesting to be able to log the fact that the consent screen has been viewed. If you're not using the Privacy Center, please call:</p>
-<div class="codehilite"><pre><span></span><span class="o">[[</span><span class="n">TCMobilePrivacy</span> <span class="n">sharedInstance</span><span class="o">]</span> <span class="n">viewConsent</span><span class="o">];</span>
-</pre></div>
-
-
+<pre><code>:::java
+[[TCMobilePrivacy sharedInstance] viewConsent];
+</code></pre>
 <h3 id="global-consent">Global consent</h3>
 <p>We integrated an On/Off switch so that the user can consent to all categories at the same time.
 It's not mandatory yet, but recommended.</p>
@@ -191,21 +174,18 @@ It's not mandatory yet, but recommended.</p>
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
-<div class="codehilite"><pre><span></span><span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span> <span class="n">consentUpdated</span><span class="o">:</span> <span class="o">(</span><span class="n">NSDictionary</span> <span class="o">*)</span> <span class="n">consent</span><span class="o">;</span>
-</pre></div>
-
-
+<pre><code>:::java
+- (void) consentUpdated: (NSDictionary *) consent;
+</code></pre>
 <p>Called when you give us the user selected consents, or when we load the saved consent from the SDK.
 We have a Dictionnary which is the same as the one given to our SDK with keys PRIVACY_CAT_n and value @"0" or @"1".</p>
-<div class="codehilite"><pre><span></span><span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span> <span class="n">consentOutdated</span><span class="o">;</span>
-</pre></div>
-
-
+<pre><code>:::java
+- (void) consentOutdated;
+</code></pre>
 <p>This is called after 13 months without change in the user consent. This can allow you to force displaying the consent the same way you would on first launch.</p>
-<div class="codehilite"><pre><span></span><span class="o">-</span> <span class="o">(</span><span class="kt">void</span><span class="o">)</span> <span class="n">consentCategoryChanged</span><span class="o">;</span>
-</pre></div>
-
-
+<pre><code>:::java
+- (void) consentCategoryChanged;
+</code></pre>
 <p>When you make a change in the JSON, there is nothing special to do.
 But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
 <h2 id="tcdemo">TCDemo</h2>
@@ -215,55 +195,53 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <p>The Privacy Center is represented by a JSON file that describes the interfaces that will be created by native code inside the application.</p>
 <p>We create an UIViewController to create the privacy center view.
 The offline JSON should be inside the project code folder.</p>
-<div class="codehilite"><pre><span></span><span class="n">TCPrivacyCenterViewController</span> <span class="o">*</span><span class="n">PCM</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCPrivacyCenterViewController</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="bp">UIBarButtonItem</span> <span class="o">*</span><span class="n">backButton</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">UIBarButtonItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithTitle</span><span class="p">:</span> <span class="p">[</span><span class="n">PCM</span> <span class="n">getSaveButtonText</span><span class="p">]</span>
-                                                               <span class="nl">style</span><span class="p">:</span> <span class="n">UIBarButtonItemStylePlain</span>
-                                                              <span class="nl">target</span><span class="p">:</span> <span class="nb">nil</span>
-                                                              <span class="nl">action</span><span class="p">:</span> <span class="nb">nil</span><span class="p">];</span>
+<pre><code>:::objective-c
+TCPrivacyCenterViewController *PCM = [[TCPrivacyCenterViewController alloc] init];
+UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSaveButtonText]
+                                                               style: UIBarButtonItemStylePlain
+                                                              target: nil
+                                                              action: nil];
 
-<span class="nb">self</span><span class="p">.</span><span class="n">navigationItem</span><span class="p">.</span><span class="n">backBarButtonItem</span> <span class="o">=</span> <span class="n">backButton</span><span class="p">;</span>
-<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">navigationController</span> <span class="nl">pushViewController</span><span class="p">:</span> <span class="n">PCM</span> <span class="nl">animated</span><span class="p">:</span> <span class="nb">YES</span><span class="p">];</span>
-</pre></div>
-
-
+self.navigationItem.backBarButtonItem = backButton;
+[self.navigationController pushViewController: PCM animated: YES];
+</code></pre>
 <p>Since we have a view controller, you can call it by pushing it. It's quite easy, but this mean we have to add code if we want to customize the name of the save/back button.</p>
 <p>For now this JSON has to be created and managed manually. But soon, this will be created by our interfaces. And the SDK will check for updates of the file automatically.
 Meanwhile the configuration has to be done manually and you can find the definition of the file here.</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;information&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-10-23&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;\nThis is your sample privacy center.&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;saveButton&quot;</span><span class="p">:</span> <span class="s2">&quot;Save&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;privacy_policy_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.commandersact.com/en/privacy/&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;privacy_policy_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Privacy policy&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;customisation&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;fontcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffffff&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;backgroundcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;#333333&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;button&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;fontcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffffff&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;backgroundcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;#6faae5&quot;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;global_consent&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;All categories&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Preferences for all services\n\n&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Statistics&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;1234&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;These cookies allow us analyze user behavior on the site, measure and improve performance and the quality of our service.&quot;</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Advertising&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;1444&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;These cookies allow us display adverts matching your interests on the websites you visit.&quot;</span><span class="p">,</span> <span class="nt">&quot;privacy_policy_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.commandersact.com/en/privacy/1&quot;</span><span class="p">,</span> <span class="nt">&quot;privacy_policy_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Privacy policy&quot;</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Details&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Here you can select the vendors.&quot;</span><span class="p">,</span> <span class="nt">&quot;subcategories&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;GA&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to GA.&quot;</span><span class="p">,</span> <span class="nt">&quot;privacy_policy_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.google.com/analytics/terms/us.html&quot;</span><span class="p">,</span> <span class="nt">&quot;privacy_policy_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Privacy policy&quot;</span> <span class="p">},</span>
-            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Xiti&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to AT Internet.&quot;</span> <span class="p">},</span>
-            <span class="p">{</span> <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Vendor3&quot;</span><span class="p">,</span> <span class="nt">&quot;ID&quot;</span> <span class="p">:</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span> <span class="p">:</span> <span class="s2">&quot;Should we send information to this vendor3.&quot;</span> <span class="p">}</span>
-        <span class="p">]}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-
-
+<pre><code>:::json
+{
+    "information": {
+        "update": "2018-10-23",
+        "version": "1",
+        "content": "\nThis is your sample privacy center.",
+        "saveButton": "Save",
+        "privacy_policy_url": "https://www.commandersact.com/en/privacy/",
+        "privacy_policy_text": "Privacy policy"
+    },
+    "customisation": {
+        "content": {
+            "fontcolor": "#ffffff",
+            "backgroundcolor": "#333333"
+        },
+        "button": {
+            "fontcolor": "#ffffff",
+            "backgroundcolor": "#6faae5"
+        }
+    },
+    "global_consent" : {
+        "name" : "All categories", "ID": "0", "description" : "Preferences for all services\n\n"
+    },
+    "categories": [
+        { "name" : "Statistics", "ID" : "1234", "description" : "These cookies allow us analyze user behavior on the site, measure and improve performance and the quality of our service." },
+        { "name" : "Advertising", "ID" : "1444", "description" : "These cookies allow us display adverts matching your interests on the websites you visit.", "privacy_policy_url": "https://www.commandersact.com/en/privacy/1", "privacy_policy_text": "Privacy policy" },
+        { "name" : "Details", "ID" : "4", "description" : "Here you can select the vendors.", "subcategories": [
+            { "name" : "GA", "ID" : "5", "description" : "Should we send information to GA.", "privacy_policy_url": "https://www.google.com/analytics/terms/us.html", "privacy_policy_text": "Privacy policy" },
+            { "name" : "Xiti", "ID" : "6", "description" : "Should we send information to AT Internet." },
+            { "name" : "Vendor3", "ID" : "7", "description" : "Should we send information to this vendor3." }
+        ]}
+    ]
+}
+</code></pre>
 <p>The <em>information</em> part contain information about the date of the configuration, the version of the file (not of the consent), the global text introducing the Privacy and the name of the save/back button.</p>
 <p>The <em>customisation</em> part defines colors for the content and the buttons, if not present, no style will be applied to your buttons.</p>
 <p>The <em>global_consent</em> let you customize the text alongside the global consent button. If not present, no global consent button will appear inside your app.</p>
@@ -279,6 +257,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 04/06/2019 17:04:39</p>
+<p>This documentation was generated on 07/06/2019 17:05:45</p>
 </body>
 </html>

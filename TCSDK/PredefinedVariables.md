@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="predefined-variables-guide">Predefined variables Guide</h1>
 <p><strong>SDK TagCommander Android and iPhone</strong></p>
-<p>Last update : <em>04/06/2019</em><br /></p>
+<p>Last update : <em>07/06/2019</em><br /></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">

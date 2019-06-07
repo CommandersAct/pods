@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>04/06/2019</em><br />
+<p>Last update : <em>07/06/2019</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -32,11 +32,9 @@ The modules are the following :</p>
 <p>For each of those modules, please check their respective documentation for more information.</p>
 <h1 id="adding-a-module-to-your-project">Adding a module to your project</h1>
 <p>If you want to add a module to your android project, you have several possibilities.</p>
-<div class="codehilite"><pre><span></span>- Using cocoapods to manage the dependency.
+<pre><code>- Using cocoapods to manage the dependency.
 - Using directly the framework files in your project.
-</pre></div>
-
-
+</code></pre>
 <h1 id="cocoapods-renaming-warning">Cocoapods renaming warning</h1>
 <div class="warning"></div>
 
@@ -46,22 +44,19 @@ The modules are the following :</p>
 <p>The names of the pod changed to be able to reflect the exact content of the podspec (and thus preventing the name warning). And by having different names we also allow you to use several of them depending on your configurations directly in the podfile.</p>
 <p><a href="https://lookback.io/blog/cocoapods-by-configuration">The basic idea is explained here</a></p>
 <p>You will then be able to modify your podfiles like this:</p>
-<div class="codehilite"><pre><span></span><span class="c1">#TC libs for debug</span>
-<span class="n">pod</span> <span class="s1">&#39;latest-TCCore-Debug-universal&#39;</span><span class="p">,</span> <span class="ss">:podspec</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Debug-universal.podspec&#39;</span><span class="p">,</span> <span class="ss">:configuration</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;Debug Prod&#39;</span><span class="p">,</span> <span class="s1">&#39;Debug Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Debug Stubs&#39;</span><span class="o">]</span>
-<span class="n">pod</span> <span class="s1">&#39;latest-TCSDK-Debug-universal&#39;</span><span class="p">,</span> <span class="ss">:podspec</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Debug-universal.podspec&#39;</span><span class="p">,</span> <span class="ss">:configuration</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;Debug Prod&#39;</span><span class="p">,</span> <span class="s1">&#39;Debug Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Debug Stubs&#39;</span><span class="o">]</span>
-<span class="c1">#TC libs for Release</span>
-<span class="n">pod</span> <span class="s1">&#39;latest-TCCore-Release-iphoneos&#39;</span><span class="p">,</span> <span class="ss">:podspec</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos.podspec&#39;</span><span class="p">,</span> <span class="ss">:configuration</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;Release Prod&#39;</span><span class="p">,</span> <span class="s1">&#39;Release Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Store Prod&#39;</span><span class="o">]</span>
-<span class="n">pod</span> <span class="s1">&#39;latest-TCSDK-Release-iphoneos&#39;</span><span class="p">,</span> <span class="ss">:podspec</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Release-iphoneos.podspec&#39;</span><span class="p">,</span> <span class="ss">:configuration</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;Release Prod&#39;</span><span class="p">,</span> <span class="s1">&#39;Release Test&#39;</span><span class="p">,</span> <span class="s1">&#39;Store Prod&#39;</span><span class="o">]</span>
-</pre></div>
-
-
+<pre><code>:::Ruby
+#TC libs for debug
+pod 'latest-TCCore-Debug-universal', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Debug-universal.podspec', :configuration =&gt; ['Debug Prod', 'Debug Test', 'Debug Stubs']
+pod 'latest-TCSDK-Debug-universal', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Debug-universal.podspec', :configuration =&gt; ['Debug Prod', 'Debug Test', 'Debug Stubs']
+#TC libs for Release
+pod 'latest-TCCore-Release-iphoneos', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos.podspec', :configuration =&gt; ['Release Prod', 'Release Test', 'Store Prod']
+pod 'latest-TCSDK-Release-iphoneos', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Release-iphoneos.podspec', :configuration =&gt; ['Release Prod', 'Release Test', 'Store Prod']
+</code></pre>
 <h2 id="build-variants">Build Variants</h2>
 <p>Whatever the chosen way to add it is, please remember that we have two different versions available.</p>
-<div class="codehilite"><pre><span></span>- A debug version with the architectures for phones and simulators.
+<pre><code>- A debug version with the architectures for phones and simulators.
 - A release version with only the architectures for phones.
-</pre></div>
-
-
+</code></pre>
 <p>In addition to those two variants also come a release version with BITCODE enabled. Since BITCODE is only used when submitting your application on the store, only a release version is available with BITCODE.</p>
 <p>And also if you don't want to use the IDFA/IDFV in your application (thus don't want to check the case in the application submission form), you can get another variant that is noIDFA. This variant will not compile anything linked with ASIdentifierManager.</p>
 <h2 id="cocoapods">Cocoapods</h2>
@@ -75,14 +70,13 @@ The modules are the following :</p>
 <p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos.podspec</p>
 <p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos-Bitcode.podspec</p>
 <p>Your podfile should look something like this :</p>
-<div class="codehilite"><pre><span></span><span class="n">use_frameworks</span><span class="o">!</span>
-<span class="n">target</span> <span class="err">&#39;</span><span class="n">TCDemo</span><span class="err">&#39;</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="err">&#39;</span><span class="n">latest</span><span class="o">-</span><span class="n">TCCore</span><span class="o">-</span><span class="n">Debug</span><span class="o">-</span><span class="n">universal</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">podspec</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">https</span><span class="o">:</span><span class="c1">//raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Debug-universal.podspec&#39;</span>
-    <span class="n">pod</span> <span class="err">&#39;</span><span class="n">latest</span><span class="o">-</span><span class="n">TCSDK</span><span class="o">-</span><span class="n">Debug</span><span class="o">-</span><span class="n">universal</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">podspec</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">https</span><span class="o">:</span><span class="c1">//raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Debug-universal.podspec&#39;</span>
-<span class="n">end</span>
-</pre></div>
-
-
+<pre><code>:::java
+use_frameworks!
+target 'TCDemo' do
+    pod 'latest-TCCore-Debug-universal', podspec: 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Debug-universal.podspec'
+    pod 'latest-TCSDK-Debug-universal', podspec: 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Debug-universal.podspec'
+end
+</code></pre>
 <h2 id="framework">Framework</h2>
 <p>The latest version of our modules are always available on our github account: https://github.com/TagCommander/pods</p>
 <div class="warning"></div>
@@ -91,12 +85,10 @@ The modules are the following :</p>
 <p>You will always need to at least add the Core module to your project.</p>
 </blockquote>
 <p>Add the modules you need to your project and confirm that XCode really added them for your Target at the following places:</p>
-<div class="codehilite"><pre><span></span>- In the &quot;general&quot; tab under &quot;Linked Frameworks and Libraries&quot;
-- In the &quot;Build Phases&quot; tab under &quot;Link Binary With Libraries&quot;
+<pre><code>- In the "general" tab under "Linked Frameworks and Libraries"
+- In the "Build Phases" tab under "Link Binary With Libraries"
 - That the FRAMEWORK_SEARCH_PATHS do include the places where the frameworks are.
-</pre></div>
-
-
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -105,6 +97,6 @@ The modules are the following :</p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 04/06/2019 17:04:39</p>
+<p>This documentation was generated on 07/06/2019 17:05:45</p>
 </body>
 </html>

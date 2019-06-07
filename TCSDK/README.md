@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>04/06/2019</em><br />
+<p>Last update : <em>07/06/2019</em><br />
 Release version : <em>4.3.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -121,11 +121,10 @@ forget them when setting your dynamic variables.</p>
 <p>It is recommended to initialise TagCommander in your <code>AppDelegate's applicationdidFinishLaunchingWithOptions</code>
  so it will be operational as soon as possible.</p>
 <p>A single line of code is required to properly initialize an instance of TagCommander:</p>
-<div class="codehilite"><pre><span></span><span class="n">TagCommander</span> <span class="o">*</span><span class="n">TagCommanderInstance</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TagCommander</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithSiteID</span><span class="p">:</span> <span class="n">siteID</span>
-                                                           <span class="nl">andContainerID</span><span class="p">:</span> <span class="n">containerID</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objectivec
+TagCommander *TagCommanderInstance = [[TagCommander alloc] initWithSiteID: siteID
+                                                           andContainerID: containerID];
+</code></pre>
 <div class="warning"></div>
 
 <blockquote>
@@ -134,31 +133,28 @@ of siteID's and containerID's, you might want to use it as a Singleton
 anyway for reasons of simplification.</p>
 </blockquote>
 <p>If you want to use localisation, you will need to instantiation TCLocation after TagCommander.</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCLocation</span> <span class="n">sharedInstance</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objectivec
+[TCLocation sharedInstance];
+</code></pre>
 <p>We have set the default setInterval to 30 minutes to save battery. If you need another time precision, you can set TCLocation.GPSInterval to any value and it will be used instead of the default value.</p>
 <h2 id="executing-tags">Executing tags</h2>
 <p>For every element that needs tagging in your application, you need to call addData on your TagCommander instance and when you want to send all those information to the server, you will simply need to call sendData.</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;click&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#PAGE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;order&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#AMOUNT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;584.46&quot;</span><span class="p">];</span>
+<pre><code>:::objectivec
+[TCInstance addData: @"#EVENT#" withValue: @"click"];
+[TCInstance addData: @"#PAGE#" withValue: @"order"];
+[TCInstance addData: @"#AMOUNT#" withValue: @"584.46"];
 
-<span class="p">[</span><span class="n">TCInstance</span> <span class="n">sendData</span><span class="p">];</span>
-</pre></div>
-
-
+[TCInstance sendData];
+</code></pre>
 <p>For compatibility reasons, we can still use TCAppVars to pass those information to TagCommander.</p>
-<div class="codehilite"><pre><span></span><span class="n">TCAppVars</span> <span class="o">*</span><span class="n">appVar</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCAppVars</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="p">[</span><span class="n">appVar</span> <span class="nl">set</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;click&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">appVar</span> <span class="nl">set</span><span class="p">:</span> <span class="s">@&quot;#PAGE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;order&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">appVar</span> <span class="nl">set</span><span class="p">:</span> <span class="s">@&quot;#AMOUNT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;584.46&quot;</span><span class="p">];</span>
+<pre><code>:::objectivec
+TCAppVars *appVar = [[TCAppVars alloc] init];
+[appVar set: @"#EVENT#" withValue: @"click"];
+[appVar set: @"#PAGE#" withValue: @"order"];
+[appVar set: @"#AMOUNT#" withValue: @"584.46"];
 
-<span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">TCInstance</span> <span class="nl">execute</span><span class="p">:</span> <span class="n">appVar</span><span class="p">];</span>
-</pre></div>
-
-
+[self.TCInstance execute: appVar];
+</code></pre>
 <div class="warning"></div>
 
 <blockquote>
@@ -166,11 +162,10 @@ anyway for reasons of simplification.</p>
 </blockquote>
 <h2 id="example">Example</h2>
 <p>Let's say that the URL you are using in your server-side container uses the following url:</p>
-<div class="codehilite"><pre><span></span>http://engage.commander1.com/dms?tc_s=3109&amp;tc_type=dms&amp;data_sysname=#TC_SYSNAME#
+<pre><code>:::url
+http://engage.commander1.com/dms?tc_s=3109&amp;tc_type=dms&amp;data_sysname=#TC_SYSNAME#
 &amp;data_sysversion=#TC_SYSVERSION#&amp;page=#SCREEN_NAME#&amp;event=#EVENT#
-</pre></div>
-
-
+</code></pre>
 <p>In order to be executed, the tag needs two values:</p>
 <ul>
 <li><code>#EVENT#</code></li>
@@ -181,31 +176,30 @@ anyway for reasons of simplification.</p>
 <p>There are some tags that need to be passed a list of dictionaries, usually representing products. By passing complex information, we are able to create and send complex hits or many hits at the same time.</p>
 <p>Tags that needs to be passed a list of dictionaries are easy to spot in the configuration. They have appended to the name of the dynamic variable the name of the key that is retrieved from the dictionary.</p>
 <p>Most of the time the data are provided ready to use, but we provide a TCProduct class representing a product and its possible values.</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#EVENT#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;viewCart&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#PARTNER_ID#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;868&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#REGIONAL_CODE#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;eu&quot;</span><span class="p">];</span>
+<pre><code>:::objectivec
+[TCInstance addData: @"#EVENT#" withValue: @"viewCart"];
+[TCInstance addData: @"#PARTNER_ID#" withValue: @"868"];
+[TCInstance addData: @"#REGIONAL_CODE#" withValue: @"eu"];
 
-<span class="n">TCProduct</span> <span class="o">*</span><span class="n">product1</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="n">product1</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;22561563&quot;</span><span class="p">;</span>
-<span class="n">product1</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;1.2&quot;</span><span class="p">;</span>
-<span class="n">product1</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;1&quot;</span><span class="p">;</span>
-<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product1</span><span class="p">];</span>
+TCProduct *product1 = [[TCProduct alloc] init];
+product1.ID = @"22561563";
+product1.priceATI = @"1.2";
+product1.quantity = @"1";
+[TCInstance addData: @"#ORDER_PRODUCTS#" withProduct: product1];
 
-<span class="n">TCProduct</span> <span class="o">*</span><span class="n">product2</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="n">product2</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;21669790&quot;</span><span class="p">;</span>
-<span class="n">product2</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;3.4&quot;</span><span class="p">;</span>
-<span class="n">product2</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;2&quot;</span><span class="p">;</span>
-<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product2</span><span class="p">];</span>
+TCProduct *product2 = [[TCProduct alloc] init];
+product2.ID = @"21669790";
+product2.priceATI = @"3.4";
+product2.quantity = @"2";
+[TCInstance addData: @"#ORDER_PRODUCTS#" withProduct: product2];
 
-<span class="n">TCProduct</span> <span class="o">*</span><span class="n">product3</span> <span class="o">=</span> <span class="p">[[</span><span class="n">TCProduct</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="n">product3</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="s">@&quot;3886822&quot;</span><span class="p">;</span>
-<span class="n">product3</span><span class="p">.</span><span class="n">priceATI</span> <span class="o">=</span> <span class="s">@&quot;5.4&quot;</span><span class="p">;</span>
-<span class="n">product3</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s">@&quot;3&quot;</span><span class="p">;</span>
-<span class="p">[</span><span class="n">TCInstance</span> <span class="nl">addData</span><span class="p">:</span> <span class="s">@&quot;#ORDER_PRODUCTS#&quot;</span> <span class="nl">withProduct</span><span class="p">:</span> <span class="n">product3</span><span class="p">];</span>
-<span class="p">[</span><span class="n">TCInstance</span> <span class="n">sendData</span><span class="p">];</span>
-</pre></div>
-
-
+TCProduct *product3 = [[TCProduct alloc] init];
+product3.ID = @"3886822";
+product3.priceATI = @"5.4";
+product3.quantity = @"3";
+[TCInstance addData: @"#ORDER_PRODUCTS#" withProduct: product3];
+[TCInstance sendData];
+</code></pre>
 <p>The following properties can be used with the TCProduct class:</p>
 <ul>
 <li>ID</li>
@@ -223,11 +217,10 @@ anyway for reasons of simplification.</p>
 <li>inStock</li>
 </ul>
 <p>If you want to add more properties, please use the method on your TCProduct instance:</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">product</span><span class="p">.</span><span class="n">customProperties</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;12&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;Menu&quot;</span><span class="p">];</span>
-<span class="p">[</span><span class="n">product</span><span class="p">.</span><span class="n">customProperties</span> <span class="nl">setValue</span><span class="p">:</span> <span class="s">@&quot;0&quot;</span> <span class="nl">forKey</span><span class="p">:</span> <span class="s">@&quot;TakeOut&quot;</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objectivec
+[product.customProperties setValue: @"12" forKey: @"Menu"];
+[product.customProperties setValue: @"0" forKey: @"TakeOut"];
+</code></pre>
 <div class="warning"></div>
 
 <blockquote>
@@ -237,36 +230,32 @@ anyway for reasons of simplification.</p>
 <p>While the application is goind to background, the SDK sends all data that was already queued then stops. This is in order to preserve battery life and not use carrier data when not required.</p>
 <p>But some applications need to be able to continue sending data because they have real background activities. For example listening to music.</p>
 <p>For those cases, we added a way to bypass the way to SDK usually react to background. Please call:</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">tc</span> <span class="n">enableRunningInBackground</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objective-c
+[tc enableRunningInBackground];
+</code></pre>
 <p>One drawback is that we're not able to ascertain when the application will really be killed. In normal mode, we're saving all hits not sent when going in the background, which is not possible here anymore. To be sure to not loose any hits in background mode, we will save much more often the offline hits. </p>
 <p>Please assure that your application has background modes enabled to use this feature.</p>
 <h2 id="deactivating-the-sdk">Deactivating the SDK</h2>
 <p>If you want to show a privacy message to your users allowing them to stop the tracking, you might want to use the following function to stop it if they refuse to be tracked.</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">TCInstance</span> <span class="n">disableSDK</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objectivec
+[TCInstance disableSDK];
+</code></pre>
 <p>What this function does is stopping all systems in the SDK that update automatically or listen to notifications like background or internet reachability. This will also ignore all calls to the SDK by your application so that nothing is treated anymore and you don't have to protect those calls manually.</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">TCInstance</span> <span class="n">enableSDK</span><span class="o">];</span>
-</pre></div>
-
-
+<pre><code>:::java
+[TCInstance enableSDK];
+</code></pre>
 <p>In the case you need to re-enable it after disabling it the first time, you can use this function.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <p>The TagCommander SDK also offers methods to help you with the Quality Assessment of the SDK implementation.</p>
 <h2 id="debugging">Debugging</h2>
 <p>We recommend using TCLogLevel_Verbose while developing your application:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Put it before the TagCommander initialization</span>
-<span class="cp">#ifdef DEBUG</span>
-<span class="p">[</span><span class="n">TCDebug</span> <span class="nl">setDebugLevel</span><span class="p">:</span> <span class="n">TCLogLevel_Verbose</span><span class="p">];</span>
-<span class="p">[</span><span class="n">TCDebug</span> <span class="nl">setNotificationLog</span><span class="p">:</span> <span class="nb">YES</span><span class="p">];</span>
-<span class="cp">#end</span>
-</pre></div>
-
-
+<pre><code>:::objectivec
+// Put it before the TagCommander initialization
+#ifdef DEBUG
+[TCDebug setDebugLevel: TCLogLevel_Verbose];
+[TCDebug setNotificationLog: YES];
+#end
+</code></pre>
 <ul>
 <li>
 <p>The first line allows you to select the verbosity of TagCommander's logs.</p>
@@ -349,25 +338,22 @@ anyway for reasons of simplification.</p>
 <h2 id="persisting-variables">Persisting variables</h2>
 <p>TagCommander permits storing of variables that remain the same in the whole application, such as vendors ID, in a TagCommander instance, instead of sending them each time you want to send data.</p>
 <p>These variables will have a lower priority to the one given by the addData method but will persist for the whole run of the application.</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">TagCommanderInstance</span> <span class="nl">addPermanentData</span><span class="p">:</span> <span class="s">@&quot;#VENDOR_ID#&quot;</span> <span class="nl">withValue</span><span class="p">:</span> <span class="s">@&quot;UE-556XXXXX-01&quot;</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objectivec
+[self.TagCommanderInstance addPermanentData: @"#VENDOR_ID#" withValue: @"UE-556XXXXX-01"];
+</code></pre>
 <p>They can also be removed if necessary.</p>
-<div class="codehilite"><pre><span></span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">TagCommanderInstance</span> <span class="nl">removePermanentData</span><span class="p">:</span> <span class="s">@&quot;#VENDOR_ID#&quot;</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objectivec
+[self.TagCommanderInstance removePermanentData: @"#VENDOR_ID#"];
+</code></pre>
 <h2 id="tcpredefinedvariables">TCPredefinedVariables</h2>
 <p>TagCommander collects a great deal of information to function with accuracy.
 You can ask for any variables computed by TagCommander through a simple getData on TCPredefinedVariables.</p>
 <p>The two following line are doing exactly the same thing, one using the constants declared in the SDK, the second using the name of the variable as defined in PredefinedVariables.xlsx. You can use either one.</p>
-<div class="codehilite"><pre><span></span><span class="n">TCPredefinedVariables</span> <span class="o">*</span><span class="n">predefVariables</span> <span class="o">=</span> <span class="p">[</span><span class="n">TCPredefinedVariables</span> <span class="n">sharedInstance</span><span class="p">];</span>
-<span class="bp">NSString</span> <span class="o">*</span><span class="n">currentVisit</span> <span class="o">=</span> <span class="p">[</span><span class="n">predefVariables</span> <span class="nl">getData</span><span class="p">:</span> <span class="n">kTCPredefinedVariable_CurrentVisitMs</span><span class="p">];</span>
-<span class="bp">NSString</span> <span class="o">*</span><span class="n">currentVisit</span> <span class="o">=</span> <span class="p">[</span><span class="n">predefVariables</span> <span class="nl">getData</span><span class="p">:</span> <span class="s">@&quot;#TC_CURRENT_VISIT_MS#&quot;</span><span class="p">];</span>
-</pre></div>
-
-
+<pre><code>:::objectivec
+TCPredefinedVariables *predefVariables = [TCPredefinedVariables sharedInstance];
+NSString *currentVisit = [predefVariables getData: kTCPredefinedVariable_CurrentVisitMs];
+NSString *currentVisit = [predefVariables getData: @"#TC_CURRENT_VISIT_MS#"];
+</code></pre>
 <p>You can find a full list of variables computed by the SDK, explanations and examples here: </p>
 <p><a href="PredefinedVariables.md">TCPredefinedVariables</a></p>
 <h1 id="swift">Swift</h1>
@@ -391,6 +377,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 04/06/2019 17:04:39</p>
+<p>This documentation was generated on 07/06/2019 17:05:45</p>
 </body>
 </html>

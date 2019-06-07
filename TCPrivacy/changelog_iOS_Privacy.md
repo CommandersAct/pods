@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.3.8 : 06/07 2019*
+
+	~ Corrected merge error preventing some consent hit to be sent.
+
+
 *4.3.7 : 05/15 2019*
 
 	+ Generating consent string for IAB version 1.
