@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.3.10 : 08/05 2019*
+
+    ~ User-agent encoding error in stand alone privacy. 
+
+
 *4.3.9 : 08/02 2019*
 
     ~ Only passing categories ID related IAB for Consent String generation. 

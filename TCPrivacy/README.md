@@ -5,7 +5,7 @@
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
 <p>Last update : <em>05/08/2019</em><br />
-Release version : <em>4.3.9</em></p>
+Release version : <em>4.3.10</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -258,6 +258,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/08/2019 10:53:38</p>
+<p>This documentation was generated on 05/08/2019 14:23:25</p>
 </body>
 </html>
