@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.3.9 : 08/02 2019*
+
+    ~ Only passing categories ID related IAB for Consent String generation. 
+    
+
 *4.3.8 : 06/07 2019*
 
 	~ Corrected merge error preventing some consent hit to be sent.

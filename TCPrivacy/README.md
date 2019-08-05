@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>13/06/2019</em><br />
-Release version : <em>4.3.8</em></p>
+<p>Last update : <em>05/08/2019</em><br />
+Release version : <em>4.3.9</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -49,7 +49,8 @@ Release version : <em>4.3.8</em></p>
 <p>Having the user consent is essential to send sensible information like the IDFA/AAID.
 To prevent having to manually save the consent asked to the user and manually using it with our SDKs, we created a module helping you do it automatically.</p>
 <p>This module will gather the consent and will:</p>
-<pre><code>- Save it and reload it every time the application is launched.
+<pre><code>- Display a consent page (if needed)
+- Save consent and reload it every time the application is launched.
 - Save and check the validity of the consent. The validity duration is set to 13 months.
 - Send a hit to our servers to record the consent.
 - Enable or disable the SDK. (if used alongside the SDK)
@@ -257,6 +258,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 13/06/2019 16:02:48</p>
+<p>This documentation was generated on 05/08/2019 10:53:38</p>
 </body>
 </html>

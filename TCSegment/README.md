@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>13/06/2019</em><br />
+<p>Last update : <em>05/08/2019</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -88,6 +88,6 @@ NSArray *segments = [[TCSegmentation sharedInstance] getSegments];
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 13/06/2019 16:02:48</p>
+<p>This documentation was generated on 05/08/2019 10:53:38</p>
 </body>
 </html>
