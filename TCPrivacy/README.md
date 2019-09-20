@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>05/08/2019</em><br />
-Release version : <em>4.3.10</em></p>
+<p>Last update : <em>20/09/2019</em><br />
+Release version : <em>4.4.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -73,8 +73,10 @@ To prevent having to manually save the consent asked to the user and manually us
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
 <p>/!\ This will be very simplified as we will generate a JSON from the Tag Commander interface describing your privacy and categories. (2nd Quarter 2019)</p>
 <p>The setup is really simple, pass to the TCMobilePrivacy object your site ID, application context and a pointer to your TagCommanders' SDK instance. If you want to add your consent version, you can add it to the parameters as a NSString.</p>
-<pre><code>:::java
-[[TCMobilePrivacy sharedInstance] setSiteID: 3311 TCInstance: tc AndVersion: @"001"];
+<pre><code>[[TCMobilePrivacy sharedInstance] setSiteID: 3311 TCInstance: tc AndVersion: @"001"];
+</code></pre>
+<p>If you're using you're own Privacy Center, use the following function instead:</p>
+<pre><code>[[TCMobilePrivacy sharedInstance] customPCMSetSiteID: siteID privacyID: privacyID andTCInstance: tc];
 </code></pre>
 <p>This call will check the saved consent, putting the SDK on hold if nothing is fount, and start/stop the SDK if something is saved.
 It will then the check the consent validity, if it's too old, you can implement a callback treating what to do then. Please check the Callback part.</p>
@@ -83,12 +85,10 @@ It will then the check the consent validity, if it's too old, you can implement 
 <p>Modules: Core, Privacy</p>
 <p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID  application context. If you want to add your consent version, you can add it to the parameters as a String.</p>
-<pre><code>:::java
-[[TCMobilePrivacy sharedInstance] setSiteID: siteID andPrivacyID: privacyID];
+<pre><code>[[TCMobilePrivacy sharedInstance] setSiteID: siteID andPrivacyID: privacyID];
 </code></pre>
-<p>A lot of things are hidden behind this call:</p>
-<pre><code>- it will check saved consent
-- try to update and replace the JSON configuration
+<p>If you're using you're own Privacy Center, use the following function instead:</p>
+<pre><code>[[TCMobilePrivacy sharedInstance] customPCMSetSiteID: siteID privacyID: privacyID];
 </code></pre>
 <h2 id="saving-consent">Saving consent</h2>
 <p>Here is where the IDs of the categories matters.</p>
@@ -96,8 +96,7 @@ It will then the check the consent validity, if it's too old, you can implement 
 <p>If you're using the Privacy Center, nothing has to be done here, it will automatically propagate the consent to all other systems. And the ID will be the one used in the configuration file. Please check the Privacy Center part for more information.</p>
 <h3 id="manually-displayed-consent">Manually displayed consent</h3>
 <p>Once the user validated his consent, you can the send the information to the Privacy module as follow:</p>
-<pre><code>:::objective-c
-NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
+<pre><code>NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
 [consent setObject: @"1" forKey: @"PRIVACY_CAT_1"];
 [consent setObject: @"0" forKey: @"PRIVACY_CAT_2"];
 [consent setObject: @"1" forKey: @"PRIVACY_CAT_3"];
@@ -116,14 +115,12 @@ NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3]
 <h3 id="iab-with-privacy-center">IAB with Privacy Center</h3>
 <p>As explained above IAB is not made to work with the privacy center for now, so if you still want to use the privacy center, please do it like this:</p>
 <p>You first need to remove the automatic link between the module and IAB by disabling IAB:</p>
-<pre><code>:::objective-c
-[TCMobilePrivacy sharedInstance].enableIAB = NO;
+<pre><code>[TCMobilePrivacy sharedInstance].enableIAB = NO;
 [TCMobilePrivacy sharedInstance].vendorListVersion = 146;
 </code></pre>
 <p>You need to manually set the vendorListVersion also as this is required during the creation of the consent string (we default at 146 which is the version )</p>
 <p>Then when you want to save the consent you will need to manually send information:</p>
-<pre><code>:::objective-c
-NSDictionary *consent = [[NSMutableDictionary alloc] init];
+<pre><code>NSDictionary *consent = [[NSMutableDictionary alloc] init];
 [consent setValue: @"1" forKey: @"PRIVACY_CAT_1"];
 [consent setValue: @"1" forKey: @"PRIVACY_CAT_2"];
 [consent setValue: @"1" forKey: @"PRIVACY_VEN_52"];
@@ -136,17 +133,14 @@ For now we can't do better since we're not distinguishing vendors and category i
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
 <p>If you want to use an ID already inside the SDK:</p>
-<pre><code>:::objective-c
-[[TCMobilePrivacy sharedInstance] setConsentUser: @"#TC_IDFA#"];
+<pre><code>[[TCMobilePrivacy sharedInstance] setConsentUser: @"#TC_IDFA#"];
 </code></pre>
 <p>If you want to use an ID from your data layer, please first add it to the permanant store:</p>
-<pre><code>:::objective-c
-[tc addPermanentData: @"MY_ID" withValue: @"12345"];
+<pre><code>[tc addPermanentData: @"MY_ID" withValue: @"12345"];
 [[TCMobilePrivacy sharedInstance] setConsentUser: @"MY_ID"];
 </code></pre>
 <p>and if you simply want to simply pass the information:</p>
-<pre><code>:::objective-c
-[[TCMobilePrivacy sharedInstance] setConsentUser: @"123456765432"];
+<pre><code>[[TCMobilePrivacy sharedInstance] setConsentUser: @"123456765432"];
 </code></pre>
 <p>This can be used to save the display of the consent, and giving the consent.</p>
 <p>This ID is very important because it will be the basic information used to get back the consent when you need a proof.</p>
@@ -164,8 +158,7 @@ This allow you to prove that a user has indeed been shown the consent screen eve
 <p>In some cases, client also use this to infer user consent since he continued using the application after he was shown the consent screen.
 We don't recommend this behaviour, please discuss it with your setup team first.</p>
 <p>Either way it's interesting to be able to log the fact that the consent screen has been viewed. If you're not using the Privacy Center, please call:</p>
-<pre><code>:::java
-[[TCMobilePrivacy sharedInstance] viewConsent];
+<pre><code>[[TCMobilePrivacy sharedInstance] viewConsent];
 </code></pre>
 <h3 id="global-consent">Global consent</h3>
 <p>We integrated an On/Off switch so that the user can consent to all categories at the same time.
@@ -175,17 +168,14 @@ It's not mandatory yet, but recommended.</p>
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
-<pre><code>:::java
-- (void) consentUpdated: (NSDictionary *) consent;
+<pre><code>- (void) consentUpdated: (NSDictionary *) consent;
 </code></pre>
 <p>Called when you give us the user selected consents, or when we load the saved consent from the SDK.
 We have a Dictionnary which is the same as the one given to our SDK with keys PRIVACY_CAT_n and value @"0" or @"1".</p>
-<pre><code>:::java
-- (void) consentOutdated;
+<pre><code>- (void) consentOutdated;
 </code></pre>
 <p>This is called after 13 months without change in the user consent. This can allow you to force displaying the consent the same way you would on first launch.</p>
-<pre><code>:::java
-- (void) consentCategoryChanged;
+<pre><code>- (void) consentCategoryChanged;
 </code></pre>
 <p>When you make a change in the JSON, there is nothing special to do.
 But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
@@ -196,8 +186,7 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <p>The Privacy Center is represented by a JSON file that describes the interfaces that will be created by native code inside the application.</p>
 <p>We create an UIViewController to create the privacy center view.
 The offline JSON should be inside the project code folder.</p>
-<pre><code>:::objective-c
-TCPrivacyCenterViewController *PCM = [[TCPrivacyCenterViewController alloc] init];
+<pre><code>TCPrivacyCenterViewController *PCM = [[TCPrivacyCenterViewController alloc] init];
 UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSaveButtonText]
                                                                style: UIBarButtonItemStylePlain
                                                               target: nil
@@ -258,6 +247,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/08/2019 14:23:25</p>
+<p>This documentation was generated on 20/09/2019 15:47:41</p>
 </body>
 </html>

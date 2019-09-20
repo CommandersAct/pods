@@ -6,6 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.4.1 : 11/20 2019*
+
+    + Refactoring on configuration files which now are in the priority queue.
+
+
 *4.3.3 : 06/04 2019*
 
 	- Removed useless (and deprecated key) in Info.plist

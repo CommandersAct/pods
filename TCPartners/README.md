@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>05/08/2019</em><br />
-Release version : <em>4.3.1</em></p>
+<p>Last update : <em>20/09/2019</em><br />
+Release version : <em>4.4.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -46,13 +46,21 @@ You can change this activation by using on of the 3 following functions:</p>
 * @param value the specific value.
 */
 - (void) activateOnKey: (NSString *) key andValue: (NSString *) value
+
+/**
+ * This function tells the partner to only treat hit when the specified key is NOT in the datalayer.
+ * @param key the key to prevent the activation.
+ */
+- (void) activateOnAllHitsButKey: (NSString *) key
 </code></pre>
 <p>So think carefully about which activation method you want for your partners.</p>
 <h1 id="adobe-audience-manager-aam">Adobe Audience Manager (AAM)</h1>
 <p>The point of this connector is the send information to Adobe Audience Manager and get back the segments corresponding to the app user.</p>
-<pre><code>:::objective-c
-[[TCPartners_AdobeAudienceManager sharedInstance] setDataSourceID: 81811 andPlatformID: 20201];
+<pre><code>[[TCPartners_AdobeAudienceManager sharedInstance] setDataSourceID: 81811 andPlatformID: 20201];
 [[TCPartners_AdobeAudienceManager sharedInstance] initSegmentation];
+</code></pre>
+<p>If you want to use your custom configuration to use offline segments ID, please also add this line.</p>
+<pre><code>[[TCPartners_AdobeAudienceManager sharedInstance] addOfflineConfigurationForSiteID: 3311 andContainerID: 1];
 </code></pre>
 <p>This connector only works if we have and IDFA or AAID.</p>
 <h2 id="hit">Hit</h2>
@@ -93,6 +101,6 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/08/2019 14:23:25</p>
+<p>This documentation was generated on 20/09/2019 15:47:41</p>
 </body>
 </html>

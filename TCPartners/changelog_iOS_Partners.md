@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.4.1 : 11/20 2019*
+
+    ~ /!\ Update Core module alongside this module.
+    + Allowing for offline and distance segments to be declared beforehand.
+    + Adding a "all but for key" activation system for partners.
 
 *4.3.1 : 05/09 2019*
 

@@ -1,6 +1,13 @@
 Changelog iOS
 =============
 
+*4.4.1 : 11/20 2019*
+
+    ~ /!\ Update Core module alongside this module.
+    ~ /!\ Function to initialize Privacy have changed
+    ~ Refactoring on file configurations
+    + We now have a class to manage distant configuration and privacy versions are taken from the configuration. 
+
 *4.3.10 : 08/05 2019*
 
     ~ User-agent encoding error in stand alone privacy. 
