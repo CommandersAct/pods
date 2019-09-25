@@ -1,6 +1,10 @@
 Changelog iOS
 =================
 
+*4.4.3 : 11/25 2019*
+
+	+ Adding a "all but for key + value" activation system for partners.
+
 *4.4.2 : 11/23 2019*
 
 	+ Protection when segment list is empty.
