@@ -1,11 +1,11 @@
 Changelog iOS
 =============
 
-*4.4.2 : 11/25 2019*
+*4.4.2 : 09/25 2019*
 
     ~ Correction on TCConfigurationFactory initialisation when not using CMP
 
-*4.4.1 : 11/20 2019*
+*4.4.1 : 09/20 2019*
 
     ~ /!\ Update Core module alongside this module.
     ~ /!\ Function to initialize Privacy have changed

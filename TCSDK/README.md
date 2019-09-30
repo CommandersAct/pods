@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>25/09/2019</em><br />
-Release version : <em>4.3.1</em></p>
+<p>Last update : <em>30/09/2019</em><br />
+Release version : <em>4.4.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -102,7 +102,6 @@ forget them when setting your dynamic variables.</p>
 <h2 id="dependencies">Dependencies</h2>
 <p>TagCommander requires the following frameworks:</p>
 <ul>
-<li>CoreLocation.framework</li>
 <li>SystemConfiguration.framework</li>
 <li>libz.dylib</li>
 </ul>
@@ -121,8 +120,7 @@ forget them when setting your dynamic variables.</p>
 <p>It is recommended to initialise TagCommander in your <code>AppDelegate's applicationdidFinishLaunchingWithOptions</code>
  so it will be operational as soon as possible.</p>
 <p>A single line of code is required to properly initialize an instance of TagCommander:</p>
-<pre><code>:::objectivec
-TagCommander *TagCommanderInstance = [[TagCommander alloc] initWithSiteID: siteID
+<pre><code>TagCommander *TagCommanderInstance = [[TagCommander alloc] initWithSiteID: siteID
                                                            andContainerID: containerID];
 </code></pre>
 <div class="warning"></div>
@@ -132,23 +130,22 @@ TagCommander *TagCommanderInstance = [[TagCommander alloc] initWithSiteID: siteI
 of siteID's and containerID's, you might want to use it as a Singleton
 anyway for reasons of simplification.</p>
 </blockquote>
-<p>If you want to use localisation, you will need to instantiation TCLocation after TagCommander.</p>
-<pre><code>:::objectivec
-[TCLocation sharedInstance];
-</code></pre>
-<p>We have set the default setInterval to 30 minutes to save battery. If you need another time precision, you can set TCLocation.GPSInterval to any value and it will be used instead of the default value.</p>
+<div class="warning"></div>
+
+<blockquote>
+<p>Since Apple now forces NSLocationAlwaysUsageDescription if they find any code related on location, we are removing TCLocation.
+If you want to still use the same variables to match pre-existing tags, please use #TC_LONGITUDE# and #TC_LATITUDE#.</p>
+</blockquote>
 <h2 id="executing-tags">Executing tags</h2>
 <p>For every element that needs tagging in your application, you need to call addData on your TagCommander instance and when you want to send all those information to the server, you will simply need to call sendData.</p>
-<pre><code>:::objectivec
-[TCInstance addData: @"#EVENT#" withValue: @"click"];
+<pre><code>[TCInstance addData: @"#EVENT#" withValue: @"click"];
 [TCInstance addData: @"#PAGE#" withValue: @"order"];
 [TCInstance addData: @"#AMOUNT#" withValue: @"584.46"];
 
 [TCInstance sendData];
 </code></pre>
-<p>For compatibility reasons, we can still use TCAppVars to pass those information to TagCommander.</p>
-<pre><code>:::objectivec
-TCAppVars *appVar = [[TCAppVars alloc] init];
+<p>For compatibility reasons or for synchronisation reasons, you can still use TCAppVars to pass those information to TagCommander.</p>
+<pre><code>TCAppVars *appVar = [[TCAppVars alloc] init];
 [appVar set: @"#EVENT#" withValue: @"click"];
 [appVar set: @"#PAGE#" withValue: @"order"];
 [appVar set: @"#AMOUNT#" withValue: @"584.46"];
@@ -176,8 +173,7 @@ http://engage.commander1.com/dms?tc_s=3109&amp;tc_type=dms&amp;data_sysname=#TC_
 <p>There are some tags that need to be passed a list of dictionaries, usually representing products. By passing complex information, we are able to create and send complex hits or many hits at the same time.</p>
 <p>Tags that needs to be passed a list of dictionaries are easy to spot in the configuration. They have appended to the name of the dynamic variable the name of the key that is retrieved from the dictionary.</p>
 <p>Most of the time the data are provided ready to use, but we provide a TCProduct class representing a product and its possible values.</p>
-<pre><code>:::objectivec
-[TCInstance addData: @"#EVENT#" withValue: @"viewCart"];
+<pre><code>[TCInstance addData: @"#EVENT#" withValue: @"viewCart"];
 [TCInstance addData: @"#PARTNER_ID#" withValue: @"868"];
 [TCInstance addData: @"#REGIONAL_CODE#" withValue: @"eu"];
 
@@ -217,8 +213,7 @@ product3.quantity = @"3";
 <li>inStock</li>
 </ul>
 <p>If you want to add more properties, please use the method on your TCProduct instance:</p>
-<pre><code>:::objectivec
-[product.customProperties setValue: @"12" forKey: @"Menu"];
+<pre><code>[product.customProperties setValue: @"12" forKey: @"Menu"];
 [product.customProperties setValue: @"0" forKey: @"TakeOut"];
 </code></pre>
 <div class="warning"></div>
@@ -230,27 +225,23 @@ product3.quantity = @"3";
 <p>While the application is goind to background, the SDK sends all data that was already queued then stops. This is in order to preserve battery life and not use carrier data when not required.</p>
 <p>But some applications need to be able to continue sending data because they have real background activities. For example listening to music.</p>
 <p>For those cases, we added a way to bypass the way to SDK usually react to background. Please call:</p>
-<pre><code>:::objective-c
-[tc enableRunningInBackground];
+<pre><code>[tc enableRunningInBackground];
 </code></pre>
 <p>One drawback is that we're not able to ascertain when the application will really be killed. In normal mode, we're saving all hits not sent when going in the background, which is not possible here anymore. To be sure to not loose any hits in background mode, we will save much more often the offline hits. </p>
 <p>Please assure that your application has background modes enabled to use this feature.</p>
 <h2 id="deactivating-the-sdk">Deactivating the SDK</h2>
 <p>If you want to show a privacy message to your users allowing them to stop the tracking, you might want to use the following function to stop it if they refuse to be tracked.</p>
-<pre><code>:::objectivec
-[TCInstance disableSDK];
+<pre><code>[TCInstance deactivateSDK];
 </code></pre>
 <p>What this function does is stopping all systems in the SDK that update automatically or listen to notifications like background or internet reachability. This will also ignore all calls to the SDK by your application so that nothing is treated anymore and you don't have to protect those calls manually.</p>
-<pre><code>:::java
-[TCInstance enableSDK];
+<pre><code>[TCInstance activateSDK];
 </code></pre>
 <p>In the case you need to re-enable it after disabling it the first time, you can use this function.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <p>The TagCommander SDK also offers methods to help you with the Quality Assessment of the SDK implementation.</p>
 <h2 id="debugging">Debugging</h2>
 <p>We recommend using TCLogLevel_Verbose while developing your application:</p>
-<pre><code>:::objectivec
-// Put it before the TagCommander initialization
+<pre><code>// Put it before the TagCommander initialization
 #ifdef DEBUG
 [TCDebug setDebugLevel: TCLogLevel_Verbose];
 [TCDebug setNotificationLog: YES];
@@ -349,8 +340,7 @@ product3.quantity = @"3";
 <p>TagCommander collects a great deal of information to function with accuracy.
 You can ask for any variables computed by TagCommander through a simple getData on TCPredefinedVariables.</p>
 <p>The two following line are doing exactly the same thing, one using the constants declared in the SDK, the second using the name of the variable as defined in PredefinedVariables.xlsx. You can use either one.</p>
-<pre><code>:::objectivec
-TCPredefinedVariables *predefVariables = [TCPredefinedVariables sharedInstance];
+<pre><code>TCPredefinedVariables *predefVariables = [TCPredefinedVariables sharedInstance];
 NSString *currentVisit = [predefVariables getData: kTCPredefinedVariable_CurrentVisitMs];
 NSString *currentVisit = [predefVariables getData: @"#TC_CURRENT_VISIT_MS#"];
 </code></pre>
@@ -377,6 +367,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 25/09/2019 14:56:13</p>
+<p>This documentation was generated on 30/09/2019 17:20:35</p>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="predefined-variables-guide">Predefined variables Guide</h1>
 <p><strong>SDK TagCommander Android and iPhone</strong></p>
-<p>Last update : <em>25/09/2019</em><br /></p>
+<p>Last update : <em>30/09/2019</em><br /></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -55,8 +55,8 @@
 <li><a href="#35tc_idfv">#TC_IDFV</a></li>
 <li><a href="#35tc_is_tracking_enabled">#TC_IS_TRACKING_ENABLED</a></li>
 <li><a href="#35tc_limit_user_tracking_enabled">#TC_LIMIT_USER_TRACKING_ENABLED</a></li>
-<li><a href="#35tc_longitude">#TC_LONGITUDE</a></li>
-<li><a href="#35tc_latitude">#TC_LATITUDE</a></li>
+<li><a href="#35tc_longitude-ios-before-sdk-441">#TC_LONGITUDE# (iOS: Before SDK 4.4.1)</a></li>
+<li><a href="#35tc_latitude-ios-before-sdk-441">#TC_LATITUDE# (iOS: Before SDK 4.4.1)</a></li>
 <li><a href="#35tc_bundle_identifier">#TC_BUNDLE_IDENTIFIER</a></li>
 <li><a href="#35tc_application_name">#TC_APPLICATION_NAME</a></li>
 <li><a href="#35tc_runtime_name">#TC_RUNTIME_NAME</a></li>
@@ -365,7 +365,7 @@ Should be at least one, since during launch the application is considered as goi
 <li>Galaxy S3: true</li>
 <li>iPhone 5: YES</li>
 </ul>
-<h2 id="35tc_longitude">#TC_LONGITUDE</h2>
+<h2 id="35tc_longitude-ios-before-sdk-441">#TC_LONGITUDE# (iOS: Before SDK 4.4.1)</h2>
 <p>/!\ Require user consent.</p>
 <p>The longitudinal position of the user using the device. It won't be available if the user turned off all means of localisation.</p>
 <p>This Variable requires you to ask permission to use location to your users.</p>
@@ -373,7 +373,7 @@ Should be at least one, since during launch the application is considered as goi
 <li>Galaxy Tab3: 2.3263269</li>
 <li>iPhone 4s: 2.2311654</li>
 </ul>
-<h2 id="35tc_latitude">#TC_LATITUDE</h2>
+<h2 id="35tc_latitude-ios-before-sdk-441">#TC_LATITUDE# (iOS: Before SDK 4.4.1)</h2>
 <p>/!\ Require user consent.</p>
 <p>The latitudinal position of the user using the device. It won't be available if the user turned off all means of localisation.</p>
 <p>This Variable requires you to ask permission to use location to your users.</p>

@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.4.1 : 09/30 2019*
+
+	- Removed all functions linked to Location update. Users not using it might be refused submission otherwise.
+
 *4.3.1 : 02/04 2019*
 
 	~ Put back function to deactivate the SDK manually in the case we don't need the full privacy module and still want to deactivate the SDK.

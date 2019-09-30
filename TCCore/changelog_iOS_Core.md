@@ -6,7 +6,13 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
-*4.4.1 : 11/20 2019*
+
+*4.5.1 : 09/30 2019*
+
+    ~ Removing old UIWebView now deprecated for getting user-agent with WKWebView.
+
+
+*4.4.1 : 09/20 2019*
 
     + Refactoring on configuration files which now are in the priority queue.
 
