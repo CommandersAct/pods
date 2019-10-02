@@ -7,6 +7,10 @@ Changelog iOS
 [Previous changelist](../res/changelog_iOS_3.md)
 
 
+*4.5.2 : 10/02 2019*
+
+    ~ Verifying that all WKWebView opererations are done on the main thread.
+
 *4.5.1 : 09/30 2019*
 
     ~ Removing old UIWebView now deprecated for getting user-agent with WKWebView.
