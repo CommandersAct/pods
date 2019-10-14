@@ -7,6 +7,10 @@ Changelog iOS
 [Previous changelist](../res/changelog_iOS_3.md)
 
 
+*4.5.3 : 10/14 2019*
+
+	+ Removed the need to have the offline counterpart of configuration files.
+
 *4.5.2 : 10/02 2019*
 
     ~ Verifying that all WKWebView opererations are done on the main thread.

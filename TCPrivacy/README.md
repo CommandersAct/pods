@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>02/10/2019</em><br />
-Release version : <em>4.4.2</em></p>
+<p>Last update : <em>14/10/2019</em><br />
+Release version : <em>4.4.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -107,6 +107,7 @@ It will then the check the consent validity, if it's too old, you can implement 
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
 <h2 id="using-iab-consent-string">Using IAB Consent String</h2>
 <p>For now we can create a consent string, but we can't display the privacy center with information from the vendor list. We're creating a first release with only the consent string before so that all our client that don't use the Privacy Center can use IAB.</p>
+<p>If you want to have an offline version of the official vendor list, please add it to your project named "vendorlist.json" at the same place as you would with the privacy.json of the PCM (please check the PCM part).</p>
 <p>First you will need to add the consent library to your project. You will find it in the same repository.</p>
 <p>This library is the TCIAB module, you will find the usual podspecs in the repository. Please beware that depending on your XCode version the universal versions might not be working.</p>
 <p>When you init the Privacy module it will check if this library is present in your project. If so, it will save in the phone that a CMP is present.</p>
@@ -247,6 +248,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/10/2019 16:35:10</p>
+<p>This documentation was generated on 14/10/2019 16:10:33</p>
 </body>
 </html>

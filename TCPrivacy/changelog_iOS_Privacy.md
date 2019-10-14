@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.4.3 : 10/14 2019*
+
+	~ Correction on vendorlist.json usage.
+	/!\ the file should be named vendorlist.json like in Android.
+
 *4.4.2 : 09/25 2019*
 
     ~ Correction on TCConfigurationFactory initialisation when not using CMP
