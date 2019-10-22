@@ -1,6 +1,10 @@
 Changelog iOS
 =================
 
+*4.4.4 : 10/21 2019*
+
+	+ Adding a way to create offline segments for faster customisation.
+
 *4.4.3 : 09/25 2019*
 
 	+ Adding a "all but for key + value" activation system for partners.
