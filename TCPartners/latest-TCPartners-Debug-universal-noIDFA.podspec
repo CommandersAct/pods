@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "latest-TCPartners-Debug-universal-noIDFA"
-  s.version      = "4.4.3"
+  s.version      = "4.4.4"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCPartners"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
                         Copyright 2013 - present Commanders Act. All rights reserved.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCPartners for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPartners/Debug-universal/4.4.3-noIDFA.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPartners/Debug-universal/4.4.4-noIDFA.zip" }
   s.preserve_paths      = 'TCPartners.framework'
   #s.public_header_files = 'TCPartners.framework/Headers/*.h'
   s.vendored_frameworks = 'TCPartners.framework'
