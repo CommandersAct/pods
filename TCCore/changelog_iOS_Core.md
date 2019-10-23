@@ -6,6 +6,9 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.5.4 : 10/23 2019*
+
+	~ Correction for 4.5.3 where no offline configuration would still cause a crash in preSaveOfflineJSON.
 
 *4.5.3 : 10/14 2019*
 
