@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCPartners for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPartners/Release-iphoneos/4.4.4-Bitcode.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPartners/4/4/4/Release-iphoneos/TCPartners-Bitcode.zip" }
   s.preserve_paths      = 'TCPartners.framework'
   #s.public_header_files = 'TCPartners.framework/Headers/*.h'
   s.vendored_frameworks = 'TCPartners.framework'
