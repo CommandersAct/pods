@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.4.4 : 10/29 2019*
+
+	+ All the switch positions of the Privacy Center can now default to the off position by using : [TCMobilePrivacy sharedInstance].switchDefaultState = NO;
+
 *4.4.3 : 10/14 2019*
 
 	~ Correction on vendorlist.json usage.

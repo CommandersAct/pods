@@ -1,6 +1,0 @@
-framework module TCCore {
-  umbrella header "TCCore.h"
-
-  export *
-  module * { export * }
-}

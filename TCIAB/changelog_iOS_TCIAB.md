@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.3.2 : 10/29 2019*
+
+    ~ Protection on maxVendorID which can be empty before the vendorList is updated.
+
 *4.3.1 : 10/24 2019*
 
 	+ Added several new keys to the user defaults.
