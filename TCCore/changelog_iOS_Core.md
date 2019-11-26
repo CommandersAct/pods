@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.5.5 : 11/11 2019*
+
+	+ Allow to change the bundle where the module reads the default configuration files on a file per file basis. Please read the Privacy module's documentation.
+
 *4.5.4 : 10/23 2019*
 
 	~ Correction for 4.5.3 where no offline configuration would still cause a crash in preSaveOfflineJSON.

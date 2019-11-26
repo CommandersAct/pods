@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>29/10/2019</em><br />
-Release version : <em>4.3.1</em></p>
+<p>Last update : <em>26/11/2019</em><br />
+Release version : <em>4.3.4</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -29,6 +29,6 @@ Release version : <em>4.3.1</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 29/10/2019 09:52:52</p>
+<p>This documentation was generated on 26/11/2019 14:18:59</p>
 </body>
 </html>

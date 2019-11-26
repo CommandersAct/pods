@@ -1,6 +1,14 @@
 Changelog iOS
 =============
 
+*4.3.4 : 11/23 2019*
+
+    ~ The consent string was not compliant to BASE64url (RFC 4648) and caused some vendors to crash.
+
+*4.3.3 : 10/31 2019*
+
+    ~ Corrected the key IABConsent_SubjectToGDPR which was not saved as a string.
+
 *4.3.2 : 10/29 2019*
 
     ~ Protection on maxVendorID which can be empty before the vendorList is updated.

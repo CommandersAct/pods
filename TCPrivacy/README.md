@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>29/10/2019</em><br />
-Release version : <em>4.4.4</em></p>
+<p>Last update : <em>26/11/2019</em><br />
+Release version : <em>4.4.5</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -84,6 +84,10 @@ Join those IDs with a "consent version". Default is 001, but if you change the i
 <p>This call will check the saved consent, putting the SDK on hold if nothing is fount, and start/stop the SDK if something is saved.
 It will then the check the consent validity, if it's too old, you can implement a callback treating what to do then. Please check the Callback part.</p>
 <p>Please note that start and stop have a notification sent with them, you can listen to them if needed: kTCNotification_StartingTheSDK and kTCNotification_StoppingTheSDK.</p>
+<p>If you need to store configuration files in another bundle than the main one, you can call the following line:</p>
+<pre><code>[[TCConfigurationFileFactory sharedInstance] setBundle: myBundle forConfiguration: @"vendorlist"];
+</code></pre>
+<p>But please call this <em>before</em> calling [TCMobilePrivacy sharedInstance].</p>
 <h3 id="standalone">Standalone</h3>
 <p>Modules: Core, Privacy</p>
 <p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
@@ -256,6 +260,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 29/10/2019 09:52:52</p>
+<p>This documentation was generated on 26/11/2019 14:18:59</p>
 </body>
 </html>

@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+
+*4.4.5 : 11/11 2019*
+
+	+ Changing the switch tint color.
+
 *4.4.4 : 10/29 2019*
 
 	+ All the switch positions of the Privacy Center can now default to the off position by using : [TCMobilePrivacy sharedInstance].switchDefaultState = NO;
