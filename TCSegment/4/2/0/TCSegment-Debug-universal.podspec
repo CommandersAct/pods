@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCSegment-Debug-universal"
+  s.name         = "TCSegment-Debug-universal"
   s.version      = "4.2.0"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSegment"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
