@@ -6,6 +6,13 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.5.0 : 12/18 2019*
+
+	/!\ With this update you need to also update the core module to 4.6.0+
+	- Removing armv7s support.
+	- Removed didEnterBackground and willEnterForeground as public method, they should not be used outside the of the SDK.
+	- Removed battery monitoring.
+
 *4.4.1 : 09/30 2019*
 
 	- Removed all functions linked to Location update. Users not using it might be refused submission otherwise.

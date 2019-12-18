@@ -6,6 +6,14 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.6.0 : 12/18 2019*
+
+	/!\ With this update you need to also update the SDK module to 4.5.0+
+	- Removing armv7s support.
+	+ TVOS compatibility.
+	+ Fixed useragent on TVOS since it's not compatible with WebKit.
+	- Removed battery monitoring.
+
 *4.5.5 : 11/11 2019*
 
 	+ Allow to change the bundle where the module reads the default configuration files on a file per file basis. Please read the Privacy module's documentation.

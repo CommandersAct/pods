@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.2.0 : 12/18 2019*
+
+	- Removing armv7s support.
+
 *4.1.0 : 02/06 2017*
 
 	+ Beacon module release.

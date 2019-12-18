@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>26/11/2019</em><br />
-Release version : <em>4.4.5</em></p>
+<p>Last update : <em>18/12/2019</em><br />
+Release version : <em>4.5.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -38,6 +38,7 @@ Release version : <em>4.4.5</em></p>
 </ul>
 </li>
 <li><a href="#reacting-to-consent">Reacting to consent</a></li>
+<li><a href="#consent-internal-api">Consent internal API</a></li>
 <li><a href="#tcdemo">TCDemo</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
 <li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
@@ -188,6 +189,67 @@ We have a Dictionnary which is the same as the one given to our SDK with keys PR
 </code></pre>
 <p>When you make a change in the JSON, there is nothing special to do.
 But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
+<h2 id="consent-internal-api">Consent internal API</h2>
+<p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.</p>
+<pre><code>/**
+ * Checks if consent has already been given by checking if consent information is saved.
+ * @return YES if the consent was already given, NO otherwise.
+ */
++ (BOOL) isConsentAlreadyGiven;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Return the epochformatted timestamp of the last time the consent was saved.
+ * @return epochformatted timestamp or 0.
+ */
++ (unsigned long long) getLastTimeConsentWasSaved;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Check if a Category has been accepted.
+ * @param ID the category ID.
+ * @return YES or NO.
+ */
++ (BOOL) isCategoryAccepted: (int) catID;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Check if a vendor has been accepted.
+ * @param ID the vendor ID.
+ * @return YES or NO.
+ */
++ (BOOL) isVendorAccepted: (int) venID;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Get the list of all accepted vendors.
+ * @return a List of PRIVACY_VEN_IDs.
+ */
++ (NSArray&lt;NSString *&gt; *) getAcceptedCategories;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Get the list of all accepted vendors.
+ * @return a List of PRIVACY_VEN_IDs.
+ */
++ (NSArray&lt;NSString *&gt; *) getAcceptedVendors;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Get the list of everything that was accepted.
+ * @return a List of PRIVACY_VEN_IDs and PRIVACY_CAT_IDs.
+ */
++ (NSArray&lt;NSString *&gt; *) getAllAcceptedConsent;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * /!\ Only if you're using the IAB module.
+ * Get the generated consent string.
+ * @return the generated consent string. Ex. BOrufEYOrufEYBaABLFRCSuAAAA-eADAFEABIAHo
+ */
++ (NSString *) getIABConsentString;
+</code></pre>
+<p>&nbsp;</p>
 <h2 id="tcdemo">TCDemo</h2>
 <p>You can, of course, check our demo project for a simple implementation example.</p>
 <p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/iOS">Privacy Demo</a></p>
@@ -260,6 +322,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 26/11/2019 14:18:59</p>
+<p>This documentation was generated on 18/12/2019 15:41:25</p>
 </body>
 </html>

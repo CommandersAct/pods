@@ -1,6 +1,10 @@
 Changelog iOS
 =================
 
+*4.5.0 : 12/18 2019*
+
+	- Removing armv7s support.
+
 *4.4.4 : 10/21 2019*
 
 	+ Adding a way to create offline segments for faster customisation.

@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.5.0 : 12/18 2019*
+
+	- Removing armv7s support.
+	+ Added an API class to check the content or status of the consent. Please check the TCPrivacy documentation on github.
 
 *4.4.5 : 11/11 2019*
 

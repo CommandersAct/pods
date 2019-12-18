@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.4.0 : 12/18 2019*
+
+	- Removing armv7s support.
+
 *4.3.4 : 11/23 2019*
 
     ~ The consent string was not compliant to BASE64url (RFC 4648) and caused some vendors to crash.

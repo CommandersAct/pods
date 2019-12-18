@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>26/11/2019</em><br />
-Release version : <em>4.4.1</em></p>
+<p>Last update : <em>18/12/2019</em><br />
+Release version : <em>4.5.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -62,7 +62,6 @@ Release version : <em>4.4.1</em></p>
 <ul>
 <li>Weight from 110 ko to 120 ko in your application depending on the iPhone model.</li>
 <li>Fully threaded and asynchronous.</li>
-<li>Automatic enabling / disabling depending on the Internet reachability or battery level.</li>
 <li>Offline mode (the hits are stored in the phone to be replayed at the next launch.)</li>
 <li>Very low CPU and memory usage.</li>
 <li>Dynamic variable storage. If a value never changes, it's possible to set it only once.</li>
@@ -367,6 +366,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 26/11/2019 14:18:59</p>
+<p>This documentation was generated on 18/12/2019 15:41:25</p>
 </body>
 </html>
