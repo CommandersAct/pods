@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCIAB-Release-iphoneos-Bitcode-noIDFA"
+  s.name         = "TCIAB-Release-iphoneos-Bitcode-noIDFA"
   s.version      = "4.4.0"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCIAB"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE

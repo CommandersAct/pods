@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCSegment-Release-universal-Bitcode-noIDFA"
+  s.name         = "TCSegment-Release-iphoneos-Bitcode-noIDFA"
   s.version      = "4.2.0"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSegment"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCSegment for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSegment/4/2/0/Release-universal/TCSegment-Bitcode-noIDFA.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSegment/4/2/0/Release-iphoneos/TCSegment-Bitcode-noIDFA.zip" }
   s.preserve_paths      = 'TCSegment.framework'
   #s.public_header_files = 'TCSegment.framework/Headers/*.h'
   s.vendored_frameworks = 'TCSegment.framework'
