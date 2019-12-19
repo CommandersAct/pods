@@ -6,6 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.6.1 : 12/19 2019*
+
+	~ issue with User-Agent not saved in the core dictionnary anymore leading it to be missing for other modules.
+	~ corrected bug in the initialisation of SDK_ID which would not be saved properly inside the core dictionnary the first app launch.
+
 *4.6.0 : 12/18 2019*
 
 	/!\ With this update you need to also update the SDK module to 4.5.0+

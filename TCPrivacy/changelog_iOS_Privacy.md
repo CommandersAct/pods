@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.5.1 : 12/19 2019*
+
+	~ The variable userID used to specify a specific userID for privacy was not initialised to nil leading to hazardous behaviours.
+
 *4.5.0 : 12/18 2019*
 
 	- Removing armv7s support.
