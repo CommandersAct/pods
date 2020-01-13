@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.5.3 : 01/13/2020*
+
+	~ Issue on TCPrivacyAPI header not visible.
+
 *4.5.2 : 12/19 2019*
 
 	~ corrected empty Vendor list due to prefix parsing error.
