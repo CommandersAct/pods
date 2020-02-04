@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.4.1 : 02/04 2020*
+
+	~ Correcting crash on iOS 9 due to Int being encoded on less than 64 bits.
+
 *4.4.0 : 12/18 2019*
 
 	- Removing armv7s support.
