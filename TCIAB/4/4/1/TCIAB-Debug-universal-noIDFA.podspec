@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCIAB-Debug-universal-noIDFA"
+  s.name         = "TCIAB-Debug-universal-noIDFA"
   s.version      = "4.4.1"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCIAB"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
