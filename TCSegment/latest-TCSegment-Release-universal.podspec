@@ -2,10 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "latest-TCSegment-Release-universal"
   s.version      = "4.2.0"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSegment"
-  s.license      = { :type => 'proprietary', :text => <<-LICENSE
-                        Copyright 2013 - present Commanders Act. All rights reserved.
-                      LICENSE
-                   }
+  s.license      = { :type => 'proprietary', :file => 'https://raw.githubusercontent.com/TagCommander/pods/master/LICENSE.md'}
   s.author       = { "Commanders Act" => "support@commandersact.com" }
   s.summary      = "TagCommander pod"
   s.description  = <<-DESC
