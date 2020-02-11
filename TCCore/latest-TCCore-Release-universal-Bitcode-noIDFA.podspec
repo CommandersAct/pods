@@ -2,10 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "latest-TCCore-Release-universal-Bitcode-noIDFA"
   s.version      = "4.6.1"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCCore"
-  s.license      = { :type => 'proprietary', :text => <<-LICENSE
-                        Copyright 2013 - present Commanders Act. All rights reserved.
-                      LICENSE
-                   }
+  s.license      = { :type => 'proprietary', :file => 'https://raw.githubusercontent.com/TagCommander/pods/master/LICENSE.md'}
   s.author       = { "Commanders Act" => "support@commandersact.com" }
   s.summary      = "TagCommander pod"
   s.description  = <<-DESC
