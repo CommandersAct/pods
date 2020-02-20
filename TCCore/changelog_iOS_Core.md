@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.6.2 : 02/19 2020*
+
+	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically
+
 *4.6.1 : 12/19 2019*
 
 	~ issue with User-Agent not saved in the core dictionnary anymore leading it to be missing for other modules.

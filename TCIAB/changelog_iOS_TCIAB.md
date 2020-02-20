@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.4.2 : 02/19 2020*
+
+	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically
+
 *4.4.1 : 02/04 2020*
 
 	~ Correcting crash on iOS 9 due to Int being encoded on less than 64 bits.

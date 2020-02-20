@@ -6,7 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
-*4.5.1 : 10/02 2020*
+*4.5.2 : 02/19 2020*
+
+	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically
+
+*4.5.1 : 02/10 2020*
 
 	~ Modified the way we are copying the predefined variables in TCPostData to prevent synchronisation issues provoked by the fact that getting the user-agent with WKWebView is slower than before.
 

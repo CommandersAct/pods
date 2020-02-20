@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.5.4 : 02/19 2020*
+
+	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically
+
 *4.5.3 : 01/13/2020*
 
 	~ Issue on TCPrivacyAPI header not visible.

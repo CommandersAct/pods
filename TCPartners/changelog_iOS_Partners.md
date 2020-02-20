@@ -1,6 +1,10 @@
 Changelog iOS
 =================
 
+*4.5.1 : 02/19 2020*
+
+	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically
+
 *4.5.0 : 12/18 2019*
 
 	- Removing armv7s support.
