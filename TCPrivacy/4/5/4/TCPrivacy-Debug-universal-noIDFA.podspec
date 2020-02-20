@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCPrivacy-Release-universal-noIDFA"
+  s.name         = "TCPrivacy-Debug-universal-noIDFA"
   s.version      = "4.5.4"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCPrivacy"
   s.license      = { :type => 'proprietary', :file => 'LICENSE.md' }
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCPrivacy for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPrivacy/4/5/4/Release-universal/TCPrivacy-noIDFA.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPrivacy/4/5/4/Debug-universal/TCPrivacy-noIDFA.zip" }
   s.preserve_paths      = 'TCPrivacy.framework'
   #s.public_header_files = 'TCPrivacy.framework/Headers/*.h'
   s.vendored_frameworks = 'TCPrivacy.framework'
