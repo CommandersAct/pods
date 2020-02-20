@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCCore-Release-iphoneos"
+  s.name         = "TCCore-Release-iphoneos"
   s.version      = "4.6.2"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCCore"
   s.license      = { :type => 'proprietary', :file => 'LICENSE.md' }
