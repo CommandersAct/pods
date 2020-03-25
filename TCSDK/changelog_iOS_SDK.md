@@ -6,9 +6,13 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.5.3 : 03/26 2020*
+
+	~ Modified TagCommander's activateSDK and deactivateSDK to throw the corresponding notification to propagate it to the whole system.
+
 *4.5.2 : 02/19 2020*
 
-	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically
+	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically.
 
 *4.5.1 : 02/10 2020*
 

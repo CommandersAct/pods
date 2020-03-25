@@ -1,9 +1,13 @@
 Changelog iOS
 =============
 
+*4.5.5 : 03/26 2020*
+
+	~ Activating and Disabling the SDK now saves the kTCPrivacyConsent to 1 or 0 before sending the kTCNotification_StartingTheSDK or kTCNotification_StoppingTheSDK notifications.
+
 *4.5.4 : 02/19 2020*
 
-	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically
+	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically.
 
 *4.5.3 : 01/13/2020*
 
