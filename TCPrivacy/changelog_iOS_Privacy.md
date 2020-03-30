@@ -1,6 +1,12 @@
 Changelog iOS
 =============
 
+*4.5.6 : 03/30 2020*
+
+	~ /!\ Those modifications are only needed when working with IAB version 1, if you need them also update TCIAB to 4.4.3+.
+	~ Corrected the consent Time_created and Time_updated which were inverted.
+	~ Corrected the Time_created value.
+
 *4.5.5 : 03/26 2020*
 
 	~ Activating and Disabling the SDK now saves the kTCPrivacyConsent to 1 or 0 before sending the kTCNotification_StartingTheSDK or kTCNotification_StoppingTheSDK notifications.

@@ -1,6 +1,12 @@
 Changelog iOS
 =============
 
+*4.4.3 : 03/03 2020*
+
+	~ Changed the consent screen ID to 1
+	~ Corrected bug of saving issues on IABConsent_ParsedVendorConsents and IABConsent_ParsedPurposeConsents.
+	~ Corrected bug on time_created and time_updated values in the consent string.
+
 *4.4.2 : 02/19 2020*
 
 	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically
