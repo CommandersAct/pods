@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.5.7 : 04/02 2020*
+
+	~ Removed useless delegates on UIView which is deprecated.
+
 *4.5.6 : 03/30 2020*
 
 	~ /!\ Those modifications are only needed when working with IAB version 1, if you need them also update TCIAB to 4.4.3+.
