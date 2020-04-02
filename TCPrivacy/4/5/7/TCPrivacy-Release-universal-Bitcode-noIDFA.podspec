@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCPrivacy-Release-universal-Bitcode-noIDFA"
+  s.name         = "TCPrivacy-Release-universal-Bitcode-noIDFA"
   s.version      = "4.5.7"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCPrivacy"
   s.license      = { :type => 'proprietary', :file => 'LICENSE.md' }
