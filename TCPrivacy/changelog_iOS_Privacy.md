@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.5.8 : 05/11 2020*
+
+	~ Corrected TCPrivacyAPI getAcceptedCategories and getAcceptedVendors which tested presence in sharedPref and not values.
+	~ Corrected Privacy Center category title to allow multi-lines.
+
 *4.5.7 : 04/02 2020*
 
 	~ Removed useless delegates on UIView which is deprecated.
