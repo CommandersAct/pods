@@ -2,7 +2,10 @@ Pod::Spec.new do |s|
   s.name         = "TCSegment-Release-iphoneos-Bitcode-noIDFA-noIAB"
   s.version      = "4.2.1"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSegment"
-  s.license      = { :type => 'proprietary', :file => 'LICENSE.md' }
+  s.license      = { :type => 'proprietary', :text => <<-LICENSE
+                        Copyright 2013 - present Commanders Act. All rights reserved.
+                      LICENSE
+                   }
   s.author       = { "Commanders Act" => "support@commandersact.com" }
   s.summary      = "TagCommander pod"
   s.description  = <<-DESC
