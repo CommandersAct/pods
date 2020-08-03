@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCCore-Release-iphoneos-Bitcode-noIDFA"
+  s.name         = "TCCore-Release-universal-Bitcode-noIDFA"
   s.version      = "4.6.3"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCCore"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCCore for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCCore/4/6/3/Release-iphoneos/TCCore-Bitcode-noIDFA.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCCore/4/6/3/Release-universal/TCCore-Bitcode-noIDFA.zip" }
   s.preserve_paths      = 'TCCore.framework'
   #s.public_header_files = 'TCCore.framework/Headers/*.h'
   s.vendored_frameworks = 'TCCore.framework'
