@@ -1,10 +1,9 @@
 Changelog iOS
 =============
 
-*4.5.8 : 05/11 2020*
+*4.6.0 : 07/30 2020*
 
-	~ Corrected TCPrivacyAPI getAcceptedCategories and getAcceptedVendors which tested presence in sharedPref and not values.
-	~ Corrected Privacy Center category title to allow multi-lines.
+	+ Interface based on IAB TCF v2 framework can now be used alongside TCIAB's module.
 
 *4.5.7 : 04/02 2020*
 
