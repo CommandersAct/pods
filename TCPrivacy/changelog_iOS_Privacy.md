@@ -1,9 +1,18 @@
 Changelog iOS
 =============
 
+*4.6.1 : 08/07 2020*
+
+	~ corrected missing IAB constant in some variants of the TCPrivacy module builds.
+
 *4.6.0 : 07/30 2020*
 
 	+ Interface based on IAB TCF v2 framework can now be used alongside TCIAB's module.
+
+*4.5.8 : 05/11 2020*
+
+	~ Corrected TCPrivacyAPI getAcceptedCategories and getAcceptedVendors which tested presence in sharedPref and not values.
+	~ Corrected Privacy Center category title to allow multi-lines.
 
 *4.5.7 : 04/02 2020*
 

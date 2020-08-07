@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>03/08/2020</em><br />
+<p>Last update : <em>07/08/2020</em><br />
 Release version : <em>4.5.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -138,6 +138,6 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 03/08/2020 16:01:11</p>
+<p>This documentation was generated on 07/08/2020 14:23:03</p>
 </body>
 </html>
