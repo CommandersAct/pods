@@ -1,6 +1,13 @@
 Changelog iOS
 =============
 
+*4.6.2 : 08/27 2020*
+
+	+ New method in TCPrivacyAPI : TCShouldDisplayPrivacyCenter. /!\ Beware that if you need to use this method, you might need to re-display the first time.
+	~ Corrected an issue with buttons not working on modal view
+	~ Corrected an issue with accept all and Refuse all buttons staying disabled on iPads.
+	~ corrected an issue when link to vendor screens would not work
+
 *4.6.1 : 08/07 2020*
 
 	~ corrected missing IAB constant in some variants of the TCPrivacy module builds.

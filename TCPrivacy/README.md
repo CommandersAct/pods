@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>07/08/2020</em><br />
-Release version : <em>4.6.1</em></p>
+<p>Last update : <em>28/08/2020</em><br />
+Release version : <em>4.6.2</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -170,6 +170,13 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <h2 id="consent-internal-api">Consent internal API</h2>
 <p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.</p>
 <pre><code>/**
+ * Checks if we should display privacy center for any reason.
+ * @return True or False.
+ */
++ (BOOL) shouldDisplayPrivacyCenter
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Checks if consent has already been given by checking if consent information is saved.
  * @return YES if the consent was already given, NO otherwise.
  */
@@ -292,6 +299,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 07/08/2020 14:23:03</p>
+<p>This documentation was generated on 28/08/2020 10:01:44</p>
 </body>
 </html>
