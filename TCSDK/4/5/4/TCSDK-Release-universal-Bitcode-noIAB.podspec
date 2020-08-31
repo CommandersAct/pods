@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCSDK-Release-iphoneos-Bitcode-noIAB"
+  s.name         = "TCSDK-Release-universal-Bitcode-noIAB"
   s.version      = "4.5.4"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSDK"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCSDK for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSDK/4/5/4/Release-iphoneos/TCSDK-Bitcode-noIAB.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSDK/4/5/4/Release-universal/TCSDK-Bitcode-noIAB.zip" }
   s.preserve_paths      = 'TCSDK.framework'
   #s.public_header_files = 'TCSDK.framework/Headers/*.h'
   s.vendored_frameworks = 'TCSDK.framework'
