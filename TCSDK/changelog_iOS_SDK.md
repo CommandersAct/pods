@@ -6,6 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.5.4 : 08/31 2020*
+
+	/!\ To benefit from this update you need to also update the core module to 4.6.4 or later.
+	+ Added a method to force the SDK to wait for the user_agent.
+
 *4.5.3 : 03/26 2020*
 
 	~ Modified TagCommander's activateSDK and deactivateSDK to throw the corresponding notification to propagate it to the whole system.

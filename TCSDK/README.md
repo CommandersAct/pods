@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>28/08/2020</em><br />
-Release version : <em>4.5.3</em></p>
+<p>Last update : <em>31/08/2020</em><br />
+Release version : <em>4.5.4</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -33,6 +33,7 @@ Release version : <em>4.5.3</em></p>
 <li><a href="#product-tags">Product tags</a></li>
 <li><a href="#background-mode">Background Mode</a></li>
 <li><a href="#deactivating-the-sdk">Deactivating the SDK</a></li>
+<li><a href="#wait-for-user-agent">Wait for User-agent</a></li>
 </ul>
 </li>
 <li><a href="#troubleshooting">Troubleshooting</a><ul>
@@ -236,6 +237,12 @@ product3.quantity = @"3";
 <pre><code>[TCInstance activateSDK];
 </code></pre>
 <p>In the case you need to re-enable it after disabling it the first time, you can use this function.</p>
+<h2 id="wait-for-user-agent">Wait for User-agent</h2>
+<p>As Apple removed the old class which allowed us to get the user-agent synchroneously, we sometimes have a bit of delay before the user-agent is available. And for unknown reasons, this delay is sometimes more than a minute on real devices.</p>
+<p>If it is important for your solution to have acces to the user-agent, please call the following method:</p>
+<pre><code>[tc waitForUserAgent: YES];
+</code></pre>
+<p>When the user-agent is ready, it will be added to all the hit waiting to be sent.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <p>The TagCommander SDK also offers methods to help you with the Quality Assessment of the SDK implementation.</p>
 <h2 id="debugging">Debugging</h2>
@@ -366,6 +373,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 28/08/2020 10:01:44</p>
+<p>This documentation was generated on 31/08/2020 10:14:49</p>
 </body>
 </html>

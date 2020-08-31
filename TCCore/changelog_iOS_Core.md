@@ -6,6 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.6.4 : 08/31/2020*
+
+	/!\ To benefit from this update you need to also update the SDK module to 4.5.4 or later.
+	+ Added a way to wait for the asynchroneous user-agent to be available.
+
 *4.6.3 : 07/30/2020*
 
 	~ Configuration files updates are now raising a notification.
