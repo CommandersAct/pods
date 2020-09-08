@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.6.3 : 09/07 2020*
+
+	+ Added a way to choose which buttons to have on first and second layer (IAB interface). Please check TCIAB documentation for further details.
+	- Removed URL-encoding for the statistic hits parameters which was not needed anymore.
+
 *4.6.2 : 08/27 2020*
 
 	+ New method in TCPrivacyAPI : TCShouldDisplayPrivacyCenter. /!\ Beware that if you need to use this method, you might need to re-display the first time.

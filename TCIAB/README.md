@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>31/08/2020</em><br />
-Release version : <em>4.5.0</em></p>
+<p>Last update : <em>08/09/2020</em><br />
+Release version : <em>4.5.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -21,6 +21,7 @@ Release version : <em>4.5.0</em></p>
 </ul>
 </li>
 <li><a href="#filtering-vendors">Filtering vendors</a></li>
+<li><a href="#selecting-buttons">Selecting buttons</a></li>
 <li><a href="#initialisation">Initialisation</a></li>
 <li><a href="#with-the-sdk">With the SDK</a></li>
 <li><a href="#retaining-consent">Retaining consent</a><ul>
@@ -30,6 +31,7 @@ Release version : <em>4.5.0</em></p>
 </ul>
 </li>
 <li><a href="#reacting-to-consent">Reacting to consent</a></li>
+<li><a href="#generating-publisher-tc-in-consent-string">Generating publisher TC in consent String</a></li>
 </ul>
 </li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
@@ -71,6 +73,21 @@ For example, our IAB demo is using purposes-fr.json.</p>
 <p>If you want to filter, nothing has to be done inside the code, but you should find inside the privacy.json in "information" a field like : "vendors": "8,18,467,310".</p>
 <p>This tells that you are only using the vendors which IDs are 8, 18, 467 and 310. Those ID refers to the IDs they are given inside the vendor-list.</p>
 <p>/!\ This should normally decided by your project manager and added inside the json by your Commanders Act contact.</p>
+<h2 id="selecting-buttons">Selecting buttons</h2>
+<p>The IAB interface is separated in 2 layers. The first layer is the first screen you'll see when opening the privacy center.
+The second layer is the purpose screen as well as the vendor screen.</p>
+<p>In those 2 interfaces, the default buttons are defined as followed:</p>
+<p>First layer: "Detail" (lead to the purpose detail screen), "Accept All" and "Refuse All"
+Second layer: "Save" (use the current state of all switches), "Accept All" and "Refuse All"</p>
+<p>IAB asks that you have at least a "Detail" button on the first layer, and a "Save" on the second.
+Starting September 2020 the CNIL asks that if you have a "Accept all" button, you need a "Refuse all" button with an identical visual.</p>
+<p>Meanwhile you can select the button you want to see as well as the order they'll appear in among the default ones by changing part of the privacy JSON.</p>
+<pre><code>"components": {
+    "firstLayerButton": ["Detail", "AcceptAll", "RefuseAll"],
+    "secondLayerButton": ["Save", "AcceptAll", "RefuseAll"],
+},
+</code></pre>
+<p>You can add those lines and select the needing ones. For example, if you don't want a refuse all button, just remove "RefuseAll".</p>
 <h2 id="initialisation">Initialisation</h2>
 <pre><code>:::java
 // If you need to use callbacks.
@@ -110,7 +127,7 @@ The possible issue here is that you usually ask for consent before asking for th
 Otherwise, you will have to get the ID stored in the app memory. See TC_SDK_ID.</p>
 <h3 id="using-tc_sdk_id">Using TC_SDK_ID</h3>
 <p>In this case the only place where the ID exists is inside the application memory.
-If you're looking for a way to proove consent or reset saved information, you'll need to create a specific screen in app for this.</p>
+If you're looking for a way to prove consent or reset saved information, you'll need to create a specific screen in app for this.</p>
 <h2 id="reacting-to-consent">Reacting to consent</h2>
 <p>Some of the event happening in the Privacy have callbacks associated with them in the case you need to do specific actions at this specific moment.</p>
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
@@ -130,6 +147,9 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <pre><code>- (void) significantChangesInPrivacy;
 </code></pre>
 <p>This one is slightly different from the last one, it was created for IAB and will not be sent automatically. It is conditionned by the field "significantChanges" in the privacy.json so that it will only launch when you need it to.</p>
+<h2 id="generating-publisher-tc-in-consent-string">Generating publisher TC in consent String</h2>
+<p>By default, as some clients asked, the publisher TC part of the consent string is not generated.
+But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePublisherTC.</p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -138,6 +158,6 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 31/08/2020 10:14:49</p>
+<p>This documentation was generated on 08/09/2020 09:20:28</p>
 </body>
 </html>

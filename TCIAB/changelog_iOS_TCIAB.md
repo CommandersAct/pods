@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.5.1 : 09/07 2020*
+
+	+ Adding the possibility to save the PublisherTC part of the consent string. Please check the documentation.
+
 *4.5.0 : 07/30 2020*
 
 	/!\ Requires Privacy 4.6.0+, Core 4.5.1+
