@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>08/09/2020</em><br />
-Release version : <em>4.6.3</em></p>
+<p>Last update : <em>22/09/2020</em><br />
+Release version : <em>4.6.4</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -21,6 +21,7 @@ Release version : <em>4.6.3</em></p>
 <li><a href="#saving-consent">Saving consent</a><ul>
 <li><a href="#with-the-privacy-center">With the Privacy Center</a></li>
 <li><a href="#manually-displayed-consent">Manually displayed consent</a></li>
+<li><a href="#acceptall-refuseall">AcceptAll / RefuseAll</a></li>
 </ul>
 </li>
 <li><a href="#retaining-consent">Retaining consent</a><ul>
@@ -114,6 +115,12 @@ It will then the check the consent validity, if it's too old, you can implement 
 </code></pre>
 <p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 mean accepting this category or vendor, 0 is refusing.</p>
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
+<h3 id="acceptall-refuseall">AcceptAll / RefuseAll</h3>
+<p>Even if you are using our interface (and thus either privacy.json and/or vendor-list.json), you might still want to present a first screen yourself with an accept all button and maybe also a refuse all button.
+So we created functions to call if you want to create a simple way to accept or refuse all consent from outside our user interface.</p>
+<pre><code>[[TCMobilePrivacy sharedInstance] acceptAllConsent];
+[[TCMobilePrivacy sharedInstance] refuseAllConsent];
+</code></pre>
 <h2 id="retaining-consent">Retaining consent</h2>
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
@@ -299,6 +306,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 08/09/2020 09:20:28</p>
+<p>This documentation was generated on 22/09/2020 16:21:10</p>
 </body>
 </html>

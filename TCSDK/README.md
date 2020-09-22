@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>08/09/2020</em><br />
+<p>Last update : <em>22/09/2020</em><br />
 Release version : <em>4.5.4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -354,6 +354,7 @@ NSString *currentVisit = [predefVariables getData: @"#TC_CURRENT_VISIT_MS#"];
 <p><a href="PredefinedVariables.md">TCPredefinedVariables</a></p>
 <h1 id="swift">Swift</h1>
 <p>If you want to use Swift as your main language, please check the demo <a href="https://github.com/TagCommander/TagCommander-In-Swift">TagCommander-In-Swift</a>.</p>
+<p>This library is the TCIAB module, you will find the usual podspecs in the repository. Please beware that depending on your XCode version the universal versions might not be working.</p>
 <h1 id="example-tcdemo">Example: TCDemo</h1>
 <p>To check an example of how to use this module, please check: </p>
 <p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/iOS">Tag Demo</a></p>
@@ -373,6 +374,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 08/09/2020 09:20:28</p>
+<p>This documentation was generated on 22/09/2020 16:21:10</p>
 </body>
 </html>

@@ -1,6 +1,12 @@
 Changelog iOS
 =============
 
+*4.6.4 : 09/21 2020*
+
+	+ Adding methods to enter the IAB Privacy center directly on the purpose screen or on the vendor screen. Please check documentation.
+	+ Functions used to accept or refuse all consent without entering the Privacy Center.
+	~ Preventing the callbacks from bring called if the class used is not implementing them.
+
 *4.6.3 : 09/07 2020*
 
 	+ Added a way to choose which buttons to have on first and second layer (IAB interface). Please check TCIAB documentation for further details.

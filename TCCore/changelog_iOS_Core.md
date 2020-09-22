@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.6.5 : 09/21/2020*
+
+	+ Added a way to use a custom WKProcessPool when asking for user agent to prevent cookie erasure.
+
 *4.6.4 : 08/31/2020*
 
 	/!\ To benefit from this update you need to also update the SDK module to 4.5.4 or later.
