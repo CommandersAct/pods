@@ -1,6 +1,10 @@
 Changelog iOS
 =================
 
+*4.6.0 : 09/24 2020*
+
+	+ Building for iOS 14.
+
 *4.5.2 : 03/26 2020*
 
 	~ Correting the initialisation of offline segments to force it at nil.

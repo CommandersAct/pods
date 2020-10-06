@@ -1,6 +1,14 @@
 Changelog iOS
 =============
 
+*4.7.0 : 10/06 2020*
+
+	+ Building for iOS 14.
+
+*4.6.5 : 10/06 2020*
+
+	~ Correcting first IAB purpose which was saved as consent and legitimate interest. The first purpose can't have legitimate interest.
+
 *4.6.4 : 09/21 2020*
 
 	+ Adding methods to enter the IAB Privacy center directly on the purpose screen or on the vendor screen. Please check documentation.

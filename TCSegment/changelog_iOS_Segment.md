@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.3.0 : 09/24 2020*
+
+	+ Building for iOS 14.
+
 *4.2.1 : 02/19 2020*
 
 	+ Added LICENCE.md in release zips to allow cocoapods to read it automatically

@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>22/09/2020</em><br />
-Release version : <em>4.5.4</em></p>
+<p>Last update : <em>06/10/2020</em><br />
+Release version : <em>4.6.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -34,6 +34,7 @@ Release version : <em>4.5.4</em></p>
 <li><a href="#background-mode">Background Mode</a></li>
 <li><a href="#deactivating-the-sdk">Deactivating the SDK</a></li>
 <li><a href="#wait-for-user-agent">Wait for User-agent</a></li>
+<li><a href="#getting-idfa">Getting IDFA</a></li>
 </ul>
 </li>
 <li><a href="#troubleshooting">Troubleshooting</a><ul>
@@ -243,6 +244,12 @@ product3.quantity = @"3";
 <pre><code>[tc waitForUserAgent: YES];
 </code></pre>
 <p>When the user-agent is ready, it will be added to all the hit waiting to be sent.</p>
+<h2 id="getting-idfa">Getting IDFA</h2>
+<p>If you are using iOS 14 or later, the SDK can't get the IDFA automatically. This would force the popup asking for the user permission at any moment which is not the wanted behavior.</p>
+<p>Instead, you'll have to control when you want this popup to be displayed with the code here: https://medium.com/@nish.bhasin/how-to-get-idfa-in-ios14-54f7ea02aa42</p>
+<p>and in the "case .authorized:", call:</p>
+<pre><code>[[TCCoreVariables sharedInstance] setIDFA];
+</code></pre>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <p>The TagCommander SDK also offers methods to help you with the Quality Assessment of the SDK implementation.</p>
 <h2 id="debugging">Debugging</h2>
@@ -374,6 +381,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 22/09/2020 16:27:58</p>
+<p>This documentation was generated on 06/10/2020 11:21:22</p>
 </body>
 </html>
