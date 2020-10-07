@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCSegment-Release-universal-Bitcode"
+  s.name         = "TCSegment-Release-universal-Bitcode"
   s.version      = "4.3.0"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSegment"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
