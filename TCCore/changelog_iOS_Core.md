@@ -6,10 +6,14 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
-*4.7.0 : 09/24 2020*
+*4.7.0 : 10/07/2020*
 
 	+ Building for iOS 14.
 	+ (iOS 14+ only) IDFA is no longer automatically fetched, please check SDK documentation.
+
+*4.6.6 : 10/07/2020*
+
+	- removing deprecated isAdvertisingTrackingEnabled around the fetching of IDFA.
 
 *4.6.5 : 09/21/2020*
 
