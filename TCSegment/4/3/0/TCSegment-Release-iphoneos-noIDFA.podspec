@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCSegment-Release-iphoneos-noIDFA"
+  s.name         = "TCSegment-Release-iphoneos-noIDFA"
   s.version      = "4.3.0"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSegment"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
