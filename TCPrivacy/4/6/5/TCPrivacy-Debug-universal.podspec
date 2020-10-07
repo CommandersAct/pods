@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCPrivacy-Debug-universal"
+  s.name         = "TCPrivacy-Debug-universal"
   s.version      = "4.6.5"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCPrivacy"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
