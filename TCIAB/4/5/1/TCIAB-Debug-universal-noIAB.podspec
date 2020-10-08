@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                    DESC
   s.platform     = :ios, '8.0'
   s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCIAB/4/5/1/Debug-universal/TCIAB-noIAB.zip" }
-  s.preserve_paths      = 'TCIAB.xcframework'
+  s.preserve_paths      = 'TCIAB.framework'
   #s.public_header_files = 'TCIAB.framework/Headers/*.h'
-  s.vendored_frameworks = 'TCIAB.xcframework'
+  s.vendored_frameworks = 'TCIAB.framework'
 end
