@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCPrivacy-Release-iphoneos-noIAB"
+  s.name         = "TCPrivacy-Debug-universal-noIAB"
   s.version      = "4.6.6"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCPrivacy"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCPrivacy for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPrivacy/4/6/6/Release-iphoneos/TCPrivacy-noIAB.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPrivacy/4/6/6/Debug-universal/TCPrivacy-noIAB.zip" }
   s.preserve_paths      = 'TCPrivacy.framework'
   #s.public_header_files = 'TCPrivacy.framework/Headers/*.h'
   s.vendored_frameworks = 'TCPrivacy.framework'

@@ -1,9 +1,19 @@
 Changelog iOS
 =============
 
+*4.7.1 : 10/16 2020*
+
+	~ [IAB] Correcting display issue on iOS 11 and before.
+	+ [IAB] Forcing separation between "related vendors" and "legal information" to avoid collision when texts are changed.
+
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.6 : 10/16 2020*
+
+	~ [IAB] Correcting display issue on iOS 11 and before.
+	+ [IAB] Forcing separation between "related vendors" and "legal information" to avoid collision when texts are changed.
 
 *4.6.5 : 10/06 2020*
 
