@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCPrivacy-Release-iphoneos-Bitcode"
+  s.name         = "TCPrivacy-Release-universal-Bitcode"
   s.version      = "4.6.7"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCPrivacy"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCPrivacy for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPrivacy/4/6/7/Release-iphoneos/TCPrivacy-Bitcode.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPrivacy/4/6/7/Release-universal/TCPrivacy-Bitcode.zip" }
   s.preserve_paths      = 'TCPrivacy.xcframework'
   #s.public_header_files = 'TCPrivacy.framework/Headers/*.h'
   s.vendored_frameworks = 'TCPrivacy.xcframework'
