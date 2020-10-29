@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCPartners-Release-universal"
+  s.name         = "TCPartners-Release-iphoneos"
   s.version      = "4.5.3"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCPartners"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCPartners for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPartners/4/5/3/Release-universal/TCPartners.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPartners/4/5/3/Release-iphoneos/TCPartners.zip" }
   s.preserve_paths      = 'TCPartners.xcframework'
   #s.public_header_files = 'TCPartners.framework/Headers/*.h'
   s.vendored_frameworks = 'TCPartners.xcframework'
