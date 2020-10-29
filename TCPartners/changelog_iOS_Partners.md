@@ -1,9 +1,19 @@
 Changelog iOS
 =================
 
+*4.6.1 : 10/29 2020*
+
+	/!\ This update require an update of SDK and Core
+	~ Modified the ID used to send information to Adobe from IDFA to uniqueID.
+
 *4.6.0 : 09/24 2020*
 
 	+ Building for iOS 14.
+
+*4.5.3 : 10/29 2020*
+
+	/!\ This update require an update of SDK and Core
+	~ Modified the ID used to send information to Adobe from IDFA to uniqueID.
 
 *4.5.2 : 03/26 2020*
 

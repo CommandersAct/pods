@@ -6,9 +6,19 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.6.1 : 10/29/2020*
+
+	/!\ Update Core and SDK at the same time.
+	- Removed TC_UNIQUEID from TCSDK and added it in TCCore.
+
 *4.6.0 : 09/24 2020*
 
 	+ Building for iOS 14.
+
+*4.5.5 : 10/29/2020*
+
+	/!\ Update Core and SDK at the same time.
+	- Removed TC_UNIQUEID from TCSDK and added it in TCCore.
 
 *4.5.4 : 08/31 2020*
 

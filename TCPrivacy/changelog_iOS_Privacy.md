@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.7.2 : 10/30 2020*
+
+	~ [IAB] Corrected the accept all function which was saving too many vendors and miss-saving special features and first purpose.
+	~ [IAB] Corrected the purposes buttons which didn't remove legitimate interest.
+
 *4.7.1 : 10/16 2020*
 
 	~ [IAB] Correcting display issue on iOS 11 and before.
@@ -9,6 +14,11 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.7 : 10/30 2020*
+
+	~ [IAB] Corrected the accept all function which was saving too many vendors and miss-saving special features and first purpose.
+	~ [IAB] Corrected the purposes buttons which didn't remove legitimate interest.
 
 *4.6.6 : 10/16 2020*
 
