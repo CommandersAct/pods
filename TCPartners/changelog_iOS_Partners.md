@@ -1,6 +1,11 @@
 Changelog iOS
 =================
 
+*4.6.2 : 11/02/2020*
+
+	/!\ This update require an update of SDK and Core
+	~ Modified the source of uniqueID back to TCSDK.
+
 *4.6.1 : 10/29 2020*
 
 	/!\ This update require an update of SDK and Core
@@ -9,6 +14,11 @@ Changelog iOS
 *4.6.0 : 09/24 2020*
 
 	+ Building for iOS 14.
+
+*4.5.4 : 11/02/2020*
+
+	/!\ This update require an update of SDK and Core
+	~ Modified the source of uniqueID back to TCSDK.
 
 *4.5.3 : 10/29 2020*
 

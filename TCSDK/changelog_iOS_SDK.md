@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.6.2 : 11/02/2020*
+
+	~ Rollback from the previous version: TC_UNIQUEID is back in TCSDK.
+
 *4.6.1 : 10/29/2020*
 
 	/!\ Update Core and SDK at the same time.
@@ -14,6 +18,10 @@ Changelog iOS
 *4.6.0 : 09/24 2020*
 
 	+ Building for iOS 14.
+
+*4.5.6 : 11/02/2020*
+
+	~ Rollback from the previous version: TC_UNIQUEID is back in TCSDK.
 
 *4.5.5 : 10/29/2020*
 

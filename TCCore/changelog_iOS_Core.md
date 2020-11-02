@@ -6,6 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+
+*4.7.2 : 11/02/2020*
+
+	~ Rollback from the previous version: TC_UNIQUEID is back in TCSDK.
+
 *4.7.1 : 10/29/2020*
 
 	/!\ Update Core and SDK at the same time.
@@ -15,6 +20,10 @@ Changelog iOS
 
 	+ Building for iOS 14.
 	+ (iOS 14+ only) IDFA is no longer automatically fetched, please check SDK documentation.
+
+*4.6.8 : 11/02/2020*
+
+	~ Rollback from the previous version: TC_UNIQUEID is back in TCSDK.
 
 *4.6.7 : 10/29/2020*
 
