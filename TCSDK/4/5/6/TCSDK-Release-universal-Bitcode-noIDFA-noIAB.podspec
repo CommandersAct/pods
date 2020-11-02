@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCSDK-Release-universal-Bitcode-noIDFA-noIAB"
+  s.name         = "TCSDK-Release-universal-Bitcode-noIDFA-noIAB"
   s.version      = "4.5.6"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSDK"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
