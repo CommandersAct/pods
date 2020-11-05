@@ -5,7 +5,7 @@
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
 <p>Last update : <em>05/11/2020</em><br />
-Release version : <em>4.5.4</em></p>
+Release version : <em>4.5.5</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -108,6 +108,6 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/11/2020 14:31:26</p>
+<p>This documentation was generated on 05/11/2020 14:59:03</p>
 </body>
 </html>
