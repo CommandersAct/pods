@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "latest-TCPartners-Debug-universal-noIDFA"
+  s.name         = "TCPartners-Debug-universal-noIDFA"
   s.version      = "4.5.5"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCPartners"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
