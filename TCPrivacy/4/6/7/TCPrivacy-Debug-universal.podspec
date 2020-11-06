@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                    DESC
   s.platform     = :ios, '8.0'
   s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCPrivacy/4/6/7/Debug-universal/TCPrivacy.zip" }
-  s.preserve_paths      = 'TCPrivacy.framework'
+  s.preserve_paths      = 'TCPrivacy.xcframework'
   #s.public_header_files = 'TCPrivacy.framework/Headers/*.h'
-  s.vendored_frameworks = 'TCPrivacy.framework'
+  s.vendored_frameworks = 'TCPrivacy.xcframework'
 end
