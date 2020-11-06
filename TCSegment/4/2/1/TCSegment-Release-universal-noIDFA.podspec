@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                    DESC
   s.platform     = :ios, '8.0'
   s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSegment/4/2/1/Release-universal/TCSegment-noIDFA.zip" }
-  s.preserve_paths      = 'TCSegment.framework'
+  s.preserve_paths      = 'TCSegment.xcframework'
   #s.public_header_files = 'TCSegment.framework/Headers/*.h'
-  s.vendored_frameworks = 'TCSegment.framework'
+  s.vendored_frameworks = 'TCSegment.xcframework'
 end
