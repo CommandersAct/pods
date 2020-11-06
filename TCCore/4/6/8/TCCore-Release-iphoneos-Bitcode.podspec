@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
                    DESC
   s.platform     = :ios, '8.0'
   s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCCore/4/6/8/Release-iphoneos/TCCore-Bitcode.zip" }
-  s.preserve_paths      = 'TCCore.xcframework'
+  s.preserve_paths      = 'TCCore.framework'
   #s.public_header_files = 'TCCore.framework/Headers/*.h'
-  s.vendored_frameworks = 'TCCore.xcframework'
+  s.vendored_frameworks = 'TCCore.framework'
 end
