@@ -16,6 +16,10 @@ Changelog iOS
 
 	+ Building for iOS 14.
 
+*4.5.6 : 11/06/2020*
+
+	~ Corrected another crash cause by the release of the JSON configuration.
+
 *4.5.5 : 11/05/2020*
 
 	~ Corrected a crash cause by the release of the JSON configuration.
