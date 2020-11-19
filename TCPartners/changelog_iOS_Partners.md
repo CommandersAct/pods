@@ -16,6 +16,10 @@ Changelog iOS
 
 	+ Building for iOS 14.
 
+*4.5.7 : 11/19/2020*
+
+	~ Fixing the initialisation of AAM to force it after getting the consent.
+
 *4.5.6 : 11/06/2020*
 
 	~ Corrected another crash cause by the release of the JSON configuration.

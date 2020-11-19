@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.7.3 : 11/16 2020*
+
+	+ [iAB] We now validate vendors corresponding to selected purposes.
+
 *4.7.2 : 10/30 2020*
 
 	~ [IAB] Corrected the accept all function which was saving too many vendors and miss-saving special features and first purpose.
@@ -14,6 +18,10 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.8 : 11/16 2020*
+
+	+ [iAB] We now validate vendors corresponding to selected purposes.
 
 *4.6.7 : 10/30 2020*
 
