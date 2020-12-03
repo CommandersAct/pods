@@ -1,6 +1,12 @@
 Changelog iOS
 =============
 
+*4.7.4 : 12/04 2020*
+
+	~ Rectoring of consent waiting to be saved. Preventing the loss of special features and sometimes legitimate interest.
+	+ [IAB] vendor interface is now as fast as it should be.
+	+ Fixing greyed button issue on iPad.
+
 *4.7.3 : 11/16 2020*
 
 	+ [iAB] We now validate vendors corresponding to selected purposes.
@@ -18,6 +24,12 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.9 : 12/04 2020*
+
+	~ Rectoring of consent waiting to be saved. Preventing the loss of special features and sometimes legitimate interest.
+	+ [IAB] vendor interface is now as fast as it should be.
+	+ Fixing greyed button issue on iPad.
 
 *4.6.8 : 11/16 2020*
 

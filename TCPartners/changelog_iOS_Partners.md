@@ -1,6 +1,15 @@
 Changelog iOS
 =================
 
+*4.6.4 : 12/04/2020*
+
+	~ Fixing missing bundle ID in TCPartners.
+
+*4.6.3 : 11/19/2020*
+
+	~ Fixing the initialisation of AAM to force it after getting the consent.
+	~ Corrected another crash cause by the release of the JSON configuration.
+
 *4.6.2 : 11/05/2020*
 
 	/!\ This update require an update of SDK and Core
@@ -15,6 +24,10 @@ Changelog iOS
 *4.6.0 : 09/24 2020*
 
 	+ Building for iOS 14.
+
+*4.5.8 : 12/04/2020*
+
+	~ Fixing missing bundle ID in TCPartners.
 
 *4.5.7 : 11/19/2020*
 
