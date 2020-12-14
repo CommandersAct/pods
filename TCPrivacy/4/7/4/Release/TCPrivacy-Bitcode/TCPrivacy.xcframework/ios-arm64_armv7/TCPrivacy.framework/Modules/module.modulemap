@@ -1,0 +1,11 @@
+framework module TCPrivacy {
+  umbrella header "TCPrivacy.h"
+
+  export *
+  module * { export * }
+}
+
+module TCPrivacy.Swift {
+    header "TCPrivacy-Swift.h"
+    requires objc
+}

@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.7.5 : 12/14 2020*
+
+    + Added getConsentAsJson method to help forward consent information to the WebView.
+    + Added a way to change consent validity duration inside privacy.json.
+
 *4.7.4 : 12/04 2020*
 
 	~ Rectoring of consent waiting to be saved. Preventing the loss of special features and sometimes legitimate interest.
@@ -24,6 +29,11 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.10 : 12/14 2020*
+
+    + Added getConsentAsJson method to help forward consent information to the WebView.
+    + Added a way to change consent validity duration inside privacy.json.
 
 *4.6.9 : 12/04 2020*
 
