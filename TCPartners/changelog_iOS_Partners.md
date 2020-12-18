@@ -1,6 +1,10 @@
 Changelog iOS
 =================
 
+*4.6.5 : 12/18 2020*
+
+	~ Modified build scripts to better handle XCFramework. No more debug needed, DSYM files are now directly inside the release.
+
 *4.6.4 : 12/04/2020*
 
 	~ Fixing missing bundle ID in TCPartners.

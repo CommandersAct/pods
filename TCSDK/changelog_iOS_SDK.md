@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.6.3 : 12/18 2020*
+
+	~ Modified build scripts to better handle XCFramework. No more debug needed, DSYM files are now directly inside the release.
+
 *4.6.2 : 11/02/2020*
 
 	~ Rollback from the previous version: TC_UNIQUEID is back in TCSDK.

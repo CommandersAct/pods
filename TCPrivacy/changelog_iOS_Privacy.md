@@ -1,10 +1,15 @@
 Changelog iOS
 =============
 
+*4.7.6 : 12/18 2020*
+
+	~ Updated special features offsets to match web format.
+	~ Modified build scripts to better handle XCFramework. No more debug needed, DSYM files are now directly inside the release.
+
 *4.7.5 : 12/14 2020*
 
     + Added getConsentAsJson method to help forward consent information to the WebView.
-    + Added a way to change consent validity duration inside privacy.json.
+    + Added a way to change consent validity duration please check documentation.
 
 *4.7.4 : 12/04 2020*
 
@@ -29,6 +34,10 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.11 : 12/18 2020*
+
+	~ Updated special features offsets to match web format.
 
 *4.6.10 : 12/14 2020*
 

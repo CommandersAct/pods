@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>14/12/2020</em><br />
-Release version : <em>4.6.10</em></p>
+<p>Last update : <em>18/12/2020</em><br />
+Release version : <em>4.7.6</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -187,7 +187,8 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <p>Some clients need to have the consent forwarded in their webViews to manage a web container inside it.
 We created a function to get the privacy as a JSON string so you can save it inside the webView's local storage.
 /!\ This function only help saving it to the local storage by giving the required format, you will still need to have JS code in the web container to use it. Please ask your consultant for this part.</p>
-<p>!INCLUDE "iOS/Privacy/PrivacyConsentAsJSON.mdpp"</p>
+<pre><code>- (NSString *) getConsentAsJson;
+</code></pre>
 <h2 id="consent-internal-api">Consent internal API</h2>
 <p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.</p>
 <pre><code>/**
@@ -320,6 +321,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/12/2020 17:02:53</p>
+<p>This documentation was generated on 18/12/2020 17:51:09</p>
 </body>
 </html>

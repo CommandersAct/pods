@@ -6,6 +6,9 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.7.3 : 12/18 2020*
+
+	~ Modified build scripts to better handle XCFramework. No more debug needed, DSYM files are now directly inside the release.
 
 *4.7.2 : 11/02/2020*
 
