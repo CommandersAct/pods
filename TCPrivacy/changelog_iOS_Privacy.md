@@ -1,6 +1,12 @@
 Changelog iOS
 =============
 
+*4.7.7 : 01/12 2021*
+
+	~ [IAB] Modified CMP version as IAB can only encore it on 12 bits
+	~ Modified consent duration to float so we can test it with verrrrry small values.
+	+ Added public version of the string ConsentVersion to use in custom interface.
+
 *4.7.6 : 12/18 2020*
 
 	~ Updated special features offsets to match web format.
@@ -34,6 +40,12 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.12 : 01/12 2021*
+
+	~ [IAB] Modified CMP version as IAB can only encore it on 12 bits
+	~ Modified consent duration to float so we can test it with verrrrry small values.
+	+ Added public version of the string ConsentVersion to use in custom interface.
 
 *4.6.11 : 12/18 2020*
 
