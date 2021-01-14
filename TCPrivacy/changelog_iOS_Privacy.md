@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.7.8 : 01/14 2021*
+
+		~ Fixing timeofconsent which was called everytime we would activate the SDK.
+		~ Fixing callback protection on consentOutdated
+
 *4.7.7 : 01/12 2021*
 
 	~ [IAB] Modified CMP version as IAB can only encore it on 12 bits
@@ -40,6 +45,11 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.13 : 01/14 2021*
+
+		~ Fixing timeofconsent which was called everytime we would activate the SDK.
+		~ Fixing callback protection on consentOutdated
 
 *4.6.12 : 01/12 2021*
 
