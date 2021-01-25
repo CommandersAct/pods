@@ -5,7 +5,7 @@
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
 <p>Last update : <em>25/01/2021</em><br />
-Release version : <em>4.6.1</em></p>
+Release version : <em>4.5.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -170,6 +170,6 @@ But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePub
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 25/01/2021 14:44:06</p>
+<p>This documentation was generated on 25/01/2021 16:24:34</p>
 </body>
 </html>
