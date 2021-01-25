@@ -1,10 +1,14 @@
 Changelog iOS
 =============
 
+*4.7.9 : 01/25 2021*
+
+	~ [IAB] Fixing an issue with acceptAllConsent when either using all vendors from the IAB list of when adding more vendors in the privacy.json.
+
 *4.7.8 : 01/14 2021*
 
-		~ Fixing timeofconsent which was called everytime we would activate the SDK.
-		~ Fixing callback protection on consentOutdated
+	~ Fixing timeofconsent which was called everytime we would activate the SDK.
+	~ Fixing callback protection on consentOutdated
 
 *4.7.7 : 01/12 2021*
 
@@ -46,10 +50,14 @@ Changelog iOS
 
 	+ Building for iOS 14.
 
+*4.6.14 : 01/25 2021*
+
+	~ [IAB] Fixing an issue with acceptAllConsent when either using all vendors from the IAB list of when adding more vendors in the privacy.json.
+
 *4.6.13 : 01/14 2021*
 
-		~ Fixing timeofconsent which was called everytime we would activate the SDK.
-		~ Fixing callback protection on consentOutdated
+	~ Fixing timeofconsent which was called everytime we would activate the SDK.
+	~ Fixing callback protection on consentOutdated
 
 *4.6.12 : 01/12 2021*
 
