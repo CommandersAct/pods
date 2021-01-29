@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>25/01/2021</em><br />
-Release version : <em>4.6.14</em></p>
+<p>Last update : <em>29/01/2021</em><br />
+Release version : <em>4.7.10</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -321,6 +321,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 25/01/2021 16:24:34</p>
+<p>This documentation was generated on 29/01/2021 11:16:51</p>
 </body>
 </html>

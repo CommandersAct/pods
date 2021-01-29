@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.7.10 : 01/30 2021*
+
+	~ [IAB] Fixing issues on the vendors drop-down displaying wrong information.
+	+ [IAB] Adding support for IAB 2.1. Please read the documentation as you will need to update your privacy.json
+
 *4.7.9 : 01/25 2021*
 
 	~ [IAB] Fixing an issue with acceptAllConsent when either using all vendors from the IAB list of when adding more vendors in the privacy.json.
@@ -49,6 +54,11 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.15 : 01/30 2021*
+
+	~ [IAB] Fixing issues on the vendors drop-down displaying wrong information.
+	+ [IAB] Adding support for IAB 2.1. Please read the documentation as you will need to update your privacy.json
 
 *4.6.14 : 01/25 2021*
 
