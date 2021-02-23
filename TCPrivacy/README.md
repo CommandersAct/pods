@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>29/01/2021</em><br />
-Release version : <em>4.6.15</em></p>
+<p>Last update : <em>23/02/2021</em><br />
+Release version : <em>4.8.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -249,6 +249,30 @@ We created a function to get the privacy as a JSON string so you can save it ins
 + (NSArray&lt;NSString *&gt; *) getAllAcceptedConsent;
 </code></pre>
 <p>&nbsp;</p>
+<pre><code>/**
+ * Check if a purpose has been accepted.
+ * @param ID the purpose ID.
+ * @return YES or NO
+ */
++ (BOOL) isIABPurposeAccepted: (int) ID;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Check if a vendor has been accepted.
+ * @param ID the vendor ID.
+ * @return YES or NO
+ */
++ (BOOL) isIABVendorAccepted: (int) ID;
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Check if a special feature has been accepted.
+ * @param ID the vendor ID.
+ * @return YES or NO
+ */
++ (BOOL) isIABSpecialFeatureAccepted: (int) ID;
+</code></pre>
+<p>&nbsp;</p>
 <h2 id="tcdemo">TCDemo</h2>
 <p>You can, of course, check our demo project for a simple implementation example.</p>
 <p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/iOS">Privacy Demo</a></p>
@@ -321,6 +345,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 29/01/2021 14:37:33</p>
+<p>This documentation was generated on 23/02/2021 15:45:34</p>
 </body>
 </html>

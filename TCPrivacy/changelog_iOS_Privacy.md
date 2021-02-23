@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.8.0 : 02/23*
+    + [IAB] Added functions in TCPrivacyAPI to query IAB consent without manually offsetting the IDs.
+    + [IAB] Allowing to use custom purposes and vendors alongside IAB
+    ~ Fixing purposes validating vendors but not the one who have it in legitimate interest.
+
 *4.7.10 : 01/30 2021*
 
 	~ [IAB] Fixing issues on the vendors drop-down displaying wrong information.
@@ -54,6 +59,11 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.16 : 02/23*
+    + [IAB] Added functions in TCPrivacyAPI to query IAB consent without manually offsetting the IDs.
+    + [IAB] Allowing to use custom purposes and vendors alongside IAB
+    ~ Fixing purposes validating vendors but not the one who have it in legitimate interest.
 
 *4.6.15 : 01/30 2021*
 

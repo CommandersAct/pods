@@ -1,0 +1,15 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name TCPrivacy
+import Swift
+@_exported import TCPrivacy
+import UIKit
+@_inheritsConvenienceInitializers @objc open class TCUITableView : UIKit.UITableView {
+  @objc override dynamic public func reloadData()
+  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect, style: UIKit.UITableView.Style)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}

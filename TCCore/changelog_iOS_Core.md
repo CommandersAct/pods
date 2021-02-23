@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.7.4 : 02/23 2020*
+
+	~ Modified configuration retrieval to add if-modified-since in the header.
+
 *4.7.3 : 12/18 2020*
 
 	~ Modified build scripts to better handle XCFramework. No more debug needed, DSYM files are now directly inside the release.
@@ -23,6 +27,10 @@ Changelog iOS
 
 	+ Building for iOS 14.
 	+ (iOS 14+ only) IDFA is no longer automatically fetched, please check SDK documentation.
+
+*4.6.9 : 02/23 2020*
+
+	~ Modified configuration retrieval to add if-modified-since in the header.
 
 *4.6.8 : 11/02/2020*
 
