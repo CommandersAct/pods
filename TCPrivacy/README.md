@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>24/02/2021</em><br />
-Release version : <em>4.6.16</em></p>
+<p>Last update : <em>08/03/2021</em><br />
+Release version : <em>4.8.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -36,6 +36,7 @@ Release version : <em>4.6.16</em></p>
 </li>
 <li><a href="#reacting-to-consent">Reacting to consent</a></li>
 <li><a href="#forwarding-consent-to-webviews">Forwarding consent to webViews</a></li>
+<li><a href="#changing-consent-versiob">Changing consent versiob</a></li>
 <li><a href="#consent-internal-api">Consent internal API</a></li>
 <li><a href="#tcdemo">TCDemo</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
@@ -188,6 +189,10 @@ But when this change is adding or removing a category, or changing an ID, we sho
 We created a function to get the privacy as a JSON string so you can save it inside the webView's local storage.
 /!\ This function only help saving it to the local storage by giving the required format, you will still need to have JS code in the web container to use it. Please ask your consultant for this part.</p>
 <pre><code>- (NSString *) getConsentAsJson;
+</code></pre>
+<h2 id="changing-consent-versiob">Changing consent versiob</h2>
+<p>If the case you need to manually change the consent duration (if you're using your own privacy center for example), you can use the following:</p>
+<pre><code>[[TCMobilePrivacy sharedInstance] setConsentVersion: @"132"];
 </code></pre>
 <h2 id="consent-internal-api">Consent internal API</h2>
 <p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.</p>
@@ -345,6 +350,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 24/02/2021 10:36:29</p>
+<p>This documentation was generated on 08/03/2021 14:48:57</p>
 </body>
 </html>

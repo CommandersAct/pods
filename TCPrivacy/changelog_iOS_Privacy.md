@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.8.1 : 03/08*
+
+	~ Fixing issue when using IAB without custom vendors and still having the need to ask for custom vendors order inside privacy.json
+	+ [IAB] managing changes in vendor-list.json format. We can now have null values for cookieMaxAgeSeconds.
+
 *4.8.0 : 02/23*
     + [IAB] Added functions in TCPrivacyAPI to query IAB consent without manually offsetting the IDs.
     + [IAB] Allowing to use custom purposes and vendors alongside IAB
@@ -59,6 +64,11 @@ Changelog iOS
 *4.7.0 : 10/06 2020*
 
 	+ Building for iOS 14.
+
+*4.6.17 : 03/02*
+
+	~ Fixing issue when using IAB without custom vendors and still having the need to ask for custom vendors order inside privacy.json
+	+ [IAB] managing changes in vendor-list.json format. We can now have null values for cookieMaxAgeSeconds.
 
 *4.6.16 : 02/23*
     + [IAB] Added functions in TCPrivacyAPI to query IAB consent without manually offsetting the IDs.

@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>24/02/2021</em><br />
-Release version : <em>4.5.6</em></p>
+<p>Last update : <em>08/03/2021</em><br />
+Release version : <em>4.6.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -41,6 +41,7 @@ Release version : <em>4.5.6</em></p>
 <li><a href="#debugging">Debugging</a></li>
 <li><a href="#testing">Testing</a></li>
 <li><a href="#common-errors">Common errors</a></li>
+<li><a href="#using-a-custom-process-pool">Using a custom process pool</a></li>
 <li><a href="#common-errors-with-the-tagging-plan">Common errors with the tagging plan</a></li>
 </ul>
 </li>
@@ -326,6 +327,14 @@ product3.quantity = @"3";
 <li>Make sure you have the latest version.</li>
 </ul>
 </blockquote>
+<h2 id="using-a-custom-process-pool">Using a custom process pool</h2>
+<p>You might have issue with cookies stored in webviews and want to use a custom-process pool.
+If you encounter this issue, you need to pass your custom process pool like to TCDebug class:</p>
+<pre><code>+ (void) useCustomWKProcessPool: (BOOL);
+</code></pre>
+<p>This tells the SDK to wait before getting the user-agent to prevent cookie issues. If you do need to user-agent, you will need to manually call the following method in TCCoreVariables:</p>
+<pre><code>- (void) initUserAgentWithProcessPool: (WKProcessPool *) pool;
+</code></pre>
 <h2 id="common-errors-with-the-tagging-plan">Common errors with the tagging plan</h2>
 <div class="warning"></div>
 
@@ -381,6 +390,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 24/02/2021 10:36:29</p>
+<p>This documentation was generated on 08/03/2021 14:48:57</p>
 </body>
 </html>
