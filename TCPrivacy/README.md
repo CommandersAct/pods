@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>08/03/2021</em><br />
+<p>Last update : <em>19/03/2021</em><br />
 Release version : <em>4.8.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -75,6 +75,8 @@ Release version : <em>4.8.1</em></p>
 <p>If you're unsure of which one you should use, please contact the person in charge of your account.</p>
 <p><a href="../TCIAB/README.md">To use IAB V2 please see here</a></p>
 <h2 id="setup">Setup</h2>
+<p>/!\ If you are using our interface, you need to have a version of privacy.json inside your project. This will prevent any issues with users with bad or no internet at all. If you are using IAB please also take vendor-list.json and the translation file purposes-fr.json.
+If you are not using our interface, you can't use our privacy.json, if you want a way to use a configuration file, please ask your dev team to manage this file.</p>
 <p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.
 The default value is 13 months.</p>
 <p>If you're using our interface, and thus our privacy.json, you can change the duration on this validity.
@@ -126,8 +128,9 @@ It will then the check the consent validity, if it's too old, you can implement 
 <p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 mean accepting this category or vendor, 0 is refusing.</p>
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
 <h3 id="acceptall-refuseall">AcceptAll / RefuseAll</h3>
-<p>Even if you are using our interface (and thus either privacy.json and/or vendor-list.json), you might still want to present a first screen yourself with an accept all button and maybe also a refuse all button.
-So we created functions to call if you want to create a simple way to accept or refuse all consent from outside our user interface.</p>
+<p>/!\ Those methods only work if you are using our interface and thus have a privacy.json in your project (and maybe IAB's JSON as well).</p>
+<p>Those are intended for clients that are displaying a first "popup" screen before our interfaces and that have a way to either open the privacy center of accept/refuse the consent.</p>
+<p>We created functions to call if you want to create a simple way to accept or refuse all consent from outside our user interface.</p>
 <pre><code>[[TCMobilePrivacy sharedInstance] acceptAllConsent];
 [[TCMobilePrivacy sharedInstance] refuseAllConsent];
 </code></pre>
@@ -350,6 +353,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 08/03/2021 14:48:57</p>
+<p>This documentation was generated on 19/03/2021 11:05:00</p>
 </body>
 </html>
