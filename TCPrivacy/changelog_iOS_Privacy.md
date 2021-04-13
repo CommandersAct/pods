@@ -1,12 +1,18 @@
 Changelog iOS
 =============
 
-*4.8.1 : 03/08*
+*4.8.2 : 04/12 2021*
+
+	~ [IAB] Fixing issue with acceptAll on banner which only saved what vendors needed for the consent string and not for the interface.
+	~ [IAB] Forcing uppercase in consent string language and country code.
+
+*4.8.1 : 03/08 2021*
 
 	~ Fixing issue when using IAB without custom vendors and still having the need to ask for custom vendors order inside privacy.json
 	+ [IAB] managing changes in vendor-list.json format. We can now have null values for cookieMaxAgeSeconds.
 
-*4.8.0 : 02/23*
+*4.8.0 : 02/23 2021*
+
     + [IAB] Added functions in TCPrivacyAPI to query IAB consent without manually offsetting the IDs.
     + [IAB] Allowing to use custom purposes and vendors alongside IAB
     ~ Fixing purposes validating vendors but not the one who have it in legitimate interest.

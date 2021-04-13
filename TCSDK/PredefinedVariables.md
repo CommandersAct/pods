@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="predefined-variables-guide">Predefined variables Guide</h1>
 <p><strong>SDK TagCommander Android and iPhone</strong></p>
-<p>Last update : <em>08/03/2021</em><br /></p>
+<p>Last update : <em>13/04/2021</em><br /></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -51,10 +51,10 @@
 <li><a href="#tc_now">#TC_NOW</a></li>
 <li><a href="#tc_now_ms">#TC_NOW_MS</a></li>
 <li><a href="#tc_uniqueid-tc_local_uniqueid-tc_nav_visitor_id">#TC_UNIQUEID# (#TC_LOCAL_UNIQUEID#, #TC_NAV_VISITOR_ID#)</a></li>
-<li><a href="#tc_idfa">#TC_IDFA</a></li>
+<li><a href="#tc_idfa-android-removed-from-460">#TC_IDFA# (Android : Removed from 4.6.0+)</a></li>
 <li><a href="#tc_idfv">#TC_IDFV</a></li>
-<li><a href="#tc_is_tracking_enabled">#TC_IS_TRACKING_ENABLED</a></li>
-<li><a href="#tc_limit_user_tracking_enabled">#TC_LIMIT_USER_TRACKING_ENABLED</a></li>
+<li><a href="#tc_is_tracking_enabled-android-removed-from-460">#TC_IS_TRACKING_ENABLED# (Android : Removed from 4.6.0+)</a></li>
+<li><a href="#tc_limit_user_tracking_enabled-android-removed-from-460">#TC_LIMIT_USER_TRACKING_ENABLED# (Android : Removed from 4.6.0+)</a></li>
 <li><a href="#tc_longitude-ios-before-sdk-441">#TC_LONGITUDE# (iOS: Before SDK 4.4.1)</a></li>
 <li><a href="#tc_latitude-ios-before-sdk-441">#TC_LATITUDE# (iOS: Before SDK 4.4.1)</a></li>
 <li><a href="#tc_bundle_identifier">#TC_BUNDLE_IDENTIFIER</a></li>
@@ -78,7 +78,7 @@
 <li><a href="#tc_first_execute">#TC_FIRST_EXECUTE</a></li>
 <li><a href="#tc_install_referrer-40">#TC_INSTALL_REFERRER# 4.0+</a></li>
 <li><a href="#tc_sdk_id-core-413">#TC_SDK_ID# Core 4.1.3+</a></li>
-<li><a href="#tc_normalized_id-core-413">#TC_NORMALIZED_ID# Core 4.1.3+</a></li>
+<li><a href="#tc_normalized_id-core-413-android-removed-from-460">#TC_NORMALIZED_ID# Core 4.1.3+ (Android : Removed from 4.6.0+)</a></li>
 </ul>
 </li>
 </ul>
@@ -338,7 +338,7 @@ Should be at least one, since during launch the application is considered as goi
 <li>OnePlus One: a284d098fdf1c342</li>
 <li>iPhone 4s: 80EF0DC8-AD1B-460A-AC2D-4646FA2356E3</li>
 </ul>
-<h2 id="tc_idfa">#TC_IDFA</h2>
+<h2 id="tc_idfa-android-removed-from-460">#TC_IDFA# (Android : Removed from 4.6.0+)</h2>
 <p>/!\ Require user consent.</p>
 <p>The advertising identifier as specified by either Google or Apple.</p>
 <ul>
@@ -353,13 +353,13 @@ Should be at least one, since during launch the application is considered as goi
 <ul>
 <li>iPhone 4s: 6480CCA0-AEFC-2100-B5C6-ABCF01AA3721</li>
 </ul>
-<h2 id="tc_is_tracking_enabled">#TC_IS_TRACKING_ENABLED</h2>
+<h2 id="tc_is_tracking_enabled-android-removed-from-460">#TC_IS_TRACKING_ENABLED# (Android : Removed from 4.6.0+)</h2>
 <p>Is tracking enabled on the device. This can be turned off by the user manually in the device's settings.</p>
 <ul>
 <li>Galaxy S3: false</li>
 <li>iPhone 5: NO</li>
 </ul>
-<h2 id="tc_limit_user_tracking_enabled">#TC_LIMIT_USER_TRACKING_ENABLED</h2>
+<h2 id="tc_limit_user_tracking_enabled-android-removed-from-460">#TC_LIMIT_USER_TRACKING_ENABLED# (Android : Removed from 4.6.0+)</h2>
 <p>Is the user limiting the tracking on his device. This is effectively this inverse of #TC_IS_TRACKING_ENABLED#.</p>
 <ul>
 <li>Galaxy S3: true</li>
@@ -510,7 +510,7 @@ The second one is when you know exactly what to expect, all part of the referrer
 <li>OnePlus One: 65343D4C-BE71-47BC-B60A-4A46E49ED87E</li>
 <li>iPhone 6: 80EF0DC8-AD1B-460A-AC2D-4646FA2356E3</li>
 </ul>
-<h2 id="tc_normalized_id-core-413">#TC_NORMALIZED_ID# Core 4.1.3+</h2>
+<h2 id="tc_normalized_id-core-413-android-removed-from-460">#TC_NORMALIZED_ID# Core 4.1.3+ (Android : Removed from 4.6.0+)</h2>
 <p>/!\ Require user consent.</p>
 <p>An special ID mixing IDFA/AAID and TC_SDK_ID. Some user disable the IDFA/AAID, but those IDs are still the most reliable to recognize a user, to remove the need of manually checking the IDs we created a mix.</p>
 <p>TC_NORMALIZED_ID will be equal to the IDFA/AAID if the user has one, but if not, instead of having an empty IDFA, you will have the TC_SDK_ID.
