@@ -6,7 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
-*4.7.4 : 02/23 2020*
+*4.7.5 : 04/15 2021*
+
+	~ Added time functions in TCCoreVariables but keeping the one in the TCSDK for now.
+
+*4.7.4 : 02/23 2021*
 
 	~ Modified configuration retrieval to add if-modified-since in the header.
 

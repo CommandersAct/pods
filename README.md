@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>13/04/2021</em><br />
+<p>Last update : <em>15/04/2021</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -32,9 +32,9 @@ The modules are the following :</p>
 <p><a href="TCPrivacy/README.md">Privacy : Pass the Privacy settings to our tag system</a></p>
 <p>For each of those modules, please check their respective documentation for more information.</p>
 <h1 id="latest-available-versions">Latest available versions</h1>
-<p>Core : <em>4.7.4</em></p>
+<p>Core : <em>4.7.5</em></p>
 <p>SDK : <em>4.6.3</em></p>
-<p>Privacy : <em>4.8.2</em></p>
+<p>Privacy : <em>4.8.3</em></p>
 <p>IAB : <em>4.6.1</em></p>
 <p>Partners : <em>4.6.5</em></p>
 <p>Segment : <em>4.3.1</em></p>
@@ -113,6 +113,6 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/4/5/4/TCCore-D
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 13/04/2021 14:42:47</p>
+<p>This documentation was generated on 15/04/2021 15:04:22</p>
 </body>
 </html>

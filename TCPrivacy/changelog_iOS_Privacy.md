@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.8.3 : 04/15 2021*
+
+	/!\ Requires TCCore 4.7.5 or higher
+	~ [IAB][Standalone] Fixing issue with consentString date when not using the SDK Module.
+
 *4.8.2 : 04/12 2021*
 
 	~ [IAB] Fixing issue with acceptAll on banner which only saved what vendors needed for the consent string and not for the interface.

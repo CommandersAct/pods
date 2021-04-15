@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>13/04/2021</em><br />
+<p>Last update : <em>15/04/2021</em><br />
 Release version : <em>4.6.5</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -108,6 +108,6 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 13/04/2021 14:42:47</p>
+<p>This documentation was generated on 15/04/2021 15:04:22</p>
 </body>
 </html>
