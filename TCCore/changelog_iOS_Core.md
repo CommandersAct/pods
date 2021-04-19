@@ -6,6 +6,11 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.7.6 : 04/19 2021*
+
+	/!\ We changed the version number to prevent cache issues.
+	~ Same as 4.7.6 but rebuilt with another XCode version.
+
 *4.7.5 : 04/15 2021*
 
 	~ Added time functions in TCCoreVariables but keeping the one in the TCSDK for now.

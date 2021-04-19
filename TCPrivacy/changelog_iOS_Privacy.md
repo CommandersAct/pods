@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.8.4 : 04/19 2021*
+
+	/!\ We changed the version number to prevent cache issues.
+	~ Same as 4.8.4 but rebuilt with another XCode version.
+
 *4.8.3 : 04/15 2021*
 
 	/!\ Requires TCCore 4.7.5 or higher
