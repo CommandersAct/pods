@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.8.5 : 05/06 2021*
+
+	+ New statistics functions. Please check TCPrivacy documentation on github.
+
 *4.8.4 : 04/19 2021*
 
 	/!\ We changed the version number to prevent cache issues.

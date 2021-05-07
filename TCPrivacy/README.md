@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>19/04/2021</em><br />
-Release version : <em>4.8.4</em></p>
+<p>Last update : <em>07/05/2021</em><br />
+Release version : <em>4.8.5</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -38,11 +38,12 @@ Release version : <em>4.8.4</em></p>
 <li><a href="#forwarding-consent-to-webviews">Forwarding consent to webViews</a></li>
 <li><a href="#changing-consent-versiob">Changing consent versiob</a></li>
 <li><a href="#consent-internal-api">Consent internal API</a></li>
-<li><a href="#tcdemo">TCDemo</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
 <li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
 </ul>
 </li>
+<li><a href="#privacy-statistics">Privacy statistics</a></li>
+<li><a href="#tcdemo">TCDemo</a></li>
 </ul>
 </li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
@@ -281,9 +282,6 @@ We created a function to get the privacy as a JSON string so you can save it ins
 + (BOOL) isIABSpecialFeatureAccepted: (int) ID;
 </code></pre>
 <p>&nbsp;</p>
-<h2 id="tcdemo">TCDemo</h2>
-<p>You can, of course, check our demo project for a simple implementation example.</p>
-<p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/iOS">Privacy Demo</a></p>
 <h2 id="privacy-center">Privacy Center</h2>
 <p>The Privacy Center is represented by a JSON file that describes the interfaces that will be created by native code inside the application.</p>
 <p>We create an UIViewController to create the privacy center view.
@@ -296,6 +294,9 @@ UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSa
 
 self.navigationItem.backBarButtonItem = backButton;
 [self.navigationController pushViewController: PCM animated: YES];
+
+
+/!\ In case you are using IAB (by adding the module TCIAB), please use TCIABPrivacyCenterViewController instead.
 </code></pre>
 <p>Since we have a view controller, you can call it by pushing it. It's quite easy, but this mean we have to add code if we want to customize the name of the save/back button.</p>
 <p>Some part of the Privacy Center can be customised with your code.</p>
@@ -345,6 +346,23 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>If you want to display a link to you privacy policies (or anything else in fact), you can add together "privacy_policy_url" and "privacy_policy_text" that will form a linkable text the line after the description.</p>
 <p>Example:</p>
 <p><img alt="alt tag" src="../res/privacy_example.png" /></p>
+<h2 id="privacy-statistics">Privacy statistics</h2>
+<p>We have dashboards that allow to have detailed statistics on the choices your users are making.
+Depending on your app privacy configuration you might have to call some additional functions.</p>
+<pre><code>- Custom « banner/popup » -&gt; our privacy center
+- Custom « banner/popup » -&gt; Custom privacy center
+- Directly to our privacy center
+- Custom privacy center
+</code></pre>
+<p>Whenever saveConsent* is called you will need to provide the list of purposes and vendors that have been consented to.</p>
+<p>Also please note that you will need to call statViewBanner when you display your custom banner.</p>
+<p><img alt="alt tag" src="../res/TCPC_customBanner.jpeg" />
+<img alt="alt tag" src="../res/TCPC_PC.jpeg" />
+<img alt="alt tag" src="../res/CustomBanner.jpeg" />
+<img alt="alt tag" src="../res/CustomPC.jpeg" /></p>
+<h2 id="tcdemo">TCDemo</h2>
+<p>You can, of course, check our demo project for a simple implementation example.</p>
+<p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/iOS">Privacy Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -353,6 +371,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 19/04/2021 16:06:15</p>
+<p>This documentation was generated on 07/05/2021 10:16:54</p>
 </body>
 </html>
