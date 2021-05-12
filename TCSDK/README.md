@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>07/05/2021</em><br />
-Release version : <em>4.6.3</em></p>
+<p>Last update : <em>12/05/2021</em><br />
+Release version : <em>4.6.4</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -30,6 +30,7 @@ Release version : <em>4.6.3</em></p>
 <li><a href="#initialisation">Initialisation</a></li>
 <li><a href="#executing-tags">Executing tags</a></li>
 <li><a href="#example">Example</a></li>
+<li><a href="#privacy">Privacy</a></li>
 <li><a href="#product-tags">Product tags</a></li>
 <li><a href="#background-mode">Background Mode</a></li>
 <li><a href="#deactivating-the-sdk">Deactivating the SDK</a></li>
@@ -171,6 +172,19 @@ http://engage.commander1.com/dms?tc_s=3109&amp;tc_type=dms&amp;data_sysname=#TC_
 <li><code>#SCREEN_NAME#</code></li>
 </ul>
 <p>With the code from the previous section, this tag could be fired from Commanders Act's server. The application sends two dynamic variables (<code>#EVENT#</code> and <code>#SCREEN_NAME#</code>) and the SDK adds all information available to it (like #TC_SYSVERSION# and #TC_SYSNAME# in this hit).</p>
+<h2 id="privacy">Privacy</h2>
+<p>To manage the privacy of the user's data you can use our Trust product, another product or nothing at all.</p>
+<p>By default, the SDK will try to see if you have added our Privacy module. If so, it will put itself into a waiting for consent mode. In this mode, it will record all hits but wait to consent information to either send everything or delete all waiting hits.</p>
+<p>If you don't use our Privacy module, the SDK will be enabled by default.</p>
+<p>If you want to change those dehaviours, we added a way to initialise the TagCommander module with an additional information about the behaviour.
+For now we have 3 behaviours:</p>
+<pre><code>- PB_DEFAULT_BEHAVIOUR which is the one described just before
+- PB_ALWAYS_ENABLED which forces the SDK to always send information. This is used when you have tags that don't require consent.
+- PB_DISABLED_BY_DEFAULT which forces the SDK to disabled. It won't record hits before consent is given and you won't have any up by default time when using tagging the app loading screens. (This might only happen when you're not using our Privacy module)
+</code></pre>
+<p>To initialise the SDK with another behaviour, please call the following function:</p>
+<pre><code>TagCommander *tc = [[TagCommander alloc] initWithSiteID: siteID containerID: containerID andDefaultBehaviour: PB_ALWAYS_ENABLED];
+</code></pre>
 <h2 id="product-tags">Product tags</h2>
 <p>There are some tags that need to be passed a list of dictionaries, usually representing products. By passing complex information, we are able to create and send complex hits or many hits at the same time.</p>
 <p>Tags that needs to be passed a list of dictionaries are easy to spot in the configuration. They have appended to the name of the dynamic variable the name of the key that is retrieved from the dictionary.</p>
@@ -390,6 +404,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 07/05/2021 10:16:54</p>
+<p>This documentation was generated on 12/05/2021 14:45:56</p>
 </body>
 </html>
