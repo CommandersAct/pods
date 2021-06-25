@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>12/05/2021</em><br />
+<p>Last update : <em>25/06/2021</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -113,6 +113,6 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/4/5/4/TCCore-D
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/05/2021 16:25:11</p>
+<p>This documentation was generated on 25/06/2021 10:59:25</p>
 </body>
 </html>

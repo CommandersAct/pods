@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>12/05/2021</em><br />
+<p>Last update : <em>25/06/2021</em><br />
 Release version : <em>4.6.4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -123,9 +123,8 @@ forget them when setting your dynamic variables.</p>
 <p>It is recommended to initialise TagCommander in your <code>AppDelegate's applicationdidFinishLaunchingWithOptions</code>
  so it will be operational as soon as possible.</p>
 <p>A single line of code is required to properly initialize an instance of TagCommander:</p>
-<pre><code>TagCommander *TagCommanderInstance = [[TagCommander alloc] initWithSiteID: siteID
-                                                           andContainerID: containerID];
-</code></pre>
+<p>TagCommander *TagCommanderInstance = [[TagCommander alloc] initWithSiteID: siteID
+                                                             andContainerID: containerID];</p>
 <div class="warning"></div>
 
 <blockquote>
@@ -243,15 +242,13 @@ product3.quantity = @"3";
 <p>For those cases, we added a way to bypass the way to SDK usually react to background. Please call:</p>
 <pre><code>[tc enableRunningInBackground];
 </code></pre>
-<p>One drawback is that we're not able to ascertain when the application will really be killed. In normal mode, we're saving all hits not sent when going in the background, which is not possible here anymore. To be sure to not loose any hits in background mode, we will save much more often the offline hits. </p>
+<p>One drawback is that we're not able to ascertain when the application will really be killed. In normal mode, we're saving all hits not sent when going in the background, which is not possible here anymore. To be sure to not loose any hits in background mode, we will save much more often the offline hits.</p>
 <p>Please assure that your application has background modes enabled to use this feature.</p>
 <h2 id="deactivating-the-sdk">Deactivating the SDK</h2>
 <p>If you want to show a privacy message to your users allowing them to stop the tracking, you might want to use the following function to stop it if they refuse to be tracked.</p>
-<pre><code>[TCInstance deactivateSDK];
-</code></pre>
+<p>[TCInstance deactivateSDK];</p>
 <p>What this function does is stopping all systems in the SDK that update automatically or listen to notifications like background or internet reachability. This will also ignore all calls to the SDK by your application so that nothing is treated anymore and you don't have to protect those calls manually.</p>
-<pre><code>[TCInstance activateSDK];
-</code></pre>
+<p>[TCInstance activateSDK];</p>
 <p>In the case you need to re-enable it after disabling it the first time, you can use this function.</p>
 <h2 id="wait-for-user-agent">Wait for User-agent</h2>
 <p>As Apple removed the old class which allowed us to get the user-agent synchroneously, we sometimes have a bit of delay before the user-agent is available. And for unknown reasons, this delay is sometimes more than a minute on real devices.</p>
@@ -271,8 +268,8 @@ product3.quantity = @"3";
 <p>We recommend using TCLogLevel_Verbose while developing your application:</p>
 <pre><code>// Put it before the TagCommander initialization
 #ifdef DEBUG
-[TCDebug setDebugLevel: TCLogLevel_Verbose];
-[TCDebug setNotificationLog: YES];
+    [TCDebug setDebugLevel: TCLogLevel_Verbose];
+    [TCDebug setNotificationLog: YES];
 #end
 </code></pre>
 <ul>
@@ -365,12 +362,10 @@ If you encounter this issue, you need to pass your custom process pool like to T
 <h2 id="persisting-variables">Persisting variables</h2>
 <p>TagCommander permits storing of variables that remain the same in the whole application, such as vendors ID, in a TagCommander instance, instead of sending them each time you want to send data.</p>
 <p>These variables will have a lower priority to the one given by the addData method but will persist for the whole run of the application.</p>
-<pre><code>:::objectivec
-[self.TagCommanderInstance addPermanentData: @"#VENDOR_ID#" withValue: @"UE-556XXXXX-01"];
+<pre><code>[self.TagCommanderInstance addPermanentData: @"#VENDOR_ID#" withValue: @"UE-556XXXXX-01"];
 </code></pre>
 <p>They can also be removed if necessary.</p>
-<pre><code>:::objectivec
-[self.TagCommanderInstance removePermanentData: @"#VENDOR_ID#"];
+<pre><code>[self.TagCommanderInstance removePermanentData: @"#VENDOR_ID#"];
 </code></pre>
 <h2 id="tcpredefinedvariables">TCPredefinedVariables</h2>
 <p>TagCommander collects a great deal of information to function with accuracy.
@@ -380,7 +375,7 @@ You can ask for any variables computed by TagCommander through a simple getData 
 NSString *currentVisit = [predefVariables getData: kTCPredefinedVariable_CurrentVisitMs];
 NSString *currentVisit = [predefVariables getData: @"#TC_CURRENT_VISIT_MS#"];
 </code></pre>
-<p>You can find a full list of variables computed by the SDK, explanations and examples here: </p>
+<p>You can find a full list of variables computed by the SDK, explanations and examples here:</p>
 <p><a href="PredefinedVariables.md">TCPredefinedVariables</a></p>
 <h1 id="swift">Swift</h1>
 <p>If you want to use Swift as your main language, please check the demo <a href="https://github.com/TagCommander/TagCommander-In-Swift">TagCommander-In-Swift</a>.</p>
@@ -404,6 +399,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/05/2021 16:25:11</p>
+<p>This documentation was generated on 25/06/2021 10:59:25</p>
 </body>
 </html>

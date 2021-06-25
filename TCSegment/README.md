@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>12/05/2021</em><br />
+<p>Last update : <em>25/06/2021</em><br />
 Release version : <em>4.3.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -29,8 +29,7 @@ Release version : <em>4.3.1</em></p>
 <p>TCSegment is a small module especially made to get the segment of your user from within your application.</p>
 <h1 id="dependencies">Dependencies</h1>
 <p>The Segment module is compiled with the following dependencies :</p>
-<pre><code>:::ruby
-compile project(':core')
+<pre><code>compile project(':core')
 compile 'com.android.support:appcompat-v7:25.1.0'
 </code></pre>
 <h1 id="creating-segments">Creating Segments</h1>
@@ -38,31 +37,27 @@ compile 'com.android.support:appcompat-v7:25.1.0'
 <h1 id="getting-segments">Getting Segments</h1>
 <p>The module needs some information to be able to fetch segments. It will need your siteID and also your security token. Your siteID and token are provided by Commanders Act.</p>
 <p>For debugging purpose, we recommend the use of TCDebug which will help you seeing what's happening inside the modules.</p>
-<pre><code>:::objectivec
-[TCDebug setDebugLevel: TCLogLevel_Verbose];
+<pre><code>[TCDebug setDebugLevel: TCLogLevel_Verbose];
 [TCDebug setNotificationLog: YES];
 [[TCSegmentation sharedInstance] setSiteID: 3311
-                                  andToken: @"e2032376eca5533858b7d6616d40802be54d221db1b75e1b"];
+                                 andToken: @"e2032376eca5533858b7d6616d40802be54d221db1b75e1b"];
 </code></pre>
 <p>Since fetching segments needs internet and is not instantaneous, getting the segments require two steps. First you will ask the module to fetch the segmentation, then you will be able to get the list of segment once the first operation ended by either registering to a notification or by asking directly the segment list.</p>
 <h2 id="fetching">Fetching</h2>
 <p>To ask the module to fetch the segments, simply call the following line. Call it back each time you want to refresh the value.</p>
-<pre><code>:::objectivec
-[[TCSegmentation sharedInstance] fetchSegment];
+<pre><code>[[TCSegmentation sharedInstance] fetchSegment];
 </code></pre>
 <h2 id="getting-the-notification">Getting the notification</h2>
 <p>The simplest way to have the segment list as soon as possible is by listening to the notification sent by the module.
 First you need to listen to the kTCNotification_SegmentAvailable notification like this:</p>
-<pre><code>:::objectivec
-NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+<pre><code>NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 [notificationCenter addObserver: self
-                       selector: (@selector(onNotification:))
-                           name: kTCNotification_SegmentAvailable
-                         object: nil];
+                    selector: (@selector(onNotification:))
+                    name: kTCNotification_SegmentAvailable
+                    object: nil];
 </code></pre>
 <p>Then declare the function that will treat the notification:</p>
-<pre><code>:::objectivec
-- (void) onNotification: (NSNotification *) incomingNotification
+<pre><code>- (void) onNotification: (NSNotification *) incomingNotification
 {
     NSString *name = incomingNotification.name;
     if ([name isEqualToString: kTCNotification_SegmentAvailable])
@@ -73,12 +68,11 @@ NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 </code></pre>
 <h2 id="asking-for-the-list">Asking for the List</h2>
 <p>If you don't want to or can't register to the notification, you can also simply call a method from the module that will give you the current list. Be careful as it not synchronous, the list may get updated after you asked for it.</p>
-<pre><code>:::objectivec
-NSArray *segments = [[TCSegmentation sharedInstance] getSegments];
+<pre><code>NSArray *segments = [[TCSegmentation sharedInstance] getSegments];
 </code></pre>
 <p>If no segment are found or they were never fetched, the list will be empty and not null.</p>
 <h1 id="demo-application">Demo Application</h1>
-<p>To check an example of how to use this module, please check: </p>
+<p>To check an example of how to use this module, please check:</p>
 <p><a href="https://github.com/TagCommander/Segment-Demo/tree/master/iOS">Segment Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
@@ -88,6 +82,6 @@ NSArray *segments = [[TCSegmentation sharedInstance] getSegments];
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/05/2021 16:25:11</p>
+<p>This documentation was generated on 25/06/2021 10:59:25</p>
 </body>
 </html>

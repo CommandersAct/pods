@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>12/05/2021</em><br />
+<p>Last update : <em>25/06/2021</em><br />
 Release version : <em>4.8.5</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -174,6 +174,7 @@ It's not mandatory yet, but recommended.</p>
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
+<p>Implement TCPrivacyCallbacks to get access to those callbacks:</p>
 <pre><code>- (void) consentUpdated: (NSDictionary *) consent;
 </code></pre>
 <p>Called when you give us the user selected consents, or when we load the saved consent from the SDK.
@@ -199,52 +200,47 @@ We created a function to get the privacy as a JSON string so you can save it ins
 <pre><code>[[TCMobilePrivacy sharedInstance] setConsentVersion: @"132"];
 </code></pre>
 <h2 id="consent-internal-api">Consent internal API</h2>
-<p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.</p>
+<p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.
+You'll find those in the class TCPrivacyAPI:</p>
 <pre><code>/**
  * Checks if we should display privacy center for any reason.
  * @return True or False.
  */
 + (BOOL) shouldDisplayPrivacyCenter
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
+
+/**
  * Checks if consent has already been given by checking if consent information is saved.
  * @return YES if the consent was already given, NO otherwise.
  */
 + (BOOL) isConsentAlreadyGiven;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
+
+/**
  * Return the epochformatted timestamp of the last time the consent was saved.
  * @return epochformatted timestamp or 0.
  */
 + (unsigned long long) getLastTimeConsentWasSaved;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
+
+/**
  * Check if a Category has been accepted.
  * @param ID the category ID.
  * @return YES or NO.
  */
 + (BOOL) isCategoryAccepted: (int) catID;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
+
+/**
  * Check if a vendor has been accepted.
  * @param ID the vendor ID.
  * @return YES or NO.
  */
 + (BOOL) isVendorAccepted: (int) venID;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
+
+/**
  * Get the list of all accepted vendors.
  * @return a List of PRIVACY_VEN_IDs.
  */
 + (NSArray&lt;NSString *&gt; *) getAcceptedCategories;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
+
+/**
  * Get the list of all accepted vendors.
  * @return a List of PRIVACY_VEN_IDs.
  */
@@ -264,24 +260,21 @@ We created a function to get the privacy as a JSON string so you can save it ins
  * @return YES or NO
  */
 + (BOOL) isIABPurposeAccepted: (int) ID;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
+
+/**
  * Check if a vendor has been accepted.
  * @param ID the vendor ID.
  * @return YES or NO
  */
 + (BOOL) isIABVendorAccepted: (int) ID;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
+
+/**
  * Check if a special feature has been accepted.
  * @param ID the vendor ID.
  * @return YES or NO
  */
 + (BOOL) isIABSpecialFeatureAccepted: (int) ID;
 </code></pre>
-<p>&nbsp;</p>
 <h2 id="privacy-center">Privacy Center</h2>
 <p>The Privacy Center is represented by a JSON file that describes the interfaces that will be created by native code inside the application.</p>
 <p>We create an UIViewController to create the privacy center view.
@@ -291,7 +284,6 @@ UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSa
                                                                style: UIBarButtonItemStylePlain
                                                               target: nil
                                                               action: nil];
-
 self.navigationItem.backBarButtonItem = backButton;
 [self.navigationController pushViewController: PCM animated: YES];
 
@@ -305,8 +297,7 @@ self.navigationItem.backBarButtonItem = backButton;
 </code></pre>
 <p>For now this JSON has to be created and managed manually. But soon, this will be created by our interfaces. And the SDK will check for updates of the file automatically.
 Meanwhile the configuration has to be done manually and you can find the definition of the file here.</p>
-<pre><code>:::json
-{
+<pre><code>{
     "information": {
         "update": "2018-10-23",
         "version": "1",
@@ -371,6 +362,6 @@ Depending on your app privacy configuration you might have to call some addition
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/05/2021 16:25:11</p>
+<p>This documentation was generated on 25/06/2021 10:59:25</p>
 </body>
 </html>

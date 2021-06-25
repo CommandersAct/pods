@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>12/05/2021</em><br />
+<p>Last update : <em>25/06/2021</em><br />
 Release version : <em>4.6.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -48,22 +48,22 @@ Release version : <em>4.6.1</em></p>
 All of those configurations will update automatically but having an offline version will prevent any hasardeous behaviour over bad internet connection.</p>
 <h1 id="iab-21">IAB 2.1</h1>
 <p>We suport IAB 2.1 but you will need to add some translation in your privacy.json file. Hereafter are the lines you need to add in order to display the new informations properly.</p>
-<pre><code>:::json
- "texts": {
-  "generic": {
-        "month": "months",
-        "day": "days",
-        "seconds": "seconds",
-        "hours": "hours"
-  },
-
-  "vendors": {
+<p>```javascript
+     "texts": {
+      "generic": {
+            "month": "months",
+            "day": "days",
+            "seconds": "seconds",
+            "hours": "hours"
+      },</p>
+<pre><code>  "vendors": {
         "deviceStorageTitle": "Storage Type:",
         "deviceStorageCookieLifetime": "Cookie lifetime: ",
         "deviceStorageOther": "Others",
         "deviceStorageCookies": "Cookies"
   },
 </code></pre>
+<p>```</p>
 <h2 id="json-configurations">JSON Configurations</h2>
 <h3 id="vendor-listjson">Vendor-list.json</h3>
 <p>This file contains all vendors that have a partnership with IAB. It also contains the definition (in English only) for all purposes, special purposes, features, special features and what the vendors are using.
@@ -75,8 +75,7 @@ Keeping the same name.</p>
 For example, our IAB demo is using purposes-fr.json.</p>
 <p>If you need translation files, download them from https://register.consensu.org/translation under "List of translations for purpose descriptions v2.0". Also keeping the same file name.</p>
 <p>Call this line right after the initialisation of the TCPrivacy module:</p>
-<pre><code>:::java
-[[TCMobilePrivacy sharedInstance] setLanguage: @"fr"];
+<pre><code>[[TCMobilePrivacy sharedInstance] setLanguage: @"fr"];
 </code></pre>
 <h3 id="privacyjson">privacy.json</h3>
 <p>This file declares information used to save the privacy in our dashboards as well as texts present in the interface that are not declared officially by IAB.</p>
@@ -86,7 +85,8 @@ For example, our IAB demo is using purposes-fr.json.</p>
 <p>/!\ This file is a bit more specific and not mandatory.</p>
 <p>It is here to represent the restrictions a publisher (your company) is applying its partners.</p>
 <p>If you have a file, you need to put it with the other json configurations and add a small line later in the code.</p>
-<p>[[TCMobilePrivacy sharedInstance] useCustomPublisherRestrictions];</p>
+<pre><code>[[TCMobilePrivacy sharedInstance] useCustomPublisherRestrictions];
+</code></pre>
 <p>/!\ This should normally decided by your project manager and the file should be created by your Commanders Act contact.</p>
 <h2 id="filtering-vendors">Filtering vendors</h2>
 <p>It is possible that instead of displaying all the hundreds of vendors in the vendor list, you'd rather display only the one your company needs. This will also filter all purposes and special features that we ask the user to consent to.</p>
@@ -109,8 +109,7 @@ Starting September 2020 the CNIL asks that if you have a "Accept all" button, yo
 </code></pre>
 <p>You can add those lines and select the needing ones. For example, if you don't want a refuse all button, just remove "RefuseAll".</p>
 <h2 id="initialisation">Initialisation</h2>
-<pre><code>:::java
-// If you need to use callbacks.
+<pre><code>// If you need to use callbacks.
 [[TCMobilePrivacy sharedInstance] registerCallback: self];
 
 // a. This is for the stand-alone version
@@ -123,7 +122,7 @@ Starting September 2020 the CNIL asks that if you have a "Accept all" button, yo
 </code></pre>
 <h2 id="with-the-sdk">With the SDK</h2>
 <p>You can use classic Tag Management with IAB if needed. Doing this is really simple as all saved information used for IAB configuration will be forwarded to each server-side call.
-This mean that you can use any IAB purpose as a category and create rules in your container accordingly.    </p>
+This mean that you can use any IAB purpose as a category and create rules in your container accordingly.</p>
 <h2 id="retaining-consent">Retaining consent</h2>
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
@@ -153,6 +152,7 @@ If you're looking for a way to prove consent or reset saved information, you'll 
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner (not included in IAB) "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
+<p>Implement TCPrivacyCallbacks to get access to those callbacks:</p>
 <pre><code>- (void) consentUpdated: (NSDictionary *) consent;
 </code></pre>
 <p>Called when you give us the user selected consents, or when we load the saved consent from the SDK.
@@ -189,6 +189,6 @@ But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePub
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/05/2021 16:25:11</p>
+<p>This documentation was generated on 25/06/2021 10:59:25</p>
 </body>
 </html>

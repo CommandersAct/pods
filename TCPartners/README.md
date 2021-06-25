@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>12/05/2021</em><br />
+<p>Last update : <em>25/06/2021</em><br />
 Release version : <em>4.6.5</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -28,38 +28,32 @@ Release version : <em>4.6.5</em></p>
 <p>TCPartners or TCMobilePartners is the class used as the super-type of all partners.</p>
 <p>A TCPartner is by default a partner that will listen to all hits you're passing to the SDK so he can work on them.
 You can change this activation by using on of the 3 following functions:</p>
-<pre><code>:::objective-c
-/**
- * This function tells the partner to activate on all hits.
- */
-- (void) activateOnAllHits
-
-/**
- * This function tells the partner to only treat hit when the specified key is in the datalayer.
- * @param key the key to activate the treatment.
- */
-- (void) activateOnKey: (NSString *) key
-
-/**
-* This function tells the partner to only treat hit when the specified key/value pair is in the datalayer.
-* @param key the specific key.
-* @param value the specific value.
-*/
-- (void) activateOnKey: (NSString *) key andValue: (NSString *) value
-
-/**
- * This function tells the partner to only treat hit when the specified key is NOT in the datalayer.
- * @param key the key to prevent the activation.
- */
-- (void) activateOnAllHitsButKey: (NSString *) key
-
-/**
- * This function tells the partner to only treat hit when the specified key/value pair is NOT in the datalayer.
- * @param key the specific key.
- * @param value the specific value.
- */
-- (void) activateOnAllHitsButKey: (NSString *) key andValue: (NSString *) value
-</code></pre>
+<p>/*<em>
+  * This function tells the partner to activate on all hits.
+  </em>/
+  - (void) activateOnAllHits</p>
+<p>/<em><em>
+  * This function tells the partner to only treat hit when the specified key is in the datalayer.
+  * @param key the key to activate the treatment.
+  </em>/
+  - (void) activateOnKey: (NSString </em>) key</p>
+<p>/<em><em>
+  * This function tells the partner to only treat hit when the specified key/value pair is in the datalayer.
+  * @param key the specific key.
+  * @param value the specific value.
+  </em>/
+  - (void) activateOnKey: (NSString </em>) key andValue: (NSString *) value</p>
+<p>/<em><em>
+  * This function tells the partner to only treat hit when the specified key is NOT in the datalayer.
+  * @param key the key to prevent the activation.
+  </em>/
+  - (void) activateOnAllHitsButKey: (NSString </em>) key</p>
+<p>/<em><em>
+  * This function tells the partner to only treat hit when the specified key/value pair is NOT in the datalayer.
+  * @param key the specific key.
+  * @param value the specific value.
+  </em>/
+  - (void) activateOnAllHitsButKey: (NSString </em>) key andValue: (NSString *) value</p>
 <p>So think carefully about which activation method you want for your partners.</p>
 <h1 id="adobe-audience-manager-aam">Adobe Audience Manager (AAM)</h1>
 <p>The point of this connector is the send information to Adobe Audience Manager and get back the segments corresponding to the app user.</p>
@@ -81,21 +75,18 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>The second is the domain which correspond to the application. This is needed because AAM can send information from several different app domains when you have several configured.</p>
 <p>You will have to register to a callback to receive the content of the segments.</p>
 <p>And will receive a response of the format:</p>
-<pre><code>:::JSON
-{
+<pre><code>{
     aam_fr=sid=81025,
     aam_oas=PYT_63359=Y,
     aam_fw=PYT_63359=Y&amp;PYT_619=Y&amp;PYT_7398=Y&amp;PYT_94221
 }
 </code></pre>
 <p>To initialize Freewheel:</p>
-<pre><code>:::objective-c
-[[TCPartners_Freewheel sharedInstance] setDomain: @".tf1.fr"];
+<pre><code>[[TCPartners_Freewheel sharedInstance] setDomain: @".tf1.fr"];
 [[TCPartners_Freewheel sharedInstance] setCallback: self];
 </code></pre>
 <p>And to recover the segments:</p>
-<pre><code>:::objective-c
-- (void) onSegmentReceived: (NSDictionary *) segments
+<pre><code>- (void) onSegmentReceived: (NSDictionary *) segments
 {
     [[TCLogger sharedInstance] logMessage: [NSString stringWithFormat: @"onSegmentReceived: %@", segments] withLevel: TCLogLevel_Error];
 }
@@ -108,6 +99,6 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/05/2021 16:25:11</p>
+<p>This documentation was generated on 25/06/2021 10:59:25</p>
 </body>
 </html>
