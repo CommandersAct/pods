@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>25/06/2021</em><br />
+<p>Last update : <em>28/06/2021</em><br />
 Release version : <em>4.6.4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -114,7 +114,7 @@ forget them when setting your dynamic variables.</p>
 <h2 id="compatibility">Compatibility</h2>
 <ul>
 <li>Architecture: armv7, arm64, i386 and x86_64, bitcode sections</li>
-<li>iOS version: 7.0 minimum</li>
+<li>iOS version: 9.0 minimum</li>
 <li>Compiled with the ENABLE_BITCODE = YES option</li>
 <li>Compiled with ARC enabled</li>
 </ul>
@@ -399,6 +399,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 25/06/2021 10:59:25</p>
+<p>This documentation was generated on 28/06/2021 14:57:16</p>
 </body>
 </html>

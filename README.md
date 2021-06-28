@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>25/06/2021</em><br />
+<p>Last update : <em>28/06/2021</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -14,10 +14,9 @@ Release version : <em>4</em></p>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#latest-available-versions">Latest available versions</a></li>
 <li><a href="#adding-a-module-to-your-project">Adding a module to your project</a></li>
-<li><a href="#cocoapods-renaming-warning">Cocoapods renaming warning</a><ul>
+<li><a href="#cocoapods">Cocoapods</a><ul>
 <li><a href="#build-variants">Build Variants</a></li>
-<li><a href="#cocoapods">Cocoapods</a></li>
-<li><a href="#framework">Framework</a></li>
+<li><a href="#xcframework">XCFramework</a></li>
 </ul>
 </li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
@@ -43,57 +42,30 @@ The modules are the following :</p>
 <pre><code>- Using cocoapods to manage the dependency.
 - Using directly the framework files in your project.
 </code></pre>
-<h1 id="cocoapods-renaming-warning">Cocoapods renaming warning</h1>
+<h1 id="cocoapods">Cocoapods</h1>
 <div class="warning"></div>
 
 <blockquote>
-<p>We renamed all our pods to be able to use them depending on your configurations.</p>
+<p>We renamed all our pods! The names of the pod changed to be able to reflect the exact content of the podspec (and thus preventing the name warning).</p>
 </blockquote>
-<p>The names of the pod changed to be able to reflect the exact content of the podspec (and thus preventing the name warning). And by having different names we also allow you to use several of them depending on your configurations directly in the podfile.</p>
-<p><a href="https://lookback.io/blog/cocoapods-by-configuration">The basic idea is explained here</a></p>
-<p>You will then be able to modify your podfiles like this:</p>
-<pre><code>#TC libs for debug
-pod 'latest-TCCore-Debug-universal', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Debug-universal.podspec', :configuration =&gt; ['Debug Prod', 'Debug Test', 'Debug Stubs']
-pod 'latest-TCSDK-Debug-universal', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Debug-universal.podspec', :configuration =&gt; ['Debug Prod', 'Debug Test', 'Debug Stubs']
-#TC libs for Release
-pod 'latest-TCCore-Release-iphoneos', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos.podspec', :configuration =&gt; ['Release Prod', 'Release Test', 'Store Prod']
-pod 'latest-TCSDK-Release-iphoneos', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Release-iphoneos.podspec', :configuration =&gt; ['Release Prod', 'Release Test', 'Store Prod']
+<p>All latests now point toward an XCode 12 compiled version. If you still need XCode 11, please check the changelogs and point to the pod inside the latest XCode 11 release available. XCode 11 is not supported anymore and no new releases will be made for it.</p>
+<pre><code>pod 'latest-TCCore', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore.podspec'
+pod 'latest-TCSDK', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK.podspec'
 </code></pre>
 <p>You can also point on a specific version (only for the latests builds):</p>
-<pre><code>#TC libs for Release
-pod 'TCCore-Release-universal', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/4/5/4/TCCore-Release-universal.podspec', :configuration =&gt; ['Release Prod', 'Release Test', 'Store Prod']
-pod 'TCSDK-Release-universal', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/4/4/1/TCSDK-Release-universal.podspec', :configuration =&gt; ['Release Prod', 'Release Test', 'Store Prod']
+<pre><code>pod 'TCCore', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/4/7/7/TCCore.podspec'
+pod 'TCSDK', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/4/6/4/TCSDK.podspec'
 </code></pre>
 <h2 id="build-variants">Build Variants</h2>
-<p>Whatever the chosen way to add it is, please remember that we have three different versions available.</p>
-<pre><code>- A debug version with the architectures for phones and simulators.
-- A release version with the architectures for phones and simulators.
-- A release version with only the architectures for phones.
+<p>We have several variants depending on your needs.</p>
+<pre><code>- 1 full vanilla version
+- 1 vanilla version with Bitcode enabled
+- 1 version without the code to get the IDFA
+- 1 version without the code to get the IDFA with Bitcode enabled
 </code></pre>
-<p>In addition to those three variants also come a release version with BITCODE enabled. Since BITCODE is only used when submitting your application on the store, only a release version is available with BITCODE.</p>
-<p>And also if you don't want to use the IDFA/IDFV in your application (thus don't want to check the case in the application submission form), you can get another variant that is noIDFA. This variant will not compile anything linked with ASIdentifierManager.</p>
-<h2 id="cocoapods">Cocoapods</h2>
-<p>Please note that if you are using cocoapod and important changes occur in our SDK that would have you modify your applications, we will create new podspec files for the newest versions to prevent any issues in your project.</p>
-<div class="warning"></div>
-
-<blockquote>
-<p>You will always need to at least add the Core module to your project.</p>
-</blockquote>
-<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Debug-universal.podspec</p>
-<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos.podspec</p>
-<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Release-iphoneos-Bitcode.podspec</p>
-<p>Your podfile should look something like this :</p>
-<pre><code>use_frameworks!
-target 'TCDemo' do
-    pod 'latest-TCCore-Debug-universal', podspec: 'https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/latest-TCCore-Debug-universal.podspec'
-    pod 'latest-TCSDK-Debug-universal', podspec: 'https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/latest-TCSDK-Debug-universal.podspec'
-end
-</code></pre>
-<p>You can also point on a specific version (only for the latests builds):</p>
-<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/4/5/4/TCCore-Release-universal.podspec
-https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/4/5/4/TCCore-Debug-universal.podspec</p>
-<p>https://raw.githubusercontent.com/TagCommander/pods/master/TCSDK/4/4/1/TCSDK-Release-universal.podspec</p>
-<h2 id="framework">Framework</h2>
+<p>The 2 latests variants will not compile anything linked with ASIdentifierManager.</p>
+<p>If you're using Trust (Privacy) there is a bit more variants depending on wether you're using IAB or not for your privacy.</p>
+<h2 id="xcframework">XCFramework</h2>
 <p>The latest version of our modules are always available on our github account: https://github.com/TagCommander/pods</p>
 <div class="warning"></div>
 
@@ -113,6 +85,6 @@ https://raw.githubusercontent.com/TagCommander/pods/master/TCCore/4/5/4/TCCore-D
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 25/06/2021 10:59:25</p>
+<p>This documentation was generated on 28/06/2021 14:57:16</p>
 </body>
 </html>
