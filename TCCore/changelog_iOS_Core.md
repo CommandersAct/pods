@@ -6,7 +6,12 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.7.8 : 07/05 2021*
+
+	~ Fix in waiting for user-agent that would not propagate the user agent when waiting for consent.
+
 *4.7.7 : 05/12 2021*
+
 	+ functions to manipulate the operation queue's state from the SDK.
 
 *4.7.6 : 04/19 2021*
