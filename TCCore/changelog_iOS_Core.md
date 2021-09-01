@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.7.9 : 09/01 2021*
+
+	~ [Privacy] Fixing configuration parsing which would lead to a privacy version at 0 in some rare cases.
+
 *4.7.8 : 07/05 2021*
 
 	~ Fix in waiting for user-agent that would not propagate the user agent when waiting for consent.

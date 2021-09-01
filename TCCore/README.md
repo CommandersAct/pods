@@ -3,9 +3,9 @@
 <body>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
-<p><strong>iOS</strong></p>
-<p>Last update : <em>05/07/2021</em><br />
-Release version : <em>4.7.8</em></p>
+<p><strong>${platform}</strong></p>
+<p>Last update : <em>01/09/2021</em><br />
+Release version : <em>4.7.9</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -21,7 +21,6 @@ Release version : <em>4.7.8</em></p>
 <p>But even with that said, a part of our code is pretty useful in several of our modules, so we created a Core module to prevent code repetition and thus also bigger applications if you need several modules.</p>
 <h1 id="dependencies">Dependencies</h1>
 <p>The Core module is mandatory if you are using Commanders Act's mobile solution so we simply put the dependencies needed for the Core module directly in the documentations of the other modules.</p>
-<p>On iOS Core isn't compiling with any dependencies.</p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -30,6 +29,6 @@ Release version : <em>4.7.8</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/07/2021 11:25:29</p>
+<p>This documentation was generated on 01/09/2021 14:41:12</p>
 </body>
 </html>

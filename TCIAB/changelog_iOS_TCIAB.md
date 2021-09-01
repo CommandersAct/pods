@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.7.0 : 09/01 2021*
+
+    /!\ Requires TCPrivacy 4.9.0+
+    + We can now build Google AC-String.
+
 *4.6.1 : 12/18 2020*
 
 	~ Modified build scripts to better handle XCFramework. No more debug needed, DSYM files are now directly inside the release.

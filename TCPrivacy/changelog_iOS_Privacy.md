@@ -1,6 +1,13 @@
 Changelog iOS
 =============
 
+*4.9.0 : 10/08 2021*
+
+	+ Privacy Center unified for IAB and Non-IAB users.
+    + We can now build Google AC-String.
+	~ Fixing accept all which always sent stats from "banner"
+	+ Adding missing stat function "saveConsentFromPopUp"
+
 *4.8.5 : 05/06 2021*
 
 	+ New statistics functions. Please check TCPrivacy documentation on github.
@@ -236,17 +243,17 @@ Changelog iOS
     ~ /!\ Update Core module alongside this module.
     ~ /!\ Function to initialize Privacy have changed
     ~ Refactoring on file configurations
-    + We now have a class to manage distant configuration and privacy versions are taken from the configuration. 
+    + We now have a class to manage distant configuration and privacy versions are taken from the configuration.
 
 *4.3.10 : 08/05 2019*
 
-    ~ User-agent encoding error in stand alone privacy. 
+    ~ User-agent encoding error in stand alone privacy.
 
 
 *4.3.9 : 08/02 2019*
 
-    ~ Only passing categories ID related IAB for Consent String generation. 
-    
+    ~ Only passing categories ID related IAB for Consent String generation.
+
 
 *4.3.8 : 06/07 2019*
 

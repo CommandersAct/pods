@@ -3,9 +3,9 @@
 <body>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
-<p><strong>iOS</strong></p>
-<p>Last update : <em>05/07/2021</em><br />
-Release version : <em>4.8.5</em></p>
+<p><strong>${platform}</strong></p>
+<p>Last update : <em>01/09/2021</em><br />
+Release version : <em>4.9.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -38,10 +38,7 @@ Release version : <em>4.8.5</em></p>
 <li><a href="#forwarding-consent-to-webviews">Forwarding consent to webViews</a></li>
 <li><a href="#changing-consent-versiob">Changing consent versiob</a></li>
 <li><a href="#consent-internal-api">Consent internal API</a></li>
-<li><a href="#privacy-center">Privacy Center</a><ul>
-<li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
-</ul>
-</li>
+<li><a href="#privacy-center">Privacy Center</a></li>
 <li><a href="#privacy-statistics">Privacy statistics</a></li>
 <li><a href="#tcdemo">TCDemo</a></li>
 </ul>
@@ -85,34 +82,13 @@ To do this, add "consentDurationInMonths": "6" inside the "information" bloc.</p
 <p>If you're not using our interface, you'll have to manually change it in the code.
 We express this duration in months. The duration of a month is calculated by 365/12 days.
 Please first call the following method before initializing the Privacy module else:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setConsentDuration: 6];
-</code></pre>
 <h3 id="with-the-sdk">With the SDK</h3>
 <p>Modules: Core, Privacy, SDK</p>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
-<p>The setup is really simple, pass to the TCMobilePrivacy object your site ID, application context and a pointer to your TagCommanders' SDK instance. If you want to add your consent version, you can add it to the parameters as a NSString.</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setSiteID: 3311 TCInstance: tc AndVersion: @"001"];
-</code></pre>
-<p>If you're using you're own Privacy Center, use the following function instead:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] customPCMSetSiteID: siteID privacyID: privacyID andTCInstance: tc];
-</code></pre>
-<p>This call will check the saved consent, putting the SDK on hold if nothing is fount, and start/stop the SDK if something is saved.
-It will then the check the consent validity, if it's too old, you can implement a callback treating what to do then. Please check the Callback part.</p>
-<p>Please note that start and stop have a notification sent with them, you can listen to them if needed: kTCNotification_StartingTheSDK and kTCNotification_StoppingTheSDK.</p>
-<p>If you need to store configuration files in another bundle than the main one, you can call the following line:</p>
-<pre><code>[[TCConfigurationFileFactory sharedInstance] setBundle: myBundle forConfiguration: @"vendorlist"];
-</code></pre>
-<p>But please call this <em>before</em> calling [TCMobilePrivacy sharedInstance].</p>
 <h3 id="standalone">Standalone</h3>
 <p>Modules: Core, Privacy</p>
 <p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
-<p>The setup is really simple, pass to the TCPrivacy object your site ID  application context. If you want to add your consent version, you can add it to the parameters as a String.</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setSiteID: siteID andPrivacyID: privacyID];
-</code></pre>
-<p>If you're using you're own Privacy Center, use the following function instead:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] customPCMSetSiteID: siteID privacyID: privacyID];
-</code></pre>
 <h2 id="saving-consent">Saving consent</h2>
 <p>Here is where the IDs of the categories matters.</p>
 <h3 id="with-the-privacy-center">With the Privacy Center</h3>
@@ -120,34 +96,16 @@ It will then the check the consent validity, if it's too old, you can implement 
 <p>Please keep your category IDs between 1 and 999.</p>
 <h3 id="manually-displayed-consent">Manually displayed consent</h3>
 <p>Once the user validated his consent, you can the send the information to the Privacy module as follow:</p>
-<pre><code>NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
-[consent setObject: @"1" forKey: @"PRIVACY_CAT_1"];
-[consent setObject: @"0" forKey: @"PRIVACY_CAT_2"];
-[consent setObject: @"1" forKey: @"PRIVACY_CAT_3"];
-[[TCMobilePrivacy sharedInstance] saveConsent: consent];
-</code></pre>
 <p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 mean accepting this category or vendor, 0 is refusing.</p>
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
 <h3 id="acceptall-refuseall">AcceptAll / RefuseAll</h3>
 <p>/!\ Those methods only work if you are using our interface and thus have a privacy.json in your project (and maybe IAB's JSON as well).</p>
 <p>Those are intended for clients that are displaying a first "popup" screen before our interfaces and that have a way to either open the privacy center of accept/refuse the consent.</p>
 <p>We created functions to call if you want to create a simple way to accept or refuse all consent from outside our user interface.</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] acceptAllConsent];
-[[TCMobilePrivacy sharedInstance] refuseAllConsent];
-</code></pre>
 <h2 id="retaining-consent">Retaining consent</h2>
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
 <p>If you want to use an ID already inside the SDK:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setConsentUser: @"#TC_IDFA#"];
-</code></pre>
-<p>If you want to use an ID from your data layer, please first add it to the permanant store:</p>
-<pre><code>[tc addPermanentData: @"MY_ID" withValue: @"12345"];
-[[TCMobilePrivacy sharedInstance] setConsentUser: @"MY_ID"];
-</code></pre>
-<p>and if you simply want to simply pass the information:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setConsentUser: @"123456765432"];
-</code></pre>
 <p>This can be used to save the display of the consent, and giving the consent.</p>
 <p>This ID is very important because it will be the basic information used to get back the consent when you need a proof.</p>
 <h3 id="using-user-id">Using user ID</h3>
@@ -164,8 +122,6 @@ This allow you to prove that a user has indeed been shown the consent screen eve
 <p>In some cases, client also use this to infer user consent since he continued using the application after he was shown the consent screen.
 We don't recommend this behaviour, please discuss it with your setup team first.</p>
 <p>Either way it's interesting to be able to log the fact that the consent screen has been viewed. If you're not using the Privacy Center, please call:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] viewConsent];
-</code></pre>
 <h3 id="global-consent">Global consent</h3>
 <p>We integrated an On/Off switch so that the user can consent to all categories at the same time.
 It's not mandatory yet, but recommended.</p>
@@ -174,127 +130,15 @@ It's not mandatory yet, but recommended.</p>
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
-<p>Implement TCPrivacyCallbacks to get access to those callbacks:</p>
-<pre><code>- (void) consentUpdated: (NSDictionary *) consent;
-</code></pre>
-<p>Called when you give us the user selected consents, or when we load the saved consent from the SDK.
-We have a Dictionnary which is the same as the one given to our SDK with keys PRIVACY_CAT_n and value @"0" or @"1".</p>
-<pre><code>- (void) consentOutdated;
-</code></pre>
-<p>This is called after 13 months without change in the user consent. This can allow you to force displaying the consent the same way you would on first launch.</p>
-<pre><code>- (void) consentCategoryChanged;
-</code></pre>
-<p>When you make a change in the JSON, there is nothing special to do.
-But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
-<pre><code>- (void) significantChangesInPrivacy;
-</code></pre>
-<p>This one is slightly different from the last one, it was created for IAB and will not be sent automatically. It is conditionned by the field "significantChanges" in the privacy.json so that it will only launch when you need it to.</p>
 <h2 id="forwarding-consent-to-webviews">Forwarding consent to webViews</h2>
 <p>Some clients need to have the consent forwarded in their webViews to manage a web container inside it.
 We created a function to get the privacy as a JSON string so you can save it inside the webView's local storage.
 /!\ This function only help saving it to the local storage by giving the required format, you will still need to have JS code in the web container to use it. Please ask your consultant for this part.</p>
-<pre><code>- (NSString *) getConsentAsJson;
-</code></pre>
 <h2 id="changing-consent-versiob">Changing consent versiob</h2>
 <p>If the case you need to manually change the consent duration (if you're using your own privacy center for example), you can use the following:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setConsentVersion: @"132"];
-</code></pre>
 <h2 id="consent-internal-api">Consent internal API</h2>
-<p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.
-You'll find those in the class TCPrivacyAPI:</p>
-<pre><code>/**
- * Checks if we should display privacy center for any reason.
- * @return True or False.
- */
-+ (BOOL) shouldDisplayPrivacyCenter
-
-/**
- * Checks if consent has already been given by checking if consent information is saved.
- * @return YES if the consent was already given, NO otherwise.
- */
-+ (BOOL) isConsentAlreadyGiven;
-
-/**
- * Return the epochformatted timestamp of the last time the consent was saved.
- * @return epochformatted timestamp or 0.
- */
-+ (unsigned long long) getLastTimeConsentWasSaved;
-
-/**
- * Check if a Category has been accepted.
- * @param ID the category ID.
- * @return YES or NO.
- */
-+ (BOOL) isCategoryAccepted: (int) catID;
-
-/**
- * Check if a vendor has been accepted.
- * @param ID the vendor ID.
- * @return YES or NO.
- */
-+ (BOOL) isVendorAccepted: (int) venID;
-
-/**
- * Get the list of all accepted vendors.
- * @return a List of PRIVACY_VEN_IDs.
- */
-+ (NSArray&lt;NSString *&gt; *) getAcceptedCategories;
-
-/**
- * Get the list of all accepted vendors.
- * @return a List of PRIVACY_VEN_IDs.
- */
-+ (NSArray&lt;NSString *&gt; *) getAcceptedVendors;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
- * Get the list of everything that was accepted.
- * @return a List of PRIVACY_VEN_IDs and PRIVACY_CAT_IDs.
- */
-+ (NSArray&lt;NSString *&gt; *) getAllAcceptedConsent;
-</code></pre>
-<p>&nbsp;</p>
-<pre><code>/**
- * Check if a purpose has been accepted.
- * @param ID the purpose ID.
- * @return YES or NO
- */
-+ (BOOL) isIABPurposeAccepted: (int) ID;
-
-/**
- * Check if a vendor has been accepted.
- * @param ID the vendor ID.
- * @return YES or NO
- */
-+ (BOOL) isIABVendorAccepted: (int) ID;
-
-/**
- * Check if a special feature has been accepted.
- * @param ID the vendor ID.
- * @return YES or NO
- */
-+ (BOOL) isIABSpecialFeatureAccepted: (int) ID;
-</code></pre>
 <h2 id="privacy-center">Privacy Center</h2>
 <p>The Privacy Center is represented by a JSON file that describes the interfaces that will be created by native code inside the application.</p>
-<p>We create an UIViewController to create the privacy center view.
-The offline JSON should be inside the project code folder.</p>
-<pre><code>TCPrivacyCenterViewController *PCM = [[TCPrivacyCenterViewController alloc] init];
-UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSaveButtonText]
-                                                               style: UIBarButtonItemStylePlain
-                                                              target: nil
-                                                              action: nil];
-self.navigationItem.backBarButtonItem = backButton;
-[self.navigationController pushViewController: PCM animated: YES];
-
-
-/!\ In case you are using IAB (by adding the module TCIAB), please use TCIABPrivacyCenterViewController instead.
-</code></pre>
-<p>Since we have a view controller, you can call it by pushing it. It's quite easy, but this mean we have to add code if we want to customize the name of the save/back button.</p>
-<p>Some part of the Privacy Center can be customised with your code.</p>
-<h3 id="change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</h3>
-<pre><code>[TCMobilePrivacy sharedInstance].switchDefaultState = NO;
-</code></pre>
 <p>For now this JSON has to be created and managed manually. But soon, this will be created by our interfaces. And the SDK will check for updates of the file automatically.
 Meanwhile the configuration has to be done manually and you can find the definition of the file here.</p>
 <pre><code>{
@@ -353,7 +197,6 @@ Depending on your app privacy configuration you might have to call some addition
 <img alt="alt tag" src="../res/CustomPC.jpeg" /></p>
 <h2 id="tcdemo">TCDemo</h2>
 <p>You can, of course, check our demo project for a simple implementation example.</p>
-<p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/iOS">Privacy Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -362,6 +205,6 @@ Depending on your app privacy configuration you might have to call some addition
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/07/2021 11:25:29</p>
+<p>This documentation was generated on 01/09/2021 14:41:12</p>
 </body>
 </html>

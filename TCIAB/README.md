@@ -3,9 +3,9 @@
 <body>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
-<p><strong>iOS</strong></p>
-<p>Last update : <em>05/07/2021</em><br />
-Release version : <em>4.6.1</em></p>
+<p><strong>${platform}</strong></p>
+<p>Last update : <em>01/09/2021</em><br />
+Release version : <em>4.7.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -19,6 +19,7 @@ Release version : <em>4.6.1</em></p>
 <li><a href="#purposes-xxjson">purposes-xx.json</a></li>
 <li><a href="#privacyjson">privacy.json</a></li>
 <li><a href="#tciabpublisherrestrictionsjson">TCIABPublisherRestrictions.json</a></li>
+<li><a href="#google-atp-listjson">google-atp-list.json</a></li>
 </ul>
 </li>
 <li><a href="#filtering-vendors">Filtering vendors</a></li>
@@ -74,9 +75,6 @@ Keeping the same name.</p>
 <p>If you are using more than one language in your application you will need to also have a copy of those files. Those files are created and supported by IAB.
 For example, our IAB demo is using purposes-fr.json.</p>
 <p>If you need translation files, download them from https://register.consensu.org/translation under "List of translations for purpose descriptions v2.0". Also keeping the same file name.</p>
-<p>Call this line right after the initialisation of the TCPrivacy module:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setLanguage: @"fr"];
-</code></pre>
 <h3 id="privacyjson">privacy.json</h3>
 <p>This file declares information used to save the privacy in our dashboards as well as texts present in the interface that are not declared officially by IAB.</p>
 <p>/!\ This file should be provided by one of our consultant.</p>
@@ -85,9 +83,14 @@ For example, our IAB demo is using purposes-fr.json.</p>
 <p>/!\ This file is a bit more specific and not mandatory.</p>
 <p>It is here to represent the restrictions a publisher (your company) is applying its partners.</p>
 <p>If you have a file, you need to put it with the other json configurations and add a small line later in the code.</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] useCustomPublisherRestrictions];
-</code></pre>
 <p>/!\ This should normally decided by your project manager and the file should be created by your Commanders Act contact.</p>
+<h3 id="google-atp-listjson">google-atp-list.json</h3>
+<p>/!\ This file is a bit more specific and not mandatory.</p>
+<p>Only use this file if you are using Google AC-String.</p>
+<p>If you have a file, you need to put it with the other json configurations.
+To init it, you will have to call the following ling BEFORE the initilisation of the Privacy module:</p>
+<p>If you are using AC-String please verify that you have a list of google vendors inside your privacy.json as well.</p>
+<p>This file can only be provided by your consultant and will be updated by the SDK automatically.</p>
 <h2 id="filtering-vendors">Filtering vendors</h2>
 <p>It is possible that instead of displaying all the hundreds of vendors in the vendor list, you'd rather display only the one your company needs. This will also filter all purposes and special features that we ask the user to consent to.</p>
 <p>If you want to filter, nothing has to be done inside the code, but you should find inside the privacy.json in "information" a field like : "vendors": "8,18,467,310".</p>
@@ -109,17 +112,6 @@ Starting September 2020 the CNIL asks that if you have a "Accept all" button, yo
 </code></pre>
 <p>You can add those lines and select the needing ones. For example, if you don't want a refuse all button, just remove "RefuseAll".</p>
 <h2 id="initialisation">Initialisation</h2>
-<pre><code>// If you need to use callbacks.
-[[TCMobilePrivacy sharedInstance] registerCallback: self];
-
-// a. This is for the stand-alone version
-[[TCMobilePrivacy sharedInstance] setSiteID: 3311 andPrivacyID: 320];
-// b. Instead use this line if you're using the SDK at the same time.
-[[TCMobilePrivacy sharedInstance] setSiteID: 3311 containerID: 7 privacyID: 320 andTCInstance: tc];
-
-// Use this if you need to use a specific language
-[[TCMobilePrivacy sharedInstance] setLanguage: @"fr"];
-</code></pre>
 <h2 id="with-the-sdk">With the SDK</h2>
 <p>You can use classic Tag Management with IAB if needed. Doing this is really simple as all saved information used for IAB configuration will be forwarded to each server-side call.
 This mean that you can use any IAB purpose as a category and create rules in your container accordingly.</p>
@@ -127,15 +119,6 @@ This mean that you can use any IAB purpose as a category and create rules in you
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
 <p>If you want to use an ID already inside the SDK:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setConsentUser: @"#TC_IDFA#"];
-</code></pre>
-<p>If you want to use an ID from your data layer, please first add it to the permanant store:</p>
-<pre><code>[tc addPermanentData: @"MY_ID" withValue: @"12345"];
-[[TCMobilePrivacy sharedInstance] setConsentUser: @"MY_ID"];
-</code></pre>
-<p>and if you simply want to simply pass the information:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] setConsentUser: @"123456765432"];
-</code></pre>
 <p>This can be used to save the display of the consent, and giving the consent.</p>
 <p>This ID is very important because it will be the basic information used to get back the consent when you need a proof.</p>
 <h3 id="using-user-id">Using user ID</h3>
@@ -152,21 +135,6 @@ If you're looking for a way to prove consent or reset saved information, you'll 
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner (not included in IAB) "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
-<p>Implement TCPrivacyCallbacks to get access to those callbacks:</p>
-<pre><code>- (void) consentUpdated: (NSDictionary *) consent;
-</code></pre>
-<p>Called when you give us the user selected consents, or when we load the saved consent from the SDK.
-We have a Dictionnary which is the same as the one given to our SDK with keys PRIVACY_CAT_n and value @"0" or @"1".</p>
-<pre><code>- (void) consentOutdated;
-</code></pre>
-<p>This is called after 13 months without change in the user consent. This can allow you to force displaying the consent the same way you would on first launch.</p>
-<pre><code>- (void) consentCategoryChanged;
-</code></pre>
-<p>When you make a change in the JSON, there is nothing special to do.
-But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
-<pre><code>- (void) significantChangesInPrivacy;
-</code></pre>
-<p>This one is slightly different from the last one, it was created for IAB and will not be sent automatically. It is conditionned by the field "significantChanges" in the privacy.json so that it will only launch when you need it to.</p>
 <h2 id="generating-publisher-tc-in-consent-string">Generating publisher TC in consent String</h2>
 <p>By default, as some clients asked, the publisher TC part of the consent string is not generated.
 But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePublisherTC.</p>
@@ -174,13 +142,6 @@ But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePub
 <p>By default, the screen loaded is what we call the first layer screen (or pop-up screen). Then from this screen you'll be able to go to the purpose screen and from the purpose screen to the vendor screen. Both of which are called the second layer.</p>
 <p>if you want to have your own first layer, you'll want to be able to open from this page either of our second layer pages.</p>
 <p>To do this, we created other ways to open the privacy center as follow:</p>
-<pre><code>TCIABPrivacyCenterViewController *PCM = [[TCIABPrivacyCenterViewController alloc] init];
-[PCM startWithPurposeScreen];
-[self.navigationController pushViewController: PCM animated: NO];
-</code></pre>
-<p>or for the vendor screen:</p>
-<pre><code>[PCM startWithVendorScreen];
-</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -189,6 +150,6 @@ But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePub
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/07/2021 11:25:29</p>
+<p>This documentation was generated on 01/09/2021 14:41:12</p>
 </body>
 </html>
