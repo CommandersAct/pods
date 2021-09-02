@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.9.1 : 02/09 2021*
+
+    ~ Quick fix for regular privacy which only worked with "with-IAB" type of releases.
+
 *4.9.0 : 10/08 2021*
 
 	+ Privacy Center unified for IAB and Non-IAB users.

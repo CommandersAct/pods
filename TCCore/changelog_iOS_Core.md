@@ -6,6 +6,10 @@ Changelog iOS
 
 [Previous changelist](../res/changelog_iOS_3.md)
 
+*4.7.10 : 09/02 2021*
+
+	~ Quick fix to return an empty text on translation from configuration when the field doesn't exist.
+
 *4.7.9 : 09/01 2021*
 
 	~ [Privacy] Fixing configuration parsing which would lead to a privacy version at 0 in some rare cases.

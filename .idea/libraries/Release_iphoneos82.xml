@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Release-iphoneos82">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/5/2/Release-iphoneos/TCPartners-Bitcode-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/5/2/Release-iphoneos/TCPartners-Bitcode-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/5/2/Release-iphoneos/TCPartners-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/5/2/Release-iphoneos/TCPartners-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/5/2/Release-iphoneos/TCPartners.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/5/2/Release-iphoneos/TCPartners-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/5/2/Release-iphoneos/TCPartners-noIAB.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

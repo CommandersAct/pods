@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Release-universal35">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/9/Release-universal/TCPrivacy-Bitcode-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/9/Release-universal/TCPrivacy-Bitcode-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/9/Release-universal/TCPrivacy-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/9/Release-universal/TCPrivacy-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/9/Release-universal/TCPrivacy-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/9/Release-universal/TCPrivacy.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/9/Release-universal/TCPrivacy-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

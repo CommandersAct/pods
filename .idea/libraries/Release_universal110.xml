@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Release-universal110">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/5/1/Release-universal/TCSDK-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/5/1/Release-universal/TCSDK-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/5/1/Release-universal/TCSDK-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/5/1/Release-universal/TCSDK.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

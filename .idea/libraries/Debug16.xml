@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Debug16">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/0/Debug/TCPrivacy-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/0/Debug/TCPrivacy-Bitcode-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/0/Debug/TCPrivacy.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/0/Debug/TCPrivacy-Bitcode-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/0/Debug/TCPrivacy-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/0/Debug/TCPrivacy-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/0/Debug/TCPrivacy-Bitcode.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

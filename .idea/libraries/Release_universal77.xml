@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Release-universal77">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/8/Release-universal/TCCore-Bitcode-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/8/Release-universal/TCCore-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/8/Release-universal/TCCore-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/8/Release-universal/TCCore.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/8/Release-universal/TCCore-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/8/Release-universal/TCCore-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/8/Release-universal/TCCore-Bitcode-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/8/Release-universal/TCCore-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

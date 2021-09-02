@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Release8">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/6/2/Release/TCPartners-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/6/2/Release/TCPartners-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/6/2/Release/TCPartners.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/6/2/Release/TCPartners-Bitcode-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

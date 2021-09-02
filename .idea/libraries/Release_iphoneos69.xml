@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Release-iphoneos69">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/10/Release-iphoneos/TCPrivacy-Bitcode-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/10/Release-iphoneos/TCPrivacy-Bitcode-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/10/Release-iphoneos/TCPrivacy-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/10/Release-iphoneos/TCPrivacy-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/10/Release-iphoneos/TCPrivacy-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/10/Release-iphoneos/TCPrivacy.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/10/Release-iphoneos/TCPrivacy-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/10/Release-iphoneos/TCPrivacy-Bitcode-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

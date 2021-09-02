@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Debug-universal101">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/5/6/Debug-universal/TCSDK-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/5/6/Debug-universal/TCSDK.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/5/6/Debug-universal/TCSDK-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/5/6/Debug-universal/TCSDK-noIDFA-noIAB.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

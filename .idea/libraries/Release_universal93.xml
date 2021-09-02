@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Release-universal93">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/3/1/Release-universal/TCPrivacy-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/3/1/Release-universal/TCPrivacy0-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/3/1/Release-universal/TCPrivacy0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/3/1/Release-universal/TCPrivacy-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/3/1/Release-universal/TCPrivacy.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/3/1/Release-universal/TCPrivacy0-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/3/1/Release-universal/TCPrivacy-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/3/1/Release-universal/TCPrivacy0-Bitcode-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

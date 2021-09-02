@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="02">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/7/0/TCIAB-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/7/0/TCIAB-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/7/0/TCIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/7/0/TCIAB-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

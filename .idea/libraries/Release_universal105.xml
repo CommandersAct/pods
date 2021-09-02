@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Release-universal105">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/4/1/Release-universal/TCPartners-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/4/1/Release-universal/TCPartners-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/4/1/Release-universal/TCPartners.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPartners/4/4/1/Release-universal/TCPartners-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

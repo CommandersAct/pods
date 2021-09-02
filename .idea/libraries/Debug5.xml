@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Debug5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/6/2/Debug/TCSDK-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/6/2/Debug/TCSDK.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/6/2/Debug/TCSDK-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/6/2/Debug/TCSDK-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
