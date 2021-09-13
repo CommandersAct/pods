@@ -3,8 +3,8 @@
 <body>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
-<p><strong>${platform}</strong></p>
-<p>Last update : <em>02/09/2021</em><br />
+<p><strong>iOS</strong></p>
+<p>Last update : <em>13/09/2021</em><br />
 Release version : <em>4.6.5</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -28,9 +28,41 @@ Release version : <em>4.6.5</em></p>
 <p>TCPartners or TCMobilePartners is the class used as the super-type of all partners.</p>
 <p>A TCPartner is by default a partner that will listen to all hits you're passing to the SDK so he can work on them.
 You can change this activation by using on of the 3 following functions:</p>
+<p>/*<em>
+  * This function tells the partner to activate on all hits.
+  </em>/
+  - (void) activateOnAllHits</p>
+<p>/<em><em>
+  * This function tells the partner to only treat hit when the specified key is in the datalayer.
+  * @param key the key to activate the treatment.
+  </em>/
+  - (void) activateOnKey: (NSString </em>) key</p>
+<p>/<em><em>
+  * This function tells the partner to only treat hit when the specified key/value pair is in the datalayer.
+  * @param key the specific key.
+  * @param value the specific value.
+  </em>/
+  - (void) activateOnKey: (NSString </em>) key andValue: (NSString *) value</p>
+<p>/<em><em>
+  * This function tells the partner to only treat hit when the specified key is NOT in the datalayer.
+  * @param key the key to prevent the activation.
+  </em>/
+  - (void) activateOnAllHitsButKey: (NSString </em>) key</p>
+<p>/<em><em>
+  * This function tells the partner to only treat hit when the specified key/value pair is NOT in the datalayer.
+  * @param key the specific key.
+  * @param value the specific value.
+  </em>/
+  - (void) activateOnAllHitsButKey: (NSString </em>) key andValue: (NSString *) value</p>
 <p>So think carefully about which activation method you want for your partners.</p>
 <h1 id="adobe-audience-manager-aam">Adobe Audience Manager (AAM)</h1>
 <p>The point of this connector is the send information to Adobe Audience Manager and get back the segments corresponding to the app user.</p>
+<pre><code>[[TCPartners_AdobeAudienceManager sharedInstance] setDataSourceID: 81811 andPlatformID: 20201];
+[[TCPartners_AdobeAudienceManager sharedInstance] initSegmentation];
+</code></pre>
+<p>If you want to use your custom configuration to use offline segments ID, please also add this line.</p>
+<pre><code>[[TCPartners_AdobeAudienceManager sharedInstance] addOfflineConfigurationForSiteID: 3311 andContainerID: 1];
+</code></pre>
 <p>This connector only works if we have and IDFA or AAID.</p>
 <h2 id="hit">Hit</h2>
 <p>Since we're potentially sending information to several partners we need to differentiate the data for AAM.
@@ -50,6 +82,15 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 }
 </code></pre>
 <p>To initialize Freewheel:</p>
+<pre><code>[[TCPartners_Freewheel sharedInstance] setDomain: @".tf1.fr"];
+[[TCPartners_Freewheel sharedInstance] setCallback: self];
+</code></pre>
+<p>And to recover the segments:</p>
+<pre><code>- (void) onSegmentReceived: (NSDictionary *) segments
+{
+    [[TCLogger sharedInstance] logMessage: [NSString stringWithFormat: @"onSegmentReceived: %@", segments] withLevel: TCLogLevel_Error];
+}
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -58,6 +99,6 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/09/2021 14:17:42</p>
+<p>This documentation was generated on 13/09/2021 15:19:32</p>
 </body>
 </html>

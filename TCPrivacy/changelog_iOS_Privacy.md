@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.9.2 : 13/09 2021*
+
+	+ New function to easily get the ID used to save privacy.
+
 *4.9.1 : 02/09 2021*
 
     ~ Quick fix for regular privacy which only worked with "with-IAB" type of releases.
