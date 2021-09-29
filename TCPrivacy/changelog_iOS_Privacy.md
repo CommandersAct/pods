@@ -1,15 +1,20 @@
 Changelog iOS
 =============
 
-*4.9.2 : 13/09 2021*
+*4.9.3 : 09/29 2021*
+
+	+ Fixing the display of very long url on the purpose page.
+
+
+*4.9.2 : 09/13 2021*
 
 	+ New function to easily get the ID used to save privacy.
 
-*4.9.1 : 02/09 2021*
+*4.9.1 : 09/02 2021*
 
     ~ Quick fix for regular privacy which only worked with "with-IAB" type of releases.
 
-*4.9.0 : 10/08 2021*
+*4.9.0 : 08/10 2021*
 
 	+ Privacy Center unified for IAB and Non-IAB users.
     + We can now build Google AC-String.
