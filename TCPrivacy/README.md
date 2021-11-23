@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>29/09/2021</em><br />
-Release version : <em>4.9.3</em></p>
+<p>Last update : <em>23/11/2021</em><br />
+Release version : <em>4.9.4</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -30,13 +30,10 @@ Release version : <em>4.9.3</em></p>
 <li><a href="#displaying-chosen-id">Displaying chosen ID</a></li>
 </ul>
 </li>
-<li><a href="#displaying-consent">Displaying consent</a><ul>
-<li><a href="#global-consent">Global consent</a></li>
-</ul>
-</li>
+<li><a href="#displaying-consent">Displaying consent</a></li>
 <li><a href="#reacting-to-consent">Reacting to consent</a></li>
 <li><a href="#forwarding-consent-to-webviews">Forwarding consent to webViews</a></li>
-<li><a href="#changing-consent-versiob">Changing consent versiob</a></li>
+<li><a href="#changing-consent-version">Changing consent version</a></li>
 <li><a href="#consent-internal-api">Consent internal API</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
 <li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
@@ -123,10 +120,12 @@ It will then the check the consent validity, if it's too old, you can implement 
 <pre><code>NSMutableDictionary *consent = [[NSMutableDictionary alloc] initWithCapacity: 3];
 [consent setObject: @"1" forKey: @"PRIVACY_CAT_1"];
 [consent setObject: @"0" forKey: @"PRIVACY_CAT_2"];
-[consent setObject: @"1" forKey: @"PRIVACY_CAT_3"];
-[[TCMobilePrivacy sharedInstance] saveConsent: consent];
+[consent setObject: @"2" forKey: @"PRIVACY_CAT_3"];
+[[TCMobilePrivacy sharedInstance] saveConsent: consent fromConsentSource: Popup withPrivacyAction: Save];
 </code></pre>
-<p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 mean accepting this category or vendor, 0 is refusing.</p>
+<p>ETCConsentSource is either "Popup" or "PrivacyCenter".</p>
+<p>ETCConsentAction is either "AcceptAll", "RefuseAll", "Save"</p>
+<p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 means accepting this category or vendor, 2 is for mandatory vendors or categorues, 0 is refusing.</p>
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
 <h3 id="acceptall-refuseall">AcceptAll / RefuseAll</h3>
 <p>/!\ Those methods only work if you are using our interface and thus have a privacy.json in your project (and maybe IAB's JSON as well).</p>
@@ -164,12 +163,6 @@ It will then the check the consent validity, if it's too old, you can implement 
 This allow you to prove that a user has indeed been shown the consent screen even if he somehow left without accepting/refusing to give his consent.</p>
 <p>In some cases, client also use this to infer user consent since he continued using the application after he was shown the consent screen.
 We don't recommend this behaviour, please discuss it with your setup team first.</p>
-<p>Either way it's interesting to be able to log the fact that the consent screen has been viewed. If you're not using the Privacy Center, please call:</p>
-<pre><code>[[TCMobilePrivacy sharedInstance] viewConsent];
-</code></pre>
-<h3 id="global-consent">Global consent</h3>
-<p>We integrated an On/Off switch so that the user can consent to all categories at the same time.
-It's not mandatory yet, but recommended.</p>
 <h2 id="reacting-to-consent">Reacting to consent</h2>
 <p>Some of the event happening in the SDK have callbacks associated with them in the case you need to do specific actions at this specific moment.</p>
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
@@ -196,8 +189,8 @@ We created a function to get the privacy as a JSON string so you can save it ins
 /!\ This function only help saving it to the local storage by giving the required format, you will still need to have JS code in the web container to use it. Please ask your consultant for this part.</p>
 <pre><code>- (NSString *) getConsentAsJson;
 </code></pre>
-<h2 id="changing-consent-versiob">Changing consent versiob</h2>
-<p>If the case you need to manually change the consent duration (if you're using your own privacy center for example), you can use the following:</p>
+<h2 id="changing-consent-version">Changing consent version</h2>
+<p>If the case you need to manually change the consent version (if you're using your own privacy center for example), you can use the following:</p>
 <pre><code>[[TCMobilePrivacy sharedInstance] setConsentVersion: @"132"];
 </code></pre>
 <h2 id="consent-internal-api">Consent internal API</h2>
@@ -208,40 +201,46 @@ You'll find those in the class TCPrivacyAPI:</p>
  * @return True or False.
  */
 + (BOOL) shouldDisplayPrivacyCenter
-
-/**
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Checks if consent has already been given by checking if consent information is saved.
  * @return YES if the consent was already given, NO otherwise.
  */
 + (BOOL) isConsentAlreadyGiven;
-
-/**
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Return the epochformatted timestamp of the last time the consent was saved.
  * @return epochformatted timestamp or 0.
  */
 + (unsigned long long) getLastTimeConsentWasSaved;
-
-/**
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Check if a Category has been accepted.
  * @param ID the category ID.
  * @return YES or NO.
  */
 + (BOOL) isCategoryAccepted: (int) catID;
-
-/**
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Check if a vendor has been accepted.
  * @param ID the vendor ID.
  * @return YES or NO.
  */
 + (BOOL) isVendorAccepted: (int) venID;
-
-/**
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Get the list of all accepted vendors.
  * @return a List of PRIVACY_VEN_IDs.
  */
 + (NSArray&lt;NSString *&gt; *) getAcceptedCategories;
-
-/**
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Get the list of all accepted vendors.
  * @return a List of PRIVACY_VEN_IDs.
  */
@@ -261,40 +260,45 @@ You'll find those in the class TCPrivacyAPI:</p>
  * @return YES or NO
  */
 + (BOOL) isIABPurposeAccepted: (int) ID;
-
-/**
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Check if a vendor has been accepted.
  * @param ID the vendor ID.
  * @return YES or NO
  */
 + (BOOL) isIABVendorAccepted: (int) ID;
-
-/**
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Check if a special feature has been accepted.
  * @param ID the vendor ID.
  * @return YES or NO
  */
 + (BOOL) isIABSpecialFeatureAccepted: (int) ID;
 </code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Get the list of all google vendor accepted.
+ * @return a list of acm_IDs.
+ */
++ (NSArray &lt;NSString *&gt; *) getAcceptedGoogleVendors;
+</code></pre>
+<p>&nbsp;</p>
 <h2 id="privacy-center">Privacy Center</h2>
 <p>The Privacy Center is represented by a JSON file that describes the interfaces that will be created by native code inside the application.</p>
+<p>For now this JSON has to be created and managed manually. And the SDK will check for updates of the file automatically.</p>
+<p>Your account should have a consultant that will provide you the corresponding JSON for your project.</p>
 <p>We create an UIViewController to create the privacy center view.
 The offline JSON should be inside the project code folder.</p>
 <pre><code>TCPrivacyCenterViewController *PCM = [[TCPrivacyCenterViewController alloc] init];
-UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: [PCM getSaveButtonText]
-                                                               style: UIBarButtonItemStylePlain
-                                                              target: nil
-                                                              action: nil];
-self.navigationItem.backBarButtonItem = backButton;
 [self.navigationController pushViewController: PCM animated: YES];
 </code></pre>
-<p>Since we have a view controller, you can call it by pushing it. It's quite easy, but this mean we have to add code if we want to customize the name of the save/back button.</p>
+<p>Since we have a view controller, you can call it by pushing it. It's quite easy.</p>
 <p>Some part of the Privacy Center can be customised with your code.</p>
 <h3 id="change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</h3>
 <pre><code>[TCMobilePrivacy sharedInstance].switchDefaultState = NO;
 </code></pre>
-<p>For now this JSON has to be created and managed manually. And the SDK will check for updates of the file automatically.
-Your account should have a consultant that will provide you the corresponding JSON for your project.</p>
 <h2 id="privacy-statistics">Privacy statistics</h2>
 <p>We have dashboards that allow to have detailed statistics on the choices your users are making.
 Depending on your app privacy configuration you might have to call some additional functions.</p>
@@ -303,7 +307,9 @@ Depending on your app privacy configuration you might have to call some addition
 - Directly to our privacy center
 - Custom privacy center
 </code></pre>
-<p>Whenever saveConsent* is called you will need to provide the list of purposes and vendors that have been consented to.</p>
+<p>Whenever saveConsent* is called you will need to provide the full list of purposes and vendors that have been consented to and refused.</p>
+<p>We reworked saveConsent methods to only use one. If you are using the old functions they will still work for now.
+Otherwise please check the above section "Manually displayed consent" for how this method works.</p>
 <p>Also please note that you will need to call statViewBanner when you display your custom banner.</p>
 <p><img alt="alt tag" src="../res/TCPC_customBanner.jpeg" />
 <img alt="alt tag" src="../res/TCPC_PC.jpeg" />
@@ -320,6 +326,6 @@ Depending on your app privacy configuration you might have to call some addition
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 29/09/2021 15:51:14</p>
+<p>This documentation was generated on 23/11/2021 11:31:33</p>
 </body>
 </html>

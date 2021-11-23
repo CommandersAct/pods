@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Release-universal108">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCCore/4/1/2/Release-universal/TCCore.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/1/2/Release-universal/TCCore-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

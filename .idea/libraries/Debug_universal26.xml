@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Debug-universal26">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/8/Debug-universal/TCPrivacy-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/8/Debug-universal/TCPrivacy-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/6/8/Debug-universal/TCPrivacy.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

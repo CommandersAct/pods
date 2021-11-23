@@ -1,6 +1,12 @@
 Changelog iOS
 =============
 
+*4.9.4 : 06/10 2021*
+
+	+ Mandatory custom categories supported on Privacy Center.
+	~ Fixing a resetSave issue with AC-String.
+
+
 *4.9.3 : 09/29 2021*
 
 	+ Fixing the display of very long url on the purpose page.
@@ -10,9 +16,11 @@ Changelog iOS
 
 	+ New function to easily get the ID used to save privacy.
 
+
 *4.9.1 : 09/02 2021*
 
     ~ Quick fix for regular privacy which only worked with "with-IAB" type of releases.
+
 
 *4.9.0 : 08/10 2021*
 

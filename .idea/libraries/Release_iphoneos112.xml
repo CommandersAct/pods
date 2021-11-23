@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Release-iphoneos112">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/4/4/Release-iphoneos/TCPrivacy.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/4/4/Release-iphoneos/TCPrivacy-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/4/4/Release-iphoneos/TCPrivacy-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/4/4/Release-iphoneos/TCPrivacy-Bitcode.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

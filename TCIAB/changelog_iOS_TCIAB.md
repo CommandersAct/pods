@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.7.1 : 11/23 2021*
+
+	~ fix an issue with resetSave not removing the AC-String properly.
+
 *4.7.0 : 09/01 2021*
 
     /!\ Requires TCPrivacy 4.9.0+

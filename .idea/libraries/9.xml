@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/9/TCPrivacy-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/9/TCPrivacy-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/9/TCPrivacy-Bitcode-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/9/TCPrivacy.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/9/TCPrivacy-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/9/TCPrivacy-Bitcode-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/9/TCPrivacy-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCPrivacy/4/7/9/TCPrivacy-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
