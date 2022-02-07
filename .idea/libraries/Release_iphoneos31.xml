@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Release-iphoneos31">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/4/1/Release-iphoneos/TCSDK-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/4/1/Release-iphoneos/TCSDK-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/4/1/Release-iphoneos/TCSDK.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSDK/4/4/1/Release-iphoneos/TCSDK-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

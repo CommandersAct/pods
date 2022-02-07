@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Debug-universal61">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCCore/4/2/2/Debug-universal/TCCore-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/2/2/Debug-universal/TCCore.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

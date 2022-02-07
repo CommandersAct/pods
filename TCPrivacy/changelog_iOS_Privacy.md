@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.9.5 : 02/04 2022*
+
+	~ build with XCode 13
+
 *4.9.4 : 06/10 2021*
 
 	+ Mandatory custom categories supported on Privacy Center.

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Release-iphoneos74">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/1/Release-iphoneos/TCIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/1/Release-iphoneos/TCIAB-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/1/Release-iphoneos/TCIAB-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/1/Release-iphoneos/TCIAB-Bitcode.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

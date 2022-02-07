@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="43">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCCore/4/7/4/TCCore-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/7/4/TCCore-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/7/4/TCCore-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/7/4/TCCore.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

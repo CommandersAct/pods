@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>23/11/2021</em><br />
+<p>Last update : <em>07/02/2022</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -31,12 +31,12 @@ The modules are the following :</p>
 <p><a href="TCPrivacy/README.md">Privacy : Pass the Privacy settings to our tag system</a></p>
 <p>For each of those modules, please check their respective documentation for more information.</p>
 <h1 id="latest-available-versions">Latest available versions</h1>
-<p>Core : <em>4.7.9</em></p>
-<p>SDK : <em>4.6.4</em></p>
-<p>Privacy : <em>4.9.4</em></p>
-<p>IAB : <em>4.7.1</em></p>
-<p>Partners : <em>4.6.5</em></p>
-<p>Segment : <em>4.3.1</em></p>
+<p>Core : <em>4.7.11</em></p>
+<p>SDK : <em>4.6.5</em></p>
+<p>Privacy : <em>4.9.5</em></p>
+<p>IAB : <em>4.7.2</em></p>
+<p>Partners : <em>4.6.6</em></p>
+<p>Segment : <em>4.3.2</em></p>
 <h1 id="adding-a-module-to-your-project">Adding a module to your project</h1>
 <p>If you want to add a module to your iOS project, you have several possibilities.</p>
 <pre><code>- Using cocoapods to manage the dependency.
@@ -85,6 +85,6 @@ pod 'TCSDK', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/11/2021 13:59:47</p>
+<p>This documentation was generated on 07/02/2022 11:31:46</p>
 </body>
 </html>

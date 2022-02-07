@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Release-iphoneos34">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCSegment/4/0/0/Release-iphoneos/TCSegment-BITCODE.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCSegment/4/0/0/Release-iphoneos/TCSegment.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Release-iphoneos44">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/9/Release-iphoneos/TCCore-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/9/Release-iphoneos/TCCore-Bitcode-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/9/Release-iphoneos/TCCore-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/9/Release-iphoneos/TCCore-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/9/Release-iphoneos/TCCore-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/9/Release-iphoneos/TCCore.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/9/Release-iphoneos/TCCore-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCCore/4/6/9/Release-iphoneos/TCCore-Bitcode-noIAB.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

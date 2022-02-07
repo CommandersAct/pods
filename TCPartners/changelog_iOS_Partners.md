@@ -1,6 +1,10 @@
 Changelog iOS
 =================
 
+*4.6.6 : 02/04 2022*
+
+	~ build with XCode 13
+
 *4.6.5 : 12/18 2020*
 
 	~ Modified build scripts to better handle XCFramework. No more debug needed, DSYM files are now directly inside the release.

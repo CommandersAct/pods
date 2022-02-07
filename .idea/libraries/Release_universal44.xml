@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Release-universal44">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/3/Release-universal/TCIAB-Bitcode.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/3/Release-universal/TCIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/3/Release-universal/TCIAB-Bitcode-noIDFA.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/3/Release-universal/TCIAB-Bitcode-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/3/Release-universal/TCIAB-Bitcode-noIDFA-noIAB.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TCIAB/4/4/3/Release-universal/TCIAB-noIDFA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
