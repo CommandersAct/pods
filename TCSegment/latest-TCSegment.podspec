@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "latest-TCSegment"
-  s.version      = "4.3.2"
+  s.version      = "4.3.1"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSegment"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
                         Copyright 2013 - present Commanders Act. All rights reserved.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCSegment for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSegment/4/3/2/TCSegment.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSegment/4/3/1/TCSegment.zip" }
   s.preserve_paths      = 'TCSegment.xcframework'
   #s.public_header_files = 'TCSegment.framework/Headers/*.h'
   s.vendored_frameworks = 'TCSegment.xcframework'

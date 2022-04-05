@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "latest-TCSDK"
-  s.version      = "4.6.5"
+  s.version      = "4.6.4"
   s.homepage     = "https://github.com/TagCommander/pods/tree/master/TCSDK"
   s.license      = { :type => 'proprietary', :text => <<-LICENSE
                         Copyright 2013 - present Commanders Act. All rights reserved.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
            Go to https://github.com/TagCommander/pods/tree/master/TCSDK for more details
                    DESC
   s.platform     = :ios, '8.0'
-  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSDK/4/6/5/TCSDK.zip" }
+  s.source   = { :http => "https://github.com/TagCommander/pods/raw/master/TCSDK/4/6/4/TCSDK.zip" }
   s.preserve_paths      = 'TCSDK.xcframework'
   #s.public_header_files = 'TCSDK.framework/Headers/*.h'
   s.vendored_frameworks = 'TCSDK.xcframework'
