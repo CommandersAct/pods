@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>07/02/2022</em><br />
-Release version : <em>4.6.5</em></p>
+<p>Last update : <em>05/04/2022</em><br />
+Release version : <em>4.6.4</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -399,6 +399,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 07/02/2022 11:38:07</p>
+<p>This documentation was generated on 05/04/2022 15:34:12</p>
 </body>
 </html>

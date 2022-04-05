@@ -1,10 +1,6 @@
 Changelog iOS
 =============
 
-*4.7.2 : 02/04 2022*
-
-	~ build with XCode 13
-
 *4.7.1 : 11/23 2021*
 
 	~ fix an issue with resetSave not removing the AC-String properly.
