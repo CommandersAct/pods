@@ -5,7 +5,7 @@ Changelog iOS
 >  If you want to check the previous version's changelog, you can find it here :
 
 [Previous changelist](../res/changelog_iOS_3.md)
-
+ 
 *4.6.4 : 05/17 2021*
 	/!\ Requires TCCore 4.7.7
 	+ new way to change the SDK default beheviour depending on the privacy you are using. Please check the 'Privacy' part in the SDK's README.

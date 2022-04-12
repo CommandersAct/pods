@@ -1,9 +1,16 @@
 Changelog iOS
 =============
 
+*4.9.6 : 04/11/2022*
+
+    ~ fix purpose and vendor screen content text not appearing.
+    + Added a possibility to explicitly distinguish IAB vendors with a title in JSON at vendors.IABVendorsDef.
+
 *4.9.5 : 04/04/2022*
+
     ~ fixed memory leak on TCPrivacyCenterViewController.
     ~ [IAB] Modified consent string timestamp to comply with new TCF standards of reducing precision.
+
 
 *4.9.4 : 06/10 2021*
 
