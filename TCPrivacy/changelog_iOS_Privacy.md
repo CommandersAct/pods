@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.9.7 : 05/31/2022*
+
+	~ Fixing some stats where we would loose the click information for a consent status.
+
+
 *4.9.6 : 04/11/2022*
 
     ~ fix purpose and vendor screen content text not appearing.

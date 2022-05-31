@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>12/04/2022</em><br />
+<p>Last update : <em>31/05/2022</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -33,7 +33,7 @@ The modules are the following :</p>
 <h1 id="latest-available-versions">Latest available versions</h1>
 <p>Core : <em>4.7.9</em></p>
 <p>SDK : <em>4.6.4</em></p>
-<p>Privacy : <em>4.9.6</em></p>
+<p>Privacy : <em>4.9.7</em></p>
 <p>IAB : <em>4.7.1</em></p>
 <p>Partners : <em>4.6.5</em></p>
 <p>Segment : <em>4.3.1</em></p>
@@ -85,6 +85,6 @@ pod 'TCSDK', :podspec =&gt; 'https://raw.githubusercontent.com/TagCommander/pods
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/04/2022 10:24:42</p>
+<p>This documentation was generated on 31/05/2022 16:42:48</p>
 </body>
 </html>
