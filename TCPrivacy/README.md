@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>iOS</strong></p>
-<p>Last update : <em>31/05/2022</em><br />
-Release version : <em>4.9.7</em></p>
+<p>Last update : <em>15/07/2022</em><br />
+Release version : <em>4.9.8</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -36,7 +36,10 @@ Release version : <em>4.9.7</em></p>
 <li><a href="#changing-consent-version">Changing consent version</a></li>
 <li><a href="#consent-internal-api">Consent internal API</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
-<li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
+<li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a><ul>
+<li><a href="#testing-on-your-own-app">Testing on your own app</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#privacy-statistics">Privacy statistics</a></li>
@@ -299,6 +302,98 @@ The offline JSON should be inside the project code folder.</p>
 <h3 id="change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</h3>
 <pre><code>[TCMobilePrivacy sharedInstance].switchDefaultState = NO;
 </code></pre>
+<h4 id="testing-on-your-own-app">Testing on your own app</h4>
+<p>If you wanna implement your own UI Testing on your app, you might need the following accessibilities keys for accessing our multiple UI Buttons :</p>
+<p>please make sure you've already imported TCPrivacyConstants.h</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TC_POPUP_SCREEN_DETAILS_BTN</td>
+<td>First layer's details button</td>
+</tr>
+<tr>
+<td>TC_POPUP_SCREEN_ACCEPT_ALL_BTN</td>
+<td>First layer's accept all button</td>
+</tr>
+<tr>
+<td>TC_POPUP_SCREEN_REFUSE_ALL_BTN</td>
+<td>First layer's refuse all button</td>
+</tr>
+<tr>
+<td>TC_VENDORS_SCREEN_SAVE_EXIT_BTN</td>
+<td>Vendors screen save and exit button</td>
+</tr>
+<tr>
+<td>TC_VENDORS_SCREEN_ACCEPT_ALL_BTN</td>
+<td>Vendors screen accept all button</td>
+</tr>
+<tr>
+<td>TC_VENDORS_SCREEN_REFUSE_ALL_BTN</td>
+<td>Vendors screen refuse all button</td>
+</tr>
+<tr>
+<td>TC_VENDORS_SCREEN_SHOW_PURPOSES_BTN</td>
+<td>Vendors screen's show purposes screen button</td>
+</tr>
+<tr>
+<td>TC_PURPOSES_SCREEN_SAVE_EXIT_BTN</td>
+<td>Purposes screen save and exit button</td>
+</tr>
+<tr>
+<td>TC_PURPOSES_SCREEN_ACCEPT_ALL_BTN</td>
+<td>Purposes screen accept all button</td>
+</tr>
+<tr>
+<td>TC_PURPOSES_SCREEN_REFUSE_ALL_BTN</td>
+<td>Purposes screen refuse all button</td>
+</tr>
+<tr>
+<td>TC_PURPOSES_SCREEN_SHOW_VENDORS_BTN</td>
+<td>Purposes screen's show vendor screen button</td>
+</tr>
+</tbody>
+</table>
+<p>Switches on the UI hold the following accessibility identifier :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IAB Purpose</td>
+<td>PRIVACY_CAT_X where X = iabId * 2 - 1 + 10000</td>
+</tr>
+<tr>
+<td>IAB Special Feature</td>
+<td>PRIVACY_CAT_X where X = iabId + 13000</td>
+</tr>
+<tr>
+<td>IAB Vendor</td>
+<td>PRIVACY_VEN_X where X = ( IAB.id * 2 ) + 1000 - 1</td>
+</tr>
+<tr>
+<td>Custom Vendor</td>
+<td>PRIVACY_VEN_ID</td>
+</tr>
+<tr>
+<td>Custom Category</td>
+<td>PRIVACY_CAT_ID</td>
+</tr>
+<tr>
+<td>Google Vendor</td>
+<td>acm_ID</td>
+</tr>
+</tbody>
+</table>
 <h2 id="privacy-statistics">Privacy statistics</h2>
 <p>We have dashboards that allow to have detailed statistics on the choices your users are making.
 Depending on your app privacy configuration you might have to call some additional functions.</p>
@@ -326,6 +421,6 @@ Otherwise please check the above section "Manually displayed consent" for how th
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 31/05/2022 16:42:48</p>
+<p>This documentation was generated on 15/07/2022 14:25:57</p>
 </body>
 </html>

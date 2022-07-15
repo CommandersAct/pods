@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.9.8 : 07/15/2022*
+
+	+ Added accessibility identifier to the consent manager views.
+	+ [IAB] Partners disclosures are now shown on the vendor details.
+
 *4.9.7 : 05/31/2022*
 
 	~ Fixing some stats where we would loose the click information for a consent status.
